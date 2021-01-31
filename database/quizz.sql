@@ -21,7 +21,6 @@ USE `quizz`;
 -- Table structure for table `category`
 --
 
-DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `category` (
@@ -45,7 +44,6 @@ UNLOCK TABLES;
 -- Table structure for table `game`
 --
 
-DROP TABLE IF EXISTS `game`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `game` (
@@ -73,7 +71,7 @@ UNLOCK TABLES;
 -- Table structure for table `game_quizzes`
 --
 
-DROP TABLE IF EXISTS `game_quizzes`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `game_quizzes` (
@@ -99,7 +97,6 @@ UNLOCK TABLES;
 -- Table structure for table `question`
 --
 
-DROP TABLE IF EXISTS `question`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `question` (
@@ -126,7 +123,6 @@ UNLOCK TABLES;
 -- Table structure for table `question_responses`
 --
 
-DROP TABLE IF EXISTS `question_responses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `question_responses` (
@@ -152,7 +148,6 @@ UNLOCK TABLES;
 -- Table structure for table `quizz`
 --
 
-DROP TABLE IF EXISTS `quizz`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `quizz` (
@@ -177,7 +172,6 @@ UNLOCK TABLES;
 -- Table structure for table `response`
 --
 
-DROP TABLE IF EXISTS `response`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `response` (
@@ -201,7 +195,6 @@ UNLOCK TABLES;
 -- Table structure for table `role`
 --
 
-DROP TABLE IF EXISTS `role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `role` (
@@ -224,7 +217,6 @@ UNLOCK TABLES;
 -- Table structure for table `score`
 --
 
-DROP TABLE IF EXISTS `score`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `score` (
@@ -247,7 +239,6 @@ UNLOCK TABLES;
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
