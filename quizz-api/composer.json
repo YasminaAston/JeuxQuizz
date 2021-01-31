@@ -31,7 +31,8 @@
         "symfony/yaml": "5.2.*"
     },
     "require-dev": {
-        "symfony/debug-bundle": "5.2.*"
+        "symfony/debug-bundle": "5.2.*",
+        "symfony/maker-bundle": "^1.28"
     },
     "config": {
         "optimize-autoloader": true,
