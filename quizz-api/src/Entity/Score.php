@@ -2,29 +2,23 @@
 
 namespace App\Entity;
 
+use App\Repository\ScoreRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Score
- *
- * @ORM\Table(name="score")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass=ScoreRepository::class)
  */
 class Score
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="score", type="integer", nullable=false)
+     * @ORM\Column(type="integer")
      */
     private $score;
 
@@ -44,6 +38,4 @@ class Score
 
         return $this;
     }
-
-
 }

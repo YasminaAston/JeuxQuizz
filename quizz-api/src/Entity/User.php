@@ -2,76 +2,52 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
+use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * User
- *
- * @ORM\Table(name="user", uniqueConstraints={@ORM\UniqueConstraint(name="email", columns={"email"})}, indexes={@ORM\Index(name="FKn82ha3ccdebhokx3a8fgdqeyy", columns={"role_id"})})
- * @ORM\Entity
+ * @ApiResource()
+ * @ORM\Entity(repositoryClass=UserRepository::class)
  */
 class User
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255, nullable=false)
+     * @ORM\Column(type="string", length=60)
      */
     private $email;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="firstname", type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $firstname;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="image", type="text", length=65535, nullable=true)
-     */
-    private $image;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="lastname", type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $lastname;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=3000, nullable=false)
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $image;
+
+    /**
+     * @ORM\Column(type="string", length=3000)
      */
     private $password;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="username", type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=60, nullable=true)
      */
     private $username;
-
-    /**
-     * @var \Role
-     *
-     * @ORM\ManyToOne(targetEntity="Role")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="role_id", referencedColumnName="id")
-     * })
-     */
-    private $role;
 
     public function getId(): ?int
     {
@@ -102,18 +78,6 @@ class User
         return $this;
     }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(?string $image): self
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
     public function getLastname(): ?string
     {
         return $this->lastname;
@@ -122,6 +86,18 @@ class User
     public function setLastname(?string $lastname): self
     {
         $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }
@@ -149,18 +125,4 @@ class User
 
         return $this;
     }
-
-    public function getRole(): ?Role
-    {
-        return $this->role;
-    }
-
-    public function setRole(?Role $role): self
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
-
 }

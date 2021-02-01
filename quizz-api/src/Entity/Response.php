@@ -2,36 +2,30 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
+use App\Repository\ResponseRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Response
- *
- * @ORM\Table(name="response")
- * @ORM\Entity
+ * @ApiResource()
+ * @ORM\Entity(repositoryClass=ResponseRepository::class)
  */
 class Response
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
-     * @var bool
-     *
-     * @ORM\Column(name="is_correct", type="boolean", nullable=false)
+     * @ORM\Column(type="boolean")
      */
-    private $isCorrect;
+    private $is_correct;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="label", type="string", length=255, nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
     private $label;
 
@@ -42,12 +36,12 @@ class Response
 
     public function getIsCorrect(): ?bool
     {
-        return $this->isCorrect;
+        return $this->is_correct;
     }
 
-    public function setIsCorrect(bool $isCorrect): self
+    public function setIsCorrect(bool $is_correct): self
     {
-        $this->isCorrect = $isCorrect;
+        $this->is_correct = $is_correct;
 
         return $this;
     }
@@ -63,6 +57,4 @@ class Response
 
         return $this;
     }
-
-
 }

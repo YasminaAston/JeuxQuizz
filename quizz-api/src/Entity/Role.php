@@ -2,31 +2,27 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
+use App\Repository\RoleRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Role
- *
- * @ORM\Table(name="role")
- * @ORM\Entity
+ * @ApiResource()
+ * @ORM\Entity(repositoryClass=RoleRepository::class)
  */
 class Role
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="role_name", type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=55, nullable=true)
      */
-    private $roleName;
+    private $role_name;
 
     public function getId(): ?int
     {
@@ -35,15 +31,13 @@ class Role
 
     public function getRoleName(): ?string
     {
-        return $this->roleName;
+        return $this->role_name;
     }
 
-    public function setRoleName(?string $roleName): self
+    public function setRoleName(?string $role_name): self
     {
-        $this->roleName = $roleName;
+        $this->role_name = $role_name;
 
         return $this;
     }
-
-
 }

@@ -2,51 +2,25 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
+use App\Repository\QuizzRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Quizz
- *
- * @ORM\Table(name="quizz", indexes={@ORM\Index(name="FK3k8gf7ybuvr8yrreixdo03mme", columns={"question_id"})})
- * @ORM\Entity
+ * @ApiResource()
+ * @ORM\Entity(repositoryClass=QuizzRepository::class)
  */
 class Quizz
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
     private $id;
-
-    /**
-     * @var \Question
-     *
-     * @ORM\ManyToOne(targetEntity="Question")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="question_id", referencedColumnName="id")
-     * })
-     */
-    private $question;
 
     public function getId(): ?int
     {
         return $this->id;
     }
-
-    public function getQuestion(): ?Question
-    {
-        return $this->question;
-    }
-
-    public function setQuestion(?Question $question): self
-    {
-        $this->question = $question;
-
-        return $this;
-    }
-
-
 }
