@@ -1,11 +1,18 @@
 <?php
-
 namespace App\Entity;
+
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\JoinColumn;
+
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\ManyToOne(...)
+ * @ORM\JoinColumn(...)
+ */
 /**
  * @ApiResource()
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -48,6 +55,17 @@ class User
      * @ORM\Column(type="string", length=60, nullable=true)
      */
     private $username;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Role::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $role;
+
+
+
+
+
 
     public function getId(): ?int
     {
@@ -125,4 +143,17 @@ class User
 
         return $this;
     }
+
+    public function getRole(): ?Role
+    {
+        return $this->role;
+    }
+
+    public function setRole(?Role $role): self
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
 }

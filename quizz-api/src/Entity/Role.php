@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
@@ -24,6 +23,8 @@ class Role
      */
     private $role_name;
 
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -37,6 +38,18 @@ class Role
     public function setRoleName(?string $role_name): self
     {
         $this->role_name = $role_name;
+
+        return $this;
+    }
+
+    public function getUser(): ?self
+    {
+        return $this->User;
+    }
+
+    public function setUser(?self $User): self
+    {
+        $this->User = $User;
 
         return $this;
     }

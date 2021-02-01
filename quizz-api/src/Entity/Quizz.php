@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
@@ -19,8 +18,29 @@ class Quizz
      */
     private $id;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Question::class, cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $question;
+
+
+
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getQuestion(): ?Question
+    {
+        return $this->question;
+    }
+
+    public function setQuestion(Question $question): self
+    {
+        $this->question = $question;
+
+        return $this;
     }
 }
