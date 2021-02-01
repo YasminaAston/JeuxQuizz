@@ -28,5 +28,22 @@ class Role
      */
     private $roleName;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getRoleName(): ?string
+    {
+        return $this->roleName;
+    }
+
+    public function setRoleName(?string $roleName): self
+    {
+        $this->roleName = $roleName;
+
+        return $this;
+    }
+
 
 }

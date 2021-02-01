@@ -35,5 +35,34 @@ class Response
      */
     private $label;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getIsCorrect(): ?bool
+    {
+        return $this->isCorrect;
+    }
+
+    public function setIsCorrect(bool $isCorrect): self
+    {
+        $this->isCorrect = $isCorrect;
+
+        return $this;
+    }
+
+    public function getLabel(): ?string
+    {
+        return $this->label;
+    }
+
+    public function setLabel(string $label): self
+    {
+        $this->label = $label;
+
+        return $this;
+    }
+
 
 }

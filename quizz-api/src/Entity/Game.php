@@ -41,5 +41,34 @@ class Game
      */
     private $score;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    public function getScore(): ?Score
+    {
+        return $this->score;
+    }
+
+    public function setScore(?Score $score): self
+    {
+        $this->score = $score;
+
+        return $this;
+    }
+
 
 }
