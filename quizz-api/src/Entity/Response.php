@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ApiResource()
  * @ORM\Entity(repositoryClass=ResponseRepository::class)
  */
-class Response
+class Response extends \App\Entity\Question
 {
     /**
      * @ORM\Id
