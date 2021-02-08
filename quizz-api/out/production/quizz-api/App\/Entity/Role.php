@@ -4,6 +4,7 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use App\Repository\RoleRepository;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 /**

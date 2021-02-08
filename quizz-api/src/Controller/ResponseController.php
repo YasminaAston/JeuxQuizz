@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Dto\ResponseDto;
+use App\Entity\Question;
 use App\Entity\Response;
 use App\Form\ResponseType;
 use App\Repository\QuestionRepository;
@@ -41,51 +43,19 @@ class ResponseController extends AbstractController
     public function getAll(ResponseRepository $responseRepository)
     {
         $responses =  $responseRepository->findAll();
-        return $this->json($responses, 200);
-        /*
         if(sizeof($responses) > 0){
           return $this->json($responses, 200);
         }else {
             return $this->json(['status'=> \Symfony\Component\HttpFoundation\Response::HTTP_NOT_FOUND, 'message'=> 'Response is empty '], 404);
         }
-        */
 
-    }
 
-    /**
-     * @Route("/new", name="response_new", methods={"GET","POST"})
-     */
-    public function new(
-                        Request $request,
-                        SerializerInterface $serializer,
-                        ValidatorInterface $validator
-                        ): Response
-    {
-        // deserialize the json
-        try {
-            $response = $serializer->deserialize($request->getContent(), Response::class, 'json');
-        } catch (NotEncodableValueException $exception) {
-            throw new HttpException(\Symfony\Component\HttpFoundation\Response::HTTP_BAD_REQUEST, 'Invalid Json');
-        }
-        $errors = $validator->validate($response);
-
-        if (count($errors) > 0) {
-            $json = $serializer->serialize($errors, 'json', array_merge([
-                'json_encode_options' => JsonResponse::DEFAULT_ENCODING_OPTIONS,
-            ], []));
-            return new JsonResponse($json, Response::HTTP_BAD_REQUEST, [], true);
-        }
-
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->persist($response);
-        $entityManager->flush();
-        return new Response( $this -> json($response, 201));
     }
 
     /**
      * @Route("/{id}", name="response_show", methods={"GET"})
      */
-    public function show(int $id): Response
+    public function show(int $id)
     {
         $response = $this->responseRepository->find($id);
         if(!$response){
@@ -95,20 +65,58 @@ class ResponseController extends AbstractController
     }
 
     /**
-     * @Route("/{question_id}/edit", name="response_edit", methods={"GET","POST"})
+     * @Route("/new", name="response_new", methods={"GET","POST"})
+     */
+    public function new(
+                        Request $request,
+                        SerializerInterface $serializer,
+                        ValidatorInterface $validator,
+                        QuestionRepository $questionRepository
+                        )
+    {
+        // deserialize the json
+        try {
+            $responseDto = $serializer->deserialize($request->getContent(), ResponseDto::class, 'json');
+        } catch (NotEncodableValueException $exception) {
+            throw new HttpException(\Symfony\Component\HttpFoundation\Response::HTTP_BAD_REQUEST, 'Invalid Json');
+        }
+        $errors = $validator->validate($responseDto);
+
+        if (count($errors) > 0) {
+            $json = $serializer->serialize($errors, 'json', array_merge([
+                'json_encode_options' => JsonResponse::DEFAULT_ENCODING_OPTIONS,
+            ], []));
+            return $this->json($json, \Symfony\Component\HttpFoundation\Response::HTTP_BAD_REQUEST, [], true);
+        }
+
+        $question = $questionRepository ->find($responseDto->getQuestionId());
+        if (!$question) {
+            return $this-> json(['status'=> \Symfony\Component\HttpFoundation\Response::HTTP_NOT_FOUND, 'message'=> 'Question not found '] , 404, []);
+        }
+        $response = new Response();
+        $response->setLabel($responseDto->getLabel());
+        $response->setIsCorrect($responseDto->getIsCorrect());
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($response);
+        $entityManager->flush();
+
+        $question->addResponse($response);
+        $entityManager->persist($question);
+        $entityManager->flush();
+
+        return $this -> json($question, 201, [], ['groups'=>['question']]);
+    }
+
+    /**
+     * @Route("/edit", name="response_edit", methods={"PUT"})
      */
     public function edit(
                          Request $request,
                          QuestionRepository $questionRepository,
                          SerializerInterface $serializer,
-                         ValidatorInterface $validator,
-                         int $question_id
+                         ValidatorInterface $validator
                          ): JsonResponse
     {
-        $question = $questionRepository ->find($question_id);
-        if (!$question) {
-            return $this-> json(['status'=> \Symfony\Component\HttpFoundation\Response::HTTP_NOT_FOUND, 'message'=> 'Question not found '] , 404, []);
-        }
         // deserialize the json
         try {
             $responseData = $serializer->deserialize($request->getContent(), Response::class, 'json');
@@ -130,18 +138,13 @@ class ResponseController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($response);
         $entityManager->flush();
-        $question->addResponse($response);
-
-        $entityManager->persist($question);
-        $entityManager->flush();
-
         return  $this -> json($response, 200);
     }
 
     /**
      * @Route("/{id}", name="response_delete", methods={"DELETE"})
      */
-    public function delete(int $id): Response
+    public function delete(int $id)
     {
         $response = $this-> responseRepository ->find($id);
         if (!$response) {

@@ -4,8 +4,12 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Entity\Game;
+use App\Entity\Quizz;
 use App\Form\GameType;
+use App\Repository\CategoryRepository;
 use App\Repository\GameRepository;
+use App\Repository\QuestionRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -59,35 +63,44 @@ class GameController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="game_new", methods={"POST"})
+     * @Route("/new/{user_id}/{category_id}/{difficulty}", name="game_new", methods={"POST"})
      */
     public function new(
-        Request $request,
-        SerializerInterface $serializer,
-        ValidatorInterface $validator
+        QuestionRepository $questionRepository,
+        CategoryRepository $categoryRepository,
+        UserRepository $userRepository,
+        $category_id, $difficulty,
+        $user_id
     ): Response
     {
-
-        // deserialize the json
-        try {
-            $game = $serializer->deserialize($request->getContent(), Game::class, 'json');
-        } catch (NotEncodableValueException $exception) {
-            throw new HttpException(Response::HTTP_BAD_REQUEST, 'Invalid Json');
+        $user = $userRepository-> find($user_id);
+        if(!$user) {
+            return new JsonResponse($this-> json(['status'=>404, 'meassage'=>'User not found']), Response::HTTP_BAD_REQUEST, [], true);
         }
-        $errors = $validator->validate($game);
+        $category = $categoryRepository->find($category_id);
+        $questions = $questionRepository->findBy(array('category' => $category, 'difficulty' => $difficulty));
+        if (sizeof($questions) > 0){
+            $entityManager = $this->getDoctrine()->getManager();
+            $game = new Game();
+            $game->setUser($user);
+            $questionsQuizz = array_rand($questions, 10);
 
-        if (count($errors) > 0) {
-            $json = $serializer->serialize($errors, 'json', array_merge([
-                'json_encode_options' => JsonResponse::DEFAULT_ENCODING_OPTIONS,
-            ], []));
-            return new JsonResponse($json, Response::HTTP_BAD_REQUEST, [], true);
+            foreach ($questionsQuizz as $key => $value) {
+                echo "{$key} => {$value} ";
+                $quizz = new Quizz();
+                $quizz->setQuestion($value);
+                $entityManager->persist($quizz);
+                $entityManager->flush();
+                // array_push($quizzes, $quizz);
+                $game->addQuiz($quizz);
+            }
+            $entityManager->persist($game);
+            $entityManager->flush();
+            return $this -> json($game, 200);
+        }else {
+            return $this -> json(['status'=> Response::HTTP_OK, 'message'=> 'Entity question is empty'], 200);
         }
-
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->persist($game);
-        $entityManager->flush();
-        return new Response( $this -> json($game, 201));
-
+        //return $this -> json(['category_id'=> $category_id, 'difficulty'=> $difficulty], 200);
     }
 
     /**

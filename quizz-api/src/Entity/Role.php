@@ -4,6 +4,7 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use App\Repository\RoleRepository;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -17,11 +18,13 @@ class Role
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"userInfos"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=55, nullable=true)
+     * @Groups({"userInfos"})
      */
     private $roleName;
 

@@ -6,6 +6,7 @@ use App\Repository\CategoryRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource()
@@ -18,11 +19,13 @@ class Category
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("question")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=55, unique=true)
+     * @Groups("question")
      */
     private $name;
 
