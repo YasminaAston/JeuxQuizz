@@ -45,7 +45,7 @@ class QuizzController extends AbstractController
     {
         $quizzes = $this->quizzRepository->findAll();
         if (sizeof($quizzes) > 0){
-            return $this -> json($quizzes, 200);
+            return $this -> json($quizzes, 200, [], ['groups'=>['quizz']]);
         }else {
             return $this -> json(['status'=> Response::HTTP_OK, 'message'=> 'Entity quizz is empty'], 200);
         }
@@ -60,7 +60,7 @@ class QuizzController extends AbstractController
         if(!$quizz){
             return $this-> json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'Quizz Not Found '] , 404, []);
         }
-        return  $this->json($quizz, 200, [], ['groups'=>['quizz:read']]);
+        return  $this->json($quizz, 200, [], ['groups'=>['quizz']]);
     }
 
     /**
