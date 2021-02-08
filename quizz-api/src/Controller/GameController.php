@@ -45,7 +45,7 @@ class GameController extends AbstractController
     {
         $games = $gameRepository->findAll();
         if (sizeof($games) > 0){
-            return $this -> json($gameRepository->findAll(), 200);
+            return $this -> json($gameRepository->findAll(), 200, [], ['groups'=>['quizz']]);
         }else {
             return $this -> json(['status'=> Response::HTTP_OK, 'message'=> 'Entity game is empty'], 200);
         }
@@ -60,7 +60,7 @@ class GameController extends AbstractController
         if(!$game){
             return $this-> json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'Game Not Found '] , 404, []);
         }
-        return  $this->json($game);
+        return  $this->json($game, 200, [], ['groups'=>['quizz']]);
     }
 
     /**
@@ -116,7 +116,7 @@ class GameController extends AbstractController
             $entityManager->flush();
             return $this -> json($game, 200);
         }else {
-            return $this -> json(['status'=> Response::HTTP_OK, 'message'=> 'Entity question is empty'], 200, [], ['groups'=>['quizz:read']]);
+            return $this -> json(['status'=> Response::HTTP_OK, 'message'=> 'Entity question is empty'], 200, [], ['groups'=>['quizz']]);
         }
     }
 
@@ -152,7 +152,7 @@ class GameController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($game);
         $entityManager->flush();
-        return  $this -> json($game, 200);
+        return  $this -> json($game, 200, [], ['groups'=>['quizz']]);
     }
 
     /**
