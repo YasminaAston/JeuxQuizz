@@ -4,8 +4,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-
-
+use Symfony\Component\Serializer\Annotation\Groups;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
@@ -26,21 +25,25 @@ class User
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"quizz"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=60, unique=true)
+     * @Groups({"quizz", "userInfos"})
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
+     * @Groups({"quizz", "userInfos"})
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
+     * @Groups({"quizz", "userInfos"})
      */
     private $lastname;
 
@@ -51,17 +54,20 @@ class User
 
     /**
      * @ORM\Column(type="string", length=3000, nullable= false)
+     *
      */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=60, nullable=true, unique=true)
+     * @Groups({"quizz", "userInfos"})
      */
     private $username;
 
     /**
      * @ORM\ManyToOne(targetEntity=Role::class)
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"userInfos"})
      */
     private $role;
 

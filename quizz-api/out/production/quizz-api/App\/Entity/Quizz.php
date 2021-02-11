@@ -3,6 +3,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\QuizzRepository;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,6 +25,11 @@ class Quizz
      */
     private $question;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isCorrect;
+
 
 
 
@@ -40,6 +46,18 @@ class Quizz
     public function setQuestion(Question $question): self
     {
         $this->question = $question;
+
+        return $this;
+    }
+
+    public function getIsCorrect(): ?bool
+    {
+        return $this->isCorrect;
+    }
+
+    public function setIsCorrect(?bool $isCorrect): self
+    {
+        $this->isCorrect = $isCorrect;
 
         return $this;
     }

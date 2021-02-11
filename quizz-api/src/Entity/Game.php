@@ -5,6 +5,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\GameRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 
@@ -19,17 +20,20 @@ class Game
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"quizz"})
      */
     private $id;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class)
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
+     * @Groups({"quizz"})
      */
     private $user;
 
     /**
      * @ORM\OneToOne(targetEntity=Score::class, cascade={"persist", "remove"})
+     * @Groups({"quizz"})
      */
     private $score;
 
@@ -38,6 +42,7 @@ class Game
      * @ORM\JoinTable(name="game_quizzes",
      *joinColumns={@ORM\JoinColumn(name="game_id", referencedColumnName="id")},
      *inverseJoinColumns={@ORM\JoinColumn(name="quizz_id", referencedColumnName="id", unique=true)})
+     * @Groups({"quizz"})
      */
     private $quizzes;
 

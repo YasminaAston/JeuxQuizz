@@ -100,39 +100,42 @@ class ScoreController extends AbstractController
                          int $id
                         ): Response
     {
-        $score = $this-> scoreRepository ->find($id);
+        $score = $this->scoreRepository->find($id);
         if (!$score) {
-            return $this-> json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'Score not found '] , 404, []);
+            return $this->json(['status' => Response::HTTP_NOT_FOUND, 'message' => 'Score not found '], 404, []);
         }
         // deserialize the json
         try {
             $scoreData = $serializer->deserialize($request->getContent(), Score::class, 'json');
         } catch (NotEncodableValueException $exception) {
-            return $this-> json(['status'=> Response::HTTP_BAD_REQUEST, 'message'=> 'Bad request '] , 400, []);
+            return $this->json(['status' => Response::HTTP_BAD_REQUEST, 'message' => 'Bad request '], 400, []);
         }
 
-        $score->setScore($scoreData-> getScore());
+        $score->setScore($scoreData->getScore());
         $entityManager = $this->getDoctrine()->getManager();
         try {
             $entityManager->merge($score);
             $entityManager->flush();
-            return  $this -> json($score, 200);
-        }catch (\Exception $e){
-            return $this-> json(['status'=> Response::HTTP_BAD_REQUEST, 'message'=> $e->getMessage()] , 400, []);
+            return $this->json($score, 200);
+        } catch (\Exception $e) {
+            return $this->json(['status' => Response::HTTP_BAD_REQUEST, 'message' => $e->getMessage()], 400, []);
+        }
     }
 
     /**
      * @Route("/{id}", name="score_delete", methods={"DELETE"})
      */
-    public function delete(int $id, ScoreRepository $scoreRepository): Response
+    public function delete(int $id): Response
     {
-        $score = $scoreRepository->find($id);
+        $score = $this->scoreRepository->find($id);
         if (!$score) {
-            return json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'User not found '] , 404, []);
+            return json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'Score not found '] , 404, []);
         }
         $entityManager = $this-> getDoctrine()->getManager();
         $entityManager->remove($score);
         $entityManager->flush();
-        return $this-> json(['status'=> Response::HTTP_OK, 'message'=> 'User deleted'] , 200, []);
+        return $this-> json(['status'=> Response::HTTP_OK, 'message'=> 'Score deleted'] , 200, []);
     }
+
+
 }

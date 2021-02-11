@@ -5,6 +5,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\QuestionRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 
@@ -21,17 +22,19 @@ class Question
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("question:read")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("question:read")
      */
     private $label;
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(name="category_id", nullable=false, referencedColumnName="id")
      */
     private $category;
 
@@ -41,11 +44,13 @@ class Question
       * @ORM\JoinTable(name="question_responses",
      *joinColumns={@ORM\JoinColumn(name="question_id", referencedColumnName="id")},
      *inverseJoinColumns={@ORM\JoinColumn(name="response_id", referencedColumnName="id", unique=true)})
+     * @Groups("question:read")
      */
     private $responses;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups("question:read")
      */
     private $difficulty;
 

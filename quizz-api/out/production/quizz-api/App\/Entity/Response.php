@@ -3,6 +3,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ResponseRepository;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -15,16 +16,19 @@ class Response
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("question:read")
      */
     private $id;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups("question:read")
      */
     private $is_correct;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("question:read")
      */
     private $label;
 

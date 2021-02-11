@@ -40,14 +40,13 @@ class UserController extends AbstractController
     /**
      * @Route("/", name="user_index", methods={"GET"})
      */
-    public function index(): Response
+    public function getAll(): Response
     {
         $users = $this->userRepository->findAll();
         if (sizeof($users) > 0){
              return $this -> json($users, 200);
         }else {
             return $this -> json(['status'=> Response::HTTP_OK, 'message'=> 'Entity user is empty'], 200);
-
         }
     }
 
