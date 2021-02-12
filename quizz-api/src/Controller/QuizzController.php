@@ -28,7 +28,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  */
 class QuizzController extends AbstractController
 {
-    protected QuizzRepository $quizzRepository;
+    
 
     /**
      * QuizzController constructor.

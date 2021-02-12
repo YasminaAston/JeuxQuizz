@@ -23,7 +23,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class RoleController extends AbstractController
 {
 
-    protected RoleRepository $roleRepository;
+    
 
     /**
      * RoleController constructor.

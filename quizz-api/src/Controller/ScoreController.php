@@ -23,7 +23,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class ScoreController extends AbstractController
 {
 
-    protected ScoreRepository $scoreRepository;
+    
 
     /**
      * ScoreController constructor.

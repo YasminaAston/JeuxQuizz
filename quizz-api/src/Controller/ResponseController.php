@@ -23,7 +23,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class ResponseController extends AbstractController
 {
 
-    protected ResponseRepository $responseRepository;
+    
 
     /**
      * ResponseController constructor.

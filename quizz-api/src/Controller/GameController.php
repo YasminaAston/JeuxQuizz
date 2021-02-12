@@ -26,7 +26,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  */
 class GameController extends AbstractController
 {
-    protected GameRepository $gameRepository;
+    
 
     /**
      * GameController constructor.
