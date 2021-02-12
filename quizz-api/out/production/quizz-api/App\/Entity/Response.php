@@ -3,6 +3,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ResponseRepository;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -16,19 +17,22 @@ class Response
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups("question:read")
+     * @Groups({"question", "quizz"})
+     *
      */
     private $id;
 
     /**
      * @ORM\Column(type="boolean")
-     * @Groups("question:read")
+     * @Groups({"question", "quizz"})
+     *
      */
-    private $is_correct;
+    private $isCorrect;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("question:read")
+     * @Groups({"question","quizz"})
+     *
      */
     private $label;
 
@@ -39,12 +43,12 @@ class Response
 
     public function getIsCorrect(): ?bool
     {
-        return $this->is_correct;
+        return $this->isCorrect;
     }
 
-    public function setIsCorrect(bool $is_correct): self
+    public function setIsCorrect(bool $isCorrect): self
     {
-        $this->is_correct = $is_correct;
+        $this->isCorrect = $isCorrect;
 
         return $this;
     }

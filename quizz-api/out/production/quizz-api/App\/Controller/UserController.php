@@ -44,7 +44,7 @@ class UserController extends AbstractController
     {
         $users = $this->userRepository->findAll();
         if (sizeof($users) > 0){
-             return $this -> json($users, 200);
+             return $this -> json($users, 200, [], ['groups'=>['userInfos']]);
         }else {
             return $this -> json(['status'=> Response::HTTP_OK, 'message'=> 'Entity user is empty'], 200);
         }
@@ -59,7 +59,7 @@ class UserController extends AbstractController
         if(!$user){
             return $this-> json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'User Not Found '] , 404, []);
         }
-        return  $this->json($user);
+        return  $this->json($user, 200, [], ['groups'=>['userInfos']]);
     }
 
     /**
@@ -91,7 +91,7 @@ class UserController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($user);
         $entityManager->flush();
-        return $this -> json($user, 201);
+        return $this -> json($user, 201, [], ['groups'=>['userInfos']]);
     }
 
     /**
@@ -130,7 +130,7 @@ class UserController extends AbstractController
         try {
             $entityManager->merge($user);
             $entityManager->flush();
-            return  $this -> json($user, 200);
+            return  $this -> json($user, 200, [], ['groups'=>['userInfos']]);
         }catch (\Exception $e){
             return $this-> json(['status'=> Response::HTTP_BAD_REQUEST, 'message'=> $e->getMessage()] , 400, []);
 
