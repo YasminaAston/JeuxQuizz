@@ -1,35 +1,25 @@
 <?php
 
-
 namespace App\Dto;
 
 
-use App\Entity\Category;
-use App\Entity\Question;
-use Doctrine\Common\Collections\Collection;
 
 class QuestionDto
 {
+
+
     private $label;
+
+
     private $difficulty;
+
+
     private $categoryId;
-    private $responses;
 
-    /**
-     * QuestionDto constructor.
-     * @param $label
-     * @param $difficulty
-     * @param $categoryID
-     * @param $responses
-     */
-    public function __construct($label, $difficulty, $categoryId, $responses)
+    public function getId(): ?int
     {
-        $this->label = $label;
-        $this->difficulty = $difficulty;
-        $this->categoryId = $categoryId;
-        $this->responses = $responses;
+        return $this->id;
     }
-
 
     public function getLabel(): ?string
     {
@@ -43,33 +33,27 @@ class QuestionDto
         return $this;
     }
 
-    public function getCategoryId(): ?Category
+    public function getDifficulty(): ?int
+    {
+        return $this->difficulty;
+    }
+
+    public function setDifficulty(int $difficulty): self
+    {
+        $this->difficulty = $difficulty;
+
+        return $this;
+    }
+
+    public function getCategoryId(): ?int
     {
         return $this->categoryId;
     }
 
-    public function setCategory(?Category $categoryId): self
+    public function setCategoryId(int $categoryId): self
     {
         $this->categoryId = $categoryId;
 
         return $this;
     }
-
-    /**
-     * @return Collection|self[]
-     */
-    public function getResponses(): Collection
-    {
-        return $this->responses;
-    }
-
-    public function addResponse(self $response): self
-    {
-        if (!$this->responses->contains($response)) {
-            $this->responses[] = $response;
-        }
-
-        return $this;
-    }
-
 }

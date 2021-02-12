@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Dto\QuizzDto;
 use App\Entity\Category;
 use App\Entity\Game;
 use App\Entity\Quizz;
@@ -44,53 +45,10 @@ class QuizzController extends AbstractController
     {
         $quizzes = $this->quizzRepository->findAll();
         if (sizeof($quizzes) > 0){
-            return $this -> json($quizzes, 200);
+            return $this -> json($quizzes, 200, [], ['groups'=>['quizz']]);
         }else {
             return $this -> json(['status'=> Response::HTTP_OK, 'message'=> 'Entity quizz is empty'], 200);
         }
-    }
-
-    /**
-     * @Route("/getBycategoryAndDifficulty/{user_id}/{category_id}/{difficulty}", name="quizz_igetBycategoryAndDifficulty", methods={"GET"})
-     */
-    public function getBycategoryAndDifficulty(
-                                               GameRepository $gameRepository,
-                                               QuestionRepository $questionRepository,
-                                               CategoryRepository $categoryRepository,
-                                               UserRepository $userRepository,
-                                               $category_id, $difficulty,
-                                               $user_id
-                                                ): Response
-    {
-
-        $user = $userRepository-> find($user_id);
-        if(!$user) {
-            return new JsonResponse($this-> json(['status'=>404, 'meassage'=>'User not found']), Response::HTTP_BAD_REQUEST, [], true);
-        }
-         $category = $categoryRepository->find($category_id);
-         $questions = $questionRepository->findBy(array('category' => $category, 'difficulty' => $difficulty));
-        if (sizeof($questions) > 0){
-            $entityManager = $this->getDoctrine()->getManager();
-            $game = new Game();
-            $game->setUser($user);
-            $questionsQuizz = array_rand($questions, 10);
-
-            foreach ($questionsQuizz as $key => $value) {
-                echo "{$key} => {$value} ";
-                $quizz = new Quizz();
-                $quizz->setQuestion($value);
-                $entityManager->persist($quizz);
-                $entityManager->flush();
-                // array_push($quizzes, $quizz);
-                $game->addQuiz($quizz);
-            }
-            $entityManager->persist($game);
-            $entityManager->flush();
-            return $this -> json($game, 200);
-        }else {
-            return $this -> json(['status'=> Response::HTTP_OK, 'message'=> 'Entity question is empty'], 200);
-        }
-        //return $this -> json(['category_id'=> $category_id, 'difficulty'=> $difficulty], 200);
     }
 
     /**
@@ -102,11 +60,72 @@ class QuizzController extends AbstractController
         if(!$quizz){
             return $this-> json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'Quizz Not Found '] , 404, []);
         }
-        return  $this->json($quizz);
+        return  $this->json($quizz, 200, [], ['groups'=>['quizz']]);
     }
 
     /**
-     * @Route("/{id}/edit", name="quizz_edit", methods={"GET","POST"})
+     * @Route("/new", name="quizz_getBycategoryAndDifficulty", methods={"POST"})
+     */
+    public function getBycategoryAndDifficulty(
+                                               GameRepository $gameRepository,
+                                               QuestionRepository $questionRepository,
+                                               CategoryRepository $categoryRepository,
+                                               UserRepository $userRepository,
+                                               SerializerInterface $serializer,
+                                               ValidatorInterface $validator,
+                                               Request $request
+                                                ): Response
+    {
+        // deserialize the json
+        try {
+            $quizzDto = $serializer->deserialize($request->getContent(), QuizzDto::class, 'json');
+        } catch (NotEncodableValueException $exception) {
+            return $this-> json(['status'=> Response::HTTP_BAD_REQUEST, 'message'=> 'Bad request '] , 400, []);
+        }
+        $errors = $validator->validate($quizzDto);
+        if (count($errors) > 0) {
+            $json = $serializer->serialize($errors, 'json', array_merge([
+                'json_encode_options' => JsonResponse::DEFAULT_ENCODING_OPTIONS,
+            ], []));
+            return $this-> json($json , 400, []);
+
+        }
+
+        $user = $userRepository-> find($quizzDto->getUserId());
+        if(!$user) {
+            return new JsonResponse($this-> json(['status'=>404, 'meassage'=>'User not found']), Response::HTTP_BAD_REQUEST, [], true);
+        }
+
+         $category = $categoryRepository->find($quizzDto->getCategoryId());
+         $questions = $questionRepository->findBy(array('category' => $category, 'difficulty' => $quizzDto->getDifficulty()));
+        if (sizeof($questions) > 0){
+            $entityManager = $this->getDoctrine()->getManager();
+            $game = new Game();
+            $game->setUser($user);
+            $indexs = array_rand($questions, 10);
+            $questionsQuizz = array();
+            foreach ($indexs as $key => $value) {
+                $questionsQuizz[$key] = $questions[$value];
+            }
+            foreach ($questionsQuizz as $key=> $value){
+                $quizz = new Quizz();
+                $quizz->setQuestion($value);
+                $entityManager->persist($quizz);
+                $entityManager->flush();
+                $game->addQuiz($quizz);
+            }
+            $entityManager->persist($game);
+            $entityManager->flush();
+            return  $this -> json($game, 200, [], ['groups'=>['quizz']]);
+        }else {
+            return $this -> json(['status'=> Response::HTTP_OK, 'message'=> 'Entity question is empty'], 200);
+        }
+
+        //return $this -> json(['category_id'=> $category_id, 'difficulty'=> $difficulty], 200);
+    }
+
+    /**
+     * @Route("/{id}/edit", name="quizz_edit", methods={"PUT"})
      */
     public function edit(
                          Request $request,
@@ -130,14 +149,12 @@ class QuizzController extends AbstractController
             return $this-> json($json , 400, []);
 
         }
-        if ($errors) {
-            return $this-> json(['status'=> Response::HTTP_BAD_REQUEST, 'message'=> 'Bad request '] , 400, []);
-        }
+
         $quizz->setIsCorrect($quizzData->getIsCorrect());
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($quizz);
         $entityManager->flush();
-        return  $this -> json($quizz, 200);
+        return  $this -> json($quizz, 200, [], ['groups'=>['quizz']]);
     }
 
     /**
