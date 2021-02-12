@@ -19,6 +19,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\Exception\NotEncodableValueException;
 use Symfony\Component\Serializer\SerializerInterface;
 
+
+
 /**
  * @Route("/category")
  */
