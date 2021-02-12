@@ -9,6 +9,7 @@ class QuizzDto
 {
 
 
+
     private $userId;
 
     private $categoryId;
