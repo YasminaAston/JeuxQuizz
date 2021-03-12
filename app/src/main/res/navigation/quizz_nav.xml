@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/quizz_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="org.aston.quizzapp.homeFragment"
+        android:label="Accueil"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="org.aston.quizzapp.gameFragment"
+        android:label="Jouer"
+        tools:layout="@layout/fragment_game" />
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="org.aston.quizzapp.userFragment"
+        android:label="Votre Compte"
+        tools:layout="@layout/fragment_user" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="org.aston.quizzapp.settingsFragment"
+        android:label="Réglages"
+        tools:layout="@layout/fragment_settings" />
+</navigation>
