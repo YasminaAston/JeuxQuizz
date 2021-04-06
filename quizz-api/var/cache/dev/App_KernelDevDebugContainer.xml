@@ -69,11 +69,6 @@
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleSignalEvent">console.signal</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleTerminateEvent">console.terminate</parameter>
-      <parameter key="Symfony\Component\Form\Event\PreSubmitEvent">form.pre_submit</parameter>
-      <parameter key="Symfony\Component\Form\Event\SubmitEvent">form.submit</parameter>
-      <parameter key="Symfony\Component\Form\Event\PostSubmitEvent">form.post_submit</parameter>
-      <parameter key="Symfony\Component\Form\Event\PreSetDataEvent">form.pre_set_data</parameter>
-      <parameter key="Symfony\Component\Form\Event\PostSetDataEvent">form.post_set_data</parameter>
       <parameter key="Symfony\Component\HttpKernel\Event\ControllerArgumentsEvent">kernel.controller_arguments</parameter>
       <parameter key="Symfony\Component\HttpKernel\Event\ControllerEvent">kernel.controller</parameter>
       <parameter key="Symfony\Component\HttpKernel\Event\ResponseEvent">kernel.response</parameter>
@@ -106,8 +101,6 @@
     </parameter>
     <parameter key="session.save_path">/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizz-api/var/cache/dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
-    <parameter key="form.type_extension.csrf.enabled">true</parameter>
-    <parameter key="form.type_extension.csrf.field_name">_token</parameter>
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
     <parameter key="validator.mapping.cache.file">/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizz-api/var/cache/dev/validation.php</parameter>
@@ -425,30 +418,14 @@
     <service id="App\Dto\QuestionDto" class="App\Dto\QuestionDto" autowire="true" autoconfigure="true"/>
     <service id="App\Dto\QuizzDto" class="App\Dto\QuizzDto" autowire="true" autoconfigure="true"/>
     <service id="App\Dto\ResponseDto" class="App\Dto\ResponseDto" autowire="true" autoconfigure="true"/>
-    <service id="App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
-    <service id="App\Form\GameType" class="App\Form\GameType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
-    <service id="App\Form\QuestionType" class="App\Form\QuestionType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
-    <service id="App\Form\QuizzType" class="App\Form\QuizzType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
-    <service id="App\Form\ResponseType" class="App\Form\ResponseType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
-    <service id="App\Form\RoleType" class="App\Form\RoleType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
-    <service id="App\Form\ScoreType" class="App\Form\ScoreType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
-    <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
+    <service id="App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\GameType" class="App\Form\GameType" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\QuestionType" class="App\Form\QuestionType" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\QuizzType" class="App\Form\QuizzType" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\ResponseType" class="App\Form\ResponseType" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\RoleType" class="App\Form\RoleType" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\ScoreType" class="App\Form\ScoreType" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -586,13 +563,11 @@
         <argument key="cache.serializer" type="service" id="cache.serializer" on-invalid="ignore_uninitialized"/>
         <argument key="cache.annotations" type="service" id="cache.annotations" on-invalid="ignore_uninitialized"/>
         <argument key="cache.property_info" type="service" id="cache.property_info" on-invalid="ignore_uninitialized"/>
-        <argument key="form.choice_list_factory.cached" type="service" id="form.choice_list_factory.cached" on-invalid="ignore_uninitialized"/>
         <argument key="debug.stopwatch" type="service" id="debug.stopwatch" on-invalid="ignore_uninitialized"/>
         <argument key="debug.event_dispatcher" type="service" id="debug.event_dispatcher" on-invalid="ignore_uninitialized"/>
         <argument key="security.token_storage" type="service" id="security.token_storage" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_expression_language" type="service" id="cache.security_expression_language" on-invalid="ignore_uninitialized"/>
         <argument key="doctrine" type="service" id="doctrine" on-invalid="ignore_uninitialized"/>
-        <argument key="form.type.entity" type="service" id="form.type.entity" on-invalid="ignore_uninitialized"/>
         <argument key="api_platform.cache.route_name_resolver" type="service" id="api_platform.cache.route_name_resolver" on-invalid="ignore_uninitialized"/>
         <argument key="api_platform.cache.identifiers_extractor" type="service" id="api_platform.cache.identifiers_extractor" on-invalid="ignore_uninitialized"/>
         <argument key="api_platform.cache.subresource_operation_factory" type="service" id="api_platform.cache.subresource_operation_factory" on-invalid="ignore_uninitialized"/>
@@ -618,9 +593,6 @@
         <argument key="cache.property_info" type="collection">
           <argument>reset</argument>
         </argument>
-        <argument key="form.choice_list_factory.cached" type="collection">
-          <argument>reset</argument>
-        </argument>
         <argument key="debug.stopwatch" type="collection">
           <argument>reset</argument>
         </argument>
@@ -635,9 +607,6 @@
           <argument>reset</argument>
         </argument>
         <argument key="doctrine" type="collection">
-          <argument>reset</argument>
-        </argument>
-        <argument key="form.type.entity" type="collection">
           <argument>reset</argument>
         </argument>
         <argument key="api_platform.cache.route_name_resolver" type="collection">
@@ -890,47 +859,6 @@
       <tag name="container.no_preload"/>
       <call method="setName">
         <argument>lint:yaml</argument>
-      </call>
-    </service>
-    <service id="console.command.form_debug" class="Symfony\Component\Form\Command\DebugCommand">
-      <tag name="console.command" command="debug:form"/>
-      <tag name="container.no_preload"/>
-      <argument type="service" id="form.registry"/>
-      <argument type="collection">
-        <argument>Symfony\Component\Form\Extension\Core\Type</argument>
-        <argument>App\Form</argument>
-        <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
-      </argument>
-      <argument type="collection">
-        <argument>App\Form\CategoryType</argument>
-        <argument>App\Form\GameType</argument>
-        <argument>App\Form\QuestionType</argument>
-        <argument>App\Form\QuizzType</argument>
-        <argument>App\Form\ResponseType</argument>
-        <argument>App\Form\RoleType</argument>
-        <argument>App\Form\ScoreType</argument>
-        <argument>App\Form\UserType</argument>
-        <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
-        <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
-        <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
-        <argument>Symfony\Component\Form\Extension\Core\Type\ColorType</argument>
-        <argument>Symfony\Bridge\Doctrine\Form\Type\EntityType</argument>
-      </argument>
-      <argument type="collection">
-        <argument>Symfony\Component\Form\Extension\Core\Type\TransformationFailureExtension</argument>
-        <argument>Symfony\Component\Form\Extension\HttpFoundation\Type\FormTypeHttpFoundationExtension</argument>
-        <argument>Symfony\Component\Form\Extension\Validator\Type\FormTypeValidatorExtension</argument>
-        <argument>Symfony\Component\Form\Extension\Validator\Type\RepeatedTypeValidatorExtension</argument>
-        <argument>Symfony\Component\Form\Extension\Validator\Type\SubmitTypeValidatorExtension</argument>
-        <argument>Symfony\Component\Form\Extension\Csrf\Type\FormTypeCsrfExtension</argument>
-      </argument>
-      <argument type="collection">
-        <argument>Symfony\Component\Form\Extension\Validator\ValidatorTypeGuesser</argument>
-        <argument>Symfony\Bridge\Doctrine\Form\DoctrineOrmTypeGuesser</argument>
-      </argument>
-      <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
-      <call method="setName">
-        <argument>debug:form</argument>
       </call>
     </service>
     <service id="console.command.secrets_set" class="Symfony\Bundle\FrameworkBundle\Command\SecretsSetCommand">
@@ -1288,104 +1216,6 @@
     <service id="twig.extension.security_csrf" class="Symfony\Bridge\Twig\Extension\CsrfExtension">
       <tag name="twig.extension"/>
     </service>
-    <service id="form.resolved_type_factory" class="Symfony\Component\Form\ResolvedFormTypeFactory"/>
-    <service id="form.registry" class="Symfony\Component\Form\FormRegistry">
-      <argument type="collection">
-        <argument type="service" id="form.extension"/>
-      </argument>
-      <argument type="service" id="form.resolved_type_factory"/>
-    </service>
-    <service id="form.factory" class="Symfony\Component\Form\FormFactory" public="true">
-      <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
-      <argument type="service" id="form.registry"/>
-    </service>
-    <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.ABUQVgT"/>
-      <argument type="collection">
-        <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
-          <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
-          <argument type="service" id="form.type_extension.form.http_foundation"/>
-          <argument type="service" id="form.type_extension.form.validator"/>
-          <argument type="service" id="form.type_extension.csrf"/>
-        </argument>
-        <argument key="Symfony\Component\Form\Extension\Core\Type\RepeatedType" type="iterator">
-          <argument type="service" id="form.type_extension.repeated.validator"/>
-        </argument>
-        <argument key="Symfony\Component\Form\Extension\Core\Type\SubmitType" type="iterator">
-          <argument type="service" id="form.type_extension.submit.validator"/>
-        </argument>
-      </argument>
-      <argument type="iterator">
-        <argument type="service" id="form.type_guesser.validator"/>
-        <argument type="service" id="form.type_guesser.doctrine"/>
-      </argument>
-    </service>
-    <service id="form.type_guesser.validator" class="Symfony\Component\Form\Extension\Validator\ValidatorTypeGuesser">
-      <tag name="form.type_guesser"/>
-      <argument type="service" id="validator"/>
-    </service>
-    <service id="form.choice_list_factory.default" class="Symfony\Component\Form\ChoiceList\Factory\DefaultChoiceListFactory"/>
-    <service id="form.choice_list_factory.property_access" class="Symfony\Component\Form\ChoiceList\Factory\PropertyAccessDecorator">
-      <argument type="service" id="form.choice_list_factory.default"/>
-      <argument type="service" id="property_accessor"/>
-    </service>
-    <service id="form.choice_list_factory.cached" class="Symfony\Component\Form\ChoiceList\Factory\CachingFactoryDecorator">
-      <tag name="kernel.reset" method="reset"/>
-      <argument type="service" id="form.choice_list_factory.property_access"/>
-    </service>
-    <service id="form.type.form" class="Symfony\Component\Form\Extension\Core\Type\FormType">
-      <tag name="form.type"/>
-      <argument type="service" id="property_accessor"/>
-    </service>
-    <service id="form.type.choice" class="Symfony\Component\Form\Extension\Core\Type\ChoiceType">
-      <tag name="form.type"/>
-      <argument type="service" id="form.choice_list_factory.cached"/>
-    </service>
-    <service id="form.type.file" class="Symfony\Component\Form\Extension\Core\Type\FileType" public="true">
-      <tag name="form.type"/>
-      <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
-      <argument>null</argument>
-    </service>
-    <service id="form.type.color" class="Symfony\Component\Form\Extension\Core\Type\ColorType">
-      <tag name="form.type"/>
-      <argument>null</argument>
-    </service>
-    <service id="form.type_extension.form.transformation_failure_handling" class="Symfony\Component\Form\Extension\Core\Type\TransformationFailureExtension">
-      <tag name="form.type_extension" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
-      <argument>null</argument>
-    </service>
-    <service id="form.type_extension.form.http_foundation" class="Symfony\Component\Form\Extension\HttpFoundation\Type\FormTypeHttpFoundationExtension">
-      <tag name="form.type_extension"/>
-      <argument type="service" id="form.type_extension.form.request_handler"/>
-    </service>
-    <service id="form.type_extension.form.request_handler" class="Symfony\Component\Form\Extension\HttpFoundation\HttpFoundationRequestHandler">
-      <argument type="service" id="form.server_params"/>
-    </service>
-    <service id="form.server_params" class="Symfony\Component\Form\Util\ServerParams">
-      <argument type="service" id="request_stack"/>
-    </service>
-    <service id="form.type_extension.form.validator" class="Symfony\Component\Form\Extension\Validator\Type\FormTypeValidatorExtension">
-      <tag name="form.type_extension" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
-      <argument type="service" id="validator"/>
-      <argument>true</argument>
-      <argument type="service" id="twig.form.renderer" on-invalid="ignore"/>
-      <argument>null</argument>
-    </service>
-    <service id="form.type_extension.repeated.validator" class="Symfony\Component\Form\Extension\Validator\Type\RepeatedTypeValidatorExtension">
-      <tag name="form.type_extension"/>
-    </service>
-    <service id="form.type_extension.submit.validator" class="Symfony\Component\Form\Extension\Validator\Type\SubmitTypeValidatorExtension">
-      <tag name="form.type_extension" extended-type="Symfony\Component\Form\Extension\Core\Type\SubmitType"/>
-    </service>
-    <service id="form.type_extension.csrf" class="Symfony\Component\Form\Extension\Csrf\Type\FormTypeCsrfExtension">
-      <tag name="form.type_extension"/>
-      <argument type="service" id="security.csrf.token_manager"/>
-      <argument>true</argument>
-      <argument>_token</argument>
-      <argument>null</argument>
-      <argument>validators</argument>
-      <argument type="service" id="form.server_params"/>
-    </service>
     <service id="assets.packages" class="Symfony\Component\Asset\Packages">
       <argument type="service" id="assets._default_package"/>
       <argument type="collection"/>
@@ -1443,11 +1273,6 @@
       </call>
       <call method="setTranslationDomain">
         <argument>validators</argument>
-      </call>
-      <call method="addXmlMappings">
-        <argument type="collection">
-          <argument>/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizz-api/vendor/symfony/form/Resources/config/validation.xml</argument>
-        </argument>
       </call>
       <call method="enableAnnotationMapping">
         <argument>true</argument>
@@ -2596,9 +2421,6 @@
         <argument type="service" id="twig.extension.weblink"/>
       </call>
       <call method="addExtension">
-        <argument type="service" id="twig.extension.form"/>
-      </call>
-      <call method="addExtension">
         <argument type="service" id="twig.extension.logout_url"/>
       </call>
       <call method="addExtension">
@@ -2632,9 +2454,7 @@
     </service>
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator">
       <argument type="service" id="kernel"/>
-      <argument type="collection">
-        <argument key="/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizz-api/vendor/symfony/twig-bridge/Resources/views/Form">null</argument>
-      </argument>
+      <argument type="collection"/>
       <argument>/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizz-api/templates</argument>
     </service>
     <service id="twig.template_cache_warmer" class="Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer">
@@ -2681,9 +2501,6 @@
       </call>
       <call method="addPath">
         <argument>/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizz-api/templates</argument>
-      </call>
-      <call method="addPath">
-        <argument>/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizz-api/vendor/symfony/twig-bridge/Resources/views/Form</argument>
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader"/>
@@ -2752,7 +2569,7 @@
       <argument>,</argument>
     </service>
     <service id="twig.runtime_loader" class="Twig\RuntimeLoader\ContainerRuntimeLoader">
-      <argument type="service" id=".service_locator.L1OAKmd"/>
+      <argument type="service" id=".service_locator.EudIiQD"/>
     </service>
     <service id="twig.error_renderer.html" class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer">
       <argument type="service" id="twig"/>
@@ -2764,19 +2581,6 @@
           <factory class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer" method="isDebug"/>
         </service>
       </argument>
-    </service>
-    <service id="twig.extension.form" class="Symfony\Bridge\Twig\Extension\FormExtension">
-      <tag name="twig.extension"/>
-      <argument>null</argument>
-    </service>
-    <service id="twig.form.engine" class="Symfony\Bridge\Twig\Form\TwigRendererEngine">
-      <argument>%twig.form.resources%</argument>
-      <argument type="service" id="twig"/>
-    </service>
-    <service id="twig.form.renderer" class="Symfony\Component\Form\FormRenderer">
-      <tag name="twig.runtime"/>
-      <argument type="service" id="twig.form.engine"/>
-      <argument type="service" id="security.csrf.token_manager" on-invalid="null"/>
     </service>
     <service id="twig.command.debug" class="Symfony\Bridge\Twig\Command\DebugCommand">
       <tag name="console.command" command="debug:twig"/>
@@ -3510,7 +3314,6 @@
     </service>
     <service id="form.type.entity" class="Symfony\Bridge\Doctrine\Form\Type\EntityType">
       <tag name="form.type" alias="entity"/>
-      <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="doctrine"/>
     </service>
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
@@ -5013,22 +4816,6 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\GameType" class="App\Form\GameType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\GameType" class="App\Form\GameType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\QuestionType" class="App\Form\QuestionType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\QuestionType" class="App\Form\QuestionType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\QuizzType" class="App\Form\QuizzType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\QuizzType" class="App\Form\QuizzType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ResponseType" class="App\Form\ResponseType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\ResponseType" class="App\Form\ResponseType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RoleType" class="App\Form\RoleType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\RoleType" class="App\Form\RoleType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ScoreType" class="App\Form\ScoreType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\ScoreType" class="App\Form\ScoreType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GameRepository" class="App\Repository\GameRepository" autowire="true" abstract="true"/>
@@ -5499,24 +5286,6 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.ABUQVgT" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="App\Form\CategoryType" type="service" id="App\Form\CategoryType"/>
-        <argument key="App\Form\GameType" type="service" id="App\Form\GameType"/>
-        <argument key="App\Form\QuestionType" type="service" id="App\Form\QuestionType"/>
-        <argument key="App\Form\QuizzType" type="service" id="App\Form\QuizzType"/>
-        <argument key="App\Form\ResponseType" type="service" id="App\Form\ResponseType"/>
-        <argument key="App\Form\RoleType" type="service" id="App\Form\RoleType"/>
-        <argument key="App\Form\ScoreType" type="service" id="App\Form\ScoreType"/>
-        <argument key="App\Form\UserType" type="service" id="App\Form\UserType"/>
-        <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
-        <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
-        <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service" id="form.type.color"/>
-        <argument key="Symfony\Component\Form\Extension\Core\Type\FileType" type="service" id="form.type.file"/>
-        <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service" id="form.type.form"/>
-      </argument>
-    </service>
     <service id="debug.security.voter.security.access.authenticated_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
       <argument type="service" id="security.access.authenticated_voter"/>
       <argument type="service" id="debug.event_dispatcher"/>
@@ -5561,7 +5330,6 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="doctrine" type="service" id="doctrine" on-invalid="ignore"/>
-        <argument key="form.factory" type="service" id="form.factory" on-invalid="ignore"/>
         <argument key="http_kernel" type="service" id="http_kernel" on-invalid="ignore"/>
         <argument key="parameter_bag" type="service" id="parameter_bag" on-invalid="ignore"/>
         <argument key="request_stack" type="service" id="request_stack" on-invalid="ignore"/>
@@ -5846,7 +5614,7 @@
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.pthlxWc"/>
+      <argument type="service" id=".service_locator.BAG8uZ5"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -5866,7 +5634,6 @@
         <argument key="router:match">console.command.router_match</argument>
         <argument key="debug:validator">console.command.validator_debug</argument>
         <argument key="lint:yaml">console.command.yaml_lint</argument>
-        <argument key="debug:form">console.command.form_debug</argument>
         <argument key="secrets:set">console.command.secrets_set</argument>
         <argument key="secrets:remove">console.command.secrets_remove</argument>
         <argument key="secrets:generate-keys">console.command.secrets_generate_key</argument>
@@ -5937,7 +5704,7 @@
         <argument key="make:migration">maker.auto_command.make_migration</argument>
       </argument>
     </service>
-    <service id=".service_locator.pthlxWc" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.BAG8uZ5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Doctrine\DBAL\Tools\Console\Command\RunSqlCommand" type="service" id="Doctrine\DBAL\Tools\Console\Command\RunSqlCommand"/>
@@ -5958,7 +5725,6 @@
         <argument key="console.command.container_lint" type="service" id="console.command.container_lint"/>
         <argument key="console.command.debug_autowiring" type="service" id="console.command.debug_autowiring"/>
         <argument key="console.command.event_dispatcher_debug" type="service" id="console.command.event_dispatcher_debug"/>
-        <argument key="console.command.form_debug" type="service" id="console.command.form_debug"/>
         <argument key="console.command.router_debug" type="service" id="console.command.router_debug"/>
         <argument key="console.command.router_match" type="service" id="console.command.router_match"/>
         <argument key="console.command.secrets_decrypt_to_local" type="service" id="console.command.secrets_decrypt_to_local"/>
@@ -6029,12 +5795,11 @@
         <argument key="var_dumper.command.server_dump" type="service" id="var_dumper.command.server_dump"/>
       </argument>
     </service>
-    <service id=".service_locator.L1OAKmd" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.EudIiQD" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Symfony\Bridge\Twig\Extension\CsrfRuntime" type="service" id="twig.runtime.security_csrf"/>
         <argument key="Symfony\Bridge\Twig\Extension\HttpKernelRuntime" type="service" id="twig.runtime.httpkernel"/>
-        <argument key="Symfony\Component\Form\FormRenderer" type="service" id="twig.form.renderer"/>
       </argument>
     </service>
     <service id="Psr\Container\ContainerInterface" alias="service_container">
@@ -6079,11 +5844,6 @@
     <service id="Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface" alias="security.csrf.token_generator"/>
     <service id="Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface" alias="security.csrf.token_storage"/>
     <service id="Symfony\Component\Security\Csrf\CsrfTokenManagerInterface" alias="security.csrf.token_manager"/>
-    <service id="Symfony\Component\Form\ResolvedFormTypeFactoryInterface" alias="form.resolved_type_factory"/>
-    <service id="Symfony\Component\Form\FormRegistryInterface" alias="form.registry"/>
-    <service id="Symfony\Component\Form\FormFactoryInterface" alias="form.factory"/>
-    <service id="form.property_accessor" alias="property_accessor"/>
-    <service id="form.choice_list_factory" alias="form.choice_list_factory.cached"/>
     <service id="Symfony\Component\Asset\Packages" alias="assets.packages"/>
     <service id="Symfony\Component\Validator\Validator\ValidatorInterface" alias="validator"/>
     <service id="validator.mapping.class_metadata_factory" alias="validator"/>
