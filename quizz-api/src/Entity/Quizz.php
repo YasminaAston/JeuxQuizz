@@ -23,7 +23,7 @@ class Quizz
 
     /**
      * @ORM\OneToOne(targetEntity=Question::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false, unique=false)
+     * @ORM\JoinColumn(nullable=false)
      * @Groups("quizz")
      */
     private $question;

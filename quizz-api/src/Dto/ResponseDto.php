@@ -9,7 +9,6 @@ class ResponseDto
 
 
 
-
     private $isCorrect;
 
     private $label;
