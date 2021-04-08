@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">My userProfile</string>
+    <string name="prenom">Prenom</string>
+    <string name="accueil">Accueil</string>
+    <string name="mon_profile">Mon Profile</string>
+    <string name="prenombis">Prenom: </string>
+    <string name="nom">Nom</string>
+    <string name="username">UserName: </string>
+    <string name="email">Email:</string>
+    <string name="mot_de_passe">Mot de passe: </string>
+    <string name="numero_de_t_l_phone">Numero de téléphone: </string>
+    <string name="user">User</string>
+    <string name="question_modifier">Que voulez vous modifier?</string>
+    <string name="email2">Email</string>
+    <string name="telephone2">Telephone</string>
+    <string name="mot_de_passe2">Mot de Passe</string>
+    <string name="phrase_invite1">Si vous n\'avez pas encor de compte, Incrivez-vous dès maintenant!</string>
+</resources>
