@@ -1,3 +1,0 @@
-<?php //route_name_1ee8b300472cccedb191c1c0eefcfb05
-
-return [PHP_INT_MAX, 'api_questions_get_item'];
