@@ -536,6 +536,10 @@ return array(
     'App\\Repository\\ScoreRepository' => $baseDir . '/src/Repository/ScoreRepository.php',
     'App\\Repository\\UserRepository' => $baseDir . '/src/Repository/UserRepository.php',
     'App\\Service\\CategoryService' => $baseDir . '/src/Service/CategoryService.php',
+<<<<<<< HEAD
+=======
+    'App\\Service\\CategoryServiceImpl' => $baseDir . '/src/Service/CategoryServiceImpl.php',
+>>>>>>> 02bd3902fd4f2f1c551b8206afd34daec3bcab4c
     'App\\Service\\GameService' => $baseDir . '/src/Service/GameService.php',
     'App\\Service\\QuestionService' => $baseDir . '/src/Service/QuestionService.php',
     'App\\Service\\QuizzService' => $baseDir . '/src/Service/QuizzService.php',

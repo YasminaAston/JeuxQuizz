@@ -1004,6 +1004,10 @@ class ComposerStaticInitff3a2ad0803df7305c3eefe98b4b1c1f
         'App\\Repository\\ScoreRepository' => __DIR__ . '/../..' . '/src/Repository/ScoreRepository.php',
         'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
         'App\\Service\\CategoryService' => __DIR__ . '/../..' . '/src/Service/CategoryService.php',
+<<<<<<< HEAD
+=======
+        'App\\Service\\CategoryServiceImpl' => __DIR__ . '/../..' . '/src/Service/CategoryServiceImpl.php',
+>>>>>>> 02bd3902fd4f2f1c551b8206afd34daec3bcab4c
         'App\\Service\\GameService' => __DIR__ . '/../..' . '/src/Service/GameService.php',
         'App\\Service\\QuestionService' => __DIR__ . '/../..' . '/src/Service/QuestionService.php',
         'App\\Service\\QuizzService' => __DIR__ . '/../..' . '/src/Service/QuizzService.php',

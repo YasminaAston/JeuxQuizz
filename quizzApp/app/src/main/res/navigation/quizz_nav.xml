@@ -25,4 +25,9 @@
         android:name="org.aston.quizzapp.settingsFragment"
         android:label="Réglages"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/itemFragment"
+        android:name="org.aston.quizzapp.itemFragment"
+        android:label="fragment_item"
+        tools:layout="@layout/fragment_item" />
 </navigation>

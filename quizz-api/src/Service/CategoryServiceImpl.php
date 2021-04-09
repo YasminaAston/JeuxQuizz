@@ -1,6 +1,13 @@
 <?php
 
+
 namespace App\Service;
+
+
+
+
+
+
 
 use App\Entity\Category;
 use App\Repository\CategoryRepository;
@@ -8,15 +15,49 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class CategoryServiceImpl implements CategoryService
 
-protected Ca
+
+
+
 {
-       public function get(int $id): Response
+
+    protected CategoryRepository $categoryRepository;
+    protected EntityManagerInterface $entityManager;
+
+    /**
+     * CategoryServiceImpl constructor.
+     * @param CategoryRepository $categoryRepository
+     * @param EntityManagerInterface $entityManager
+     */
+    public function __construct(CategoryRepository $categoryRepository, EntityManagerInterface $entityManager)
     {
-        $category = $this-> categoryRepository ->find($id);
-        if(!$category){
-            return $this-> json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'Not found '] , 404, []);
-        }
-        return  $this->json($category);
+        $this->categoryRepository = $categoryRepository;
+        $this->entityManager = $entityManager;
     }
-	
-{ 
+
+
+    public function get(int $id): Category
+    {
+        return $this-> categoryRepository ->find($id);
+    }
+
+    public function getAll(): array
+    {
+        return $this-> categoryRepository ->findAll();
+    }
+
+    public function add(Category $category): Category
+    {
+        // TODO: Implement add() method.
+    }
+
+    public function update(Category $category, int $id): Category
+    {
+        // TODO: Implement update() method.
+    }
+
+    public function delete(int $id): void
+    {
+        // TODO: Implement delete() method.
+    }
+}
+
