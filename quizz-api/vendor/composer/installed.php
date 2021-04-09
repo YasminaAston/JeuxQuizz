@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '1aff8924f240d8378b4a8a722784a34a03f12800',
+    'reference' => 'e99a6756d6f6c960b6ec2840ee07dd9055c6baec',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '1aff8924f240d8378b4a8a722784a34a03f12800',
+      'reference' => 'e99a6756d6f6c960b6ec2840ee07dd9055c6baec',
     ),
     'api-platform/core' => 
     array (
@@ -540,15 +540,6 @@
       ),
       'reference' => 'ceb2b4e612bd0b4bb36a4d7fb2e800c861652f48',
     ),
-    'symfony/form' => 
-    array (
-      'pretty_version' => 'v5.2.3',
-      'version' => '5.2.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '4f3069be5fe46e72f3ec233fc61ac2828ea5b301',
-    ),
     'symfony/framework-bundle' => 
     array (
       'pretty_version' => 'v5.2.2',
@@ -585,15 +576,6 @@
       ),
       'reference' => '831b51e9370ece0febd0950dd819c63f996721c7',
     ),
-    'symfony/intl' => 
-    array (
-      'pretty_version' => 'v5.2.3',
-      'version' => '5.2.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '930f17689729cc47d2ce18be21ed403bcbeeb6a9',
-    ),
     'symfony/maker-bundle' => 
     array (
       'pretty_version' => 'v1.28.0',
@@ -602,15 +584,6 @@
       array (
       ),
       'reference' => '6f4d27a68c92179c124f5331a27e32d197c9bd59',
-    ),
-    'symfony/options-resolver' => 
-    array (
-      'pretty_version' => 'v5.2.3',
-      'version' => '5.2.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '5d0f633f9bbfcf7ec642a2b5037268e61b0a62ce',
     ),
     'symfony/polyfill-ctype' => 
     array (
@@ -634,15 +607,6 @@
       array (
       ),
       'reference' => '267a9adeb8ecb8071040a740930e077cdfb987af',
-    ),
-    'symfony/polyfill-intl-icu' => 
-    array (
-      'pretty_version' => 'v1.22.0',
-      'version' => '1.22.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'b2b1e732a6c039f1a3ea3414b3379a2433e183d6',
     ),
     'symfony/polyfill-intl-normalizer' => 
     array (

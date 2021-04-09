@@ -16,17 +16,21 @@ class Quizz
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"quizz"})
+     *
      */
     private $id;
 
     /**
      * @ORM\OneToOne(targetEntity=Question::class, cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
+     * @Groups("quizz")
      */
     private $question;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
+     * * @Groups("quizz")
      */
     private $isCorrect;
 

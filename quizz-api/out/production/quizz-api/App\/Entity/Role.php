@@ -18,11 +18,13 @@ class Role
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"userInfos"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=55, nullable=true)
+     * @Groups({"userInfos"})
      */
     private $roleName;
 
