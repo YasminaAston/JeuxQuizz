@@ -25,7 +25,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  */
 class UserController extends AbstractController
 {
-    protected UserRepository $userRepository;
+    //protected UserRepository $userRepository;
 
     /**
      * UserController constructor.

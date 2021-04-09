@@ -26,8 +26,8 @@ class CategoryController extends AbstractController
 {
 
 
-     protected CategoryRepository $categoryRepository;
-     protected EntityManagerInterface $entityManager;
+     //protected CategoryRepository $categoryRepository;
+     //protected EntityManagerInterface $entityManager;
     /**
      * CategoryController constructor.
      * @param CategoryRepository $categoryRepository

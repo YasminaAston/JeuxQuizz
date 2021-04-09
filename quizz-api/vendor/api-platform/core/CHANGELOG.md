@@ -1,5 +1,34 @@
 # Changelog
 
+## 2.6.3
+
+* Identifiers: Re-allow `POST` operations even if no identifier is defined (#4052)
+* Hydra: Fix partial pagination which no longer returns the `hydra:next` property (#4015)
+* Security: Use a `NullToken` when using the new authenticator manager in the resource access checker (#4067)
+* Mercure: Do not use data in options when deleting (#4056)
+* Doctrine: Support for foreign identifiers (#4042)
+* Doctrine: Support for binary UUID in search filter (#3774)
+* Doctrine: Do not add join or lookup for search filter with empty value (#3703)
+* Doctrine: Reduce code duplication in search filter (#3541)
+* JSON Schema: Allow generating documentation when property and method start from "is" (property `isActive` and method `isActive`) (#4064)
+* OpenAPI: Fix missing 422 responses in the documentation (#4086)
+* OpenAPI: Fix error when schema is empty (#4051)
+* OpenAPI: Do not set scheme to oauth2 when generating securitySchemes (#4073)
+* OpenAPI: Fix missing `$ref` when no `type` is used in context (#4076)
+* GraphQL: Fix "Resource class cannot be determined." error when a null iterable field is returned (#4092)
+* Metadata: Check the output class when calculating serializer groups (#3696)
+
+## 2.6.2
+
+* Validation: properties regex pattern is now compliant with ECMA 262 (#4027)
+* OpenApi: normalizer is now backward compatible (#4016), fix the name converter issue changing OpenApi properties (#4019)
+* Identifiers: Break after transforming the identifier (#3985), use the identifiers context to transform with multiple classes (#4029)
+* JsonSchema: Revert `ALLOW_EXTRA_ATTRIBUTE=false` as it is a BC break and will be done in 3.0 instead see #3881 (#4007)
+* Subresource: fix ApiSubresource maxDepth option (#3986), recursive issue in the profiler (#4023)
+* OpenApi: Allow `requestBody` and `parameters` via the `openapi_context` (#4001), make `openapi_context` work on subresources (#4004), sort paths (#4013)
+* Config: Allow disabling OpenAPI and Swagger UI without loosing the schema (#3968 and #4018), fix pagination defaults (#4011)
+* DataPersister: context propagation fix (#3983)
+
 ## 2.6.1
 
 * Fix defaults when using attributes (#3978)
@@ -56,7 +85,7 @@
 * Tests: adds a method to retrieve the CookieJar in the test Client `getCookieJar`
 * Tests: Fix the registration of the `test.api_platform.client` service when the `FrameworkBundle` bundle is registered after the `ApiPlatformBundle` bundle (#3928)
 * Validator: Add the violation code to the violation properties (#3857)
-* Validator: Allow customizing the validation error status code (#3808)
+* Validator: Allow customizing the validation error status code. **BC** Status code for validation errors is now 422, use `exception_to_status` to fallback to 400 if needed (#3808)
 * Validator: Autoconfiguration of validation groups generator via `ApiPlatform\Core\Validator\ValidationGroupsGeneratorInterface`
 * Validator: Deprecate using a validation groups generator service not implementing `ApiPlatform\Core\Bridge\Symfony\Validator\ValidationGroupsGeneratorInterface` (#3346)
 * Validator: Property validation through OpenAPI (#33329)
@@ -84,10 +113,12 @@
 * Identifiers: Do not denormalize the same identifier twice (#3762)
 * OpenAPI: Lazy load `SwaggerCommand` (#3802)
 * OpenAPI: Use Output class name instead of the Resource short name when available (#3741)
+* OpenAPI: Allow unset PathItem method (#4107)
 * Router: Replace baseurl only once (#3776)
 * Mercure: Publisher bug fixes (#3790, #3739)
 * Serializer: Catch NotNormalizableValueException to UnexpectedValueEception with inputs (#3697)
-* Doctrine: ODM escape search terms in RegexFilter
+* Doctrine: Do not add JOINs for filters without a value (#3703)
+* MongoDB: Escape search terms in `RegexFilter` (#3755)
 * Tests: Improve JSON Schema assertions (#3807, #3803, #3804, #3806, #3817, #3829, #3830)
 * Tests: Allow passing extra options in ApiTestClient (#3486)
 * Docs: Upgrade Swagger UI to version 3.37.2 (#3867)
@@ -213,7 +244,8 @@ For compatibility reasons with Symfony 5.2 and PHP 8, we do not test anymore the
 ## 2.5.0 beta 1
 
 * Add an HTTP client dedicated to functional API testing (#2608)
-* Add PATCH support (#2895)
+* Add PATCH support (#2895)  
+  Note: with JSON Merge Patch, responses will skip null values. As this may break on some endpoints, you need to manually [add the `merge-patch+json` format](https://api-platform.com/docs/core/content-negotiation/#configuring-patch-formats) to enable PATCH support. This will be the default behavior in API Platform 3.
 * Add a command to generate json schemas `api:json-schema:generate` (#2996)
 * Add infrastructure to generate a JSON Schema from a Resource `ApiPlatform\Core\JsonSchema\SchemaFactoryInterface` (#2983)
 * Replaces `access_control` by `security` and adds a `security_post_denormalize` attribute (#2992)

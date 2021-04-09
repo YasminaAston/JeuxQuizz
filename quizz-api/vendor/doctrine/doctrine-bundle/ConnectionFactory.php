@@ -13,8 +13,15 @@ use Doctrine\DBAL\Exception\DriverException;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
 
+use function array_merge;
+use function class_exists;
 use function is_subclass_of;
 
+use const PHP_EOL;
+
+/**
+ * @psalm-import-type Params from DriverManager
+ */
 class ConnectionFactory
 {
     /** @var mixed[][] */
@@ -34,19 +41,25 @@ class ConnectionFactory
     /**
      * Create a connection by name.
      *
-     * @param mixed[]         $params
-     * @param string[]|Type[] $mappingTypes
+     * @param mixed[]               $params
+     * @param array<string, string> $mappingTypes
      *
      * @return Connection
+     *
+     * @psalm-param Params $params
      */
-    public function createConnection(array $params, Configuration $config = null, EventManager $eventManager = null, array $mappingTypes = [])
+    public function createConnection(array $params, ?Configuration $config = null, ?EventManager $eventManager = null, array $mappingTypes = [])
     {
         if (! $this->initialized) {
             $this->initializeTypes();
         }
 
-        if (! isset($params['pdo']) && ! isset($params['charset'])) {
+        $overriddenOptions = $params['connection_override_options'] ?? [];
+        unset($params['connection_override_options']);
+
+        if (! isset($params['pdo']) && (! isset($params['charset']) || $overriddenOptions)) {
             $wrapperClass = null;
+
             if (isset($params['wrapperClass'])) {
                 if (! is_subclass_of($params['wrapperClass'], Connection::class)) {
                     if (class_exists(DBALException::class)) {
@@ -61,7 +74,7 @@ class ConnectionFactory
             }
 
             $connection = DriverManager::getConnection($params, $config, $eventManager);
-            $params     = $connection->getParams();
+            $params     = array_merge($connection->getParams(), $overriddenOptions);
             $driver     = $connection->getDriver();
 
             if ($driver instanceof AbstractMySQLDriver) {
