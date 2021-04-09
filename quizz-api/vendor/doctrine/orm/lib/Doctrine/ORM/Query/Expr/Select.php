@@ -1,5 +1,4 @@
 <?php
-
 /*
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
@@ -24,23 +23,30 @@ namespace Doctrine\ORM\Query\Expr;
  * Expression class for building DQL select statements.
  *
  * @link    www.doctrine-project.org
+ * @since   2.0
+ * @author  Guilherme Blanco <guilhermeblanco@hotmail.com>
+ * @author  Jonathan Wage <jonwage@gmail.com>
+ * @author  Roman Borschel <roman@code-factory.org>
  */
 class Select extends Base
 {
-    /** @var string */
+    /**
+     * @var string
+     */
     protected $preSeparator = '';
 
-    /** @var string */
+    /**
+     * @var string
+     */
     protected $postSeparator = '';
 
-    /** @var string[] */
+    /**
+     * @var array
+     */
     protected $allowedClasses = [Func::class];
 
-    /** @psalm-var list<string|Func> */
-    protected $parts = [];
-
     /**
-     * @psalm-return list<string|Func>
+     * @return array
      */
     public function getParts()
     {

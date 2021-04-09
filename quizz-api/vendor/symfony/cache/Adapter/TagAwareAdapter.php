@@ -83,7 +83,6 @@ class TagAwareAdapter implements TagAwareAdapterInterface, TagAwareCacheInterfac
                 $tagsByKey = [];
                 foreach ($deferred as $key => $item) {
                     $tagsByKey[$key] = $item->newMetadata[CacheItem::METADATA_TAGS] ?? [];
-                    $item->metadata = $item->newMetadata;
                 }
 
                 return $tagsByKey;

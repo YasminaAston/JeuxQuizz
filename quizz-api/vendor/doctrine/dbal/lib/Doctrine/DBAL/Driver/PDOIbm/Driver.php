@@ -4,7 +4,6 @@ namespace Doctrine\DBAL\Driver\PDOIbm;
 
 use Doctrine\DBAL\Driver\AbstractDB2Driver;
 use Doctrine\DBAL\Driver\PDO\Connection;
-use Doctrine\Deprecations\Deprecation;
 
 /**
  * Driver for the PDO IBM extension.
@@ -59,12 +58,6 @@ class Driver extends AbstractDB2Driver
      */
     public function getName()
     {
-        Deprecation::trigger(
-            'doctrine/dbal',
-            'https://github.com/doctrine/dbal/issues/3580',
-            'Driver::getName() is deprecated'
-        );
-
         return 'pdo_ibm';
     }
 }

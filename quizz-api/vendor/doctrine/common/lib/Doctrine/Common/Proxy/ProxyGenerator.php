@@ -545,17 +545,12 @@ EOT
     private function generateMagicSet(ClassMetadata $class)
     {
         $lazyPublicProperties = $this->getLazyLoadedPublicPropertiesNames($class);
-        $reflectionClass      = $class->getReflectionClass();
-        $hasParentSet         = false;
-        $inheritDoc           = '';
+        $hasParentSet         = $class->getReflectionClass()->hasMethod('__set');
         $parametersString     = '$name, $value';
         $returnTypeHint       = null;
 
-        if ($reflectionClass->hasMethod('__set')) {
-            $hasParentSet     = true;
-            $inheritDoc       = '{@inheritDoc}';
-            $methodReflection = $reflectionClass->getMethod('__set');
-
+        if ($hasParentSet) {
+            $methodReflection = $class->getReflectionClass()->getMethod('__set');
             $parametersString = $this->buildParametersString($methodReflection->getParameters(), ['name', 'value']);
             $returnTypeHint   = $this->getMethodReturnType($methodReflection);
         }
@@ -564,16 +559,18 @@ EOT
             return '';
         }
 
-        $magicSet = <<<EOT
+        $inheritDoc = $hasParentSet ? '{@inheritDoc}' : '';
+        $magicSet   = sprintf(<<<'EOT'
     /**
-     * $inheritDoc
-     * @param string \$name
-     * @param mixed  \$value
+     * %s
+     * @param string $name
+     * @param mixed  $value
      */
-    public function __set($parametersString)$returnTypeHint
+    public function __set(%s)%s
     {
 
-EOT;
+EOT
+            , $inheritDoc, $parametersString, $returnTypeHint);
 
         if (! empty($lazyPublicProperties)) {
             $magicSet .= <<<'EOT'
@@ -592,20 +589,9 @@ EOT;
         if ($hasParentSet) {
             $magicSet .= <<<'EOT'
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__set', [$name, $value]);
-EOT;
-
-            if ($returnTypeHint === ': void') {
-                $magicSet .= <<<'EOT'
-
-        parent::__set($name, $value);
-        return;
-EOT;
-            } else {
-                $magicSet .= <<<'EOT'
 
         return parent::__set($name, $value);
 EOT;
-            }
         } else {
             $magicSet .= '        $this->$name = $value;';
         }
@@ -905,8 +891,6 @@ EOT;
      *                              EntityManager will be used by this factory.
      *
      * @return string
-     *
-     * @psalm-param class-string $className
      */
     public function getProxyFileName($className, $baseDirectory = null)
     {
@@ -1057,11 +1041,7 @@ EOT;
             return null;
         }
 
-        $declaringFunction = $parameter->getDeclaringFunction();
-
-        assert($declaringFunction instanceof ReflectionMethod);
-
-        return $this->formatType($parameter->getType(), $declaringFunction, $parameter);
+        return $this->formatType($parameter->getType(), $parameter->getDeclaringFunction(), $parameter);
     }
 
     /**

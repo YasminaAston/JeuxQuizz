@@ -1,13 +1,7 @@
 
 name: "Coding Standards"
 
-on:
-  pull_request:
-    branches:
-      - "*.x"
-  push:
-    branches:
-      - "*.x"
+on: ["pull_request", "push"]
 
 jobs:
   coding-standards:
@@ -30,11 +24,15 @@ jobs:
           php-version: "${{ matrix.php-version }}"
           tools: "cs2pr"
 
-      - name: "Install dependencies with Composer"
-        uses: "ramsey/composer-install@v1"
+      - name: "Cache dependencies installed with Composer"
+        uses: "actions/cache@v2"
         with:
-          dependency-versions: "highest"
-          composer-options: "--prefer-stable"
+          path: "~/.composer/cache"
+          key: "php-${{ matrix.php-version }}-composer-locked-${{ hashFiles('composer.lock') }}"
+          restore-keys: "php-${{ matrix.php-version }}-composer-locked-"
+
+      - name: "Install dependencies with Composer"
+        run: "composer update --no-interaction --no-progress --prefer-dist --prefer-stable"
 
       # https://github.com/doctrine/.github/issues/3
       - name: "Run PHP_CodeSniffer"

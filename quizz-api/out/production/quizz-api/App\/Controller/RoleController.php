@@ -61,7 +61,7 @@ class RoleController extends AbstractController
         try {
             $role = $serializer->deserialize($request->getContent(), Role::class, 'json');
         } catch (NotEncodableValueException $exception) {
-            return $this->json(['status'=>Response::HTTP_BAD_REQUEST, 'message'=>'Invalid Json'], 400);
+            throw new HttpException(Response::HTTP_BAD_REQUEST, 'Invalid Json');
         }
 
         $roleCheck = $this-> roleRepository ->findOneBy(array('roleName' =>$role-> getRoleName()));

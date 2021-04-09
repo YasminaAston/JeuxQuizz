@@ -16,8 +16,6 @@ use Doctrine\Common\Annotations\CachedReader;
 use Doctrine\Common\Annotations\Reader;
 use Doctrine\Common\Cache\ArrayCache;
 use Psr\Cache\CacheItemPoolInterface;
-use Symfony\Component\Cache\Adapter\ArrayAdapter;
-use Symfony\Component\Cache\DoctrineProvider;
 use Symfony\Component\Validator\Context\ExecutionContextFactory;
 use Symfony\Component\Validator\Exception\ValidatorException;
 use Symfony\Component\Validator\Mapping\Factory\LazyLoadingMetadataFactory;
@@ -268,11 +266,7 @@ class ValidatorBuilder
      */
     public function addDefaultDoctrineAnnotationReader(): self
     {
-        if (class_exists(ArrayAdapter::class)) {
-            $this->annotationReader = new CachedReader(new AnnotationReader(), new DoctrineProvider(new ArrayAdapter()));
-        } else {
-            $this->annotationReader = new CachedReader(new AnnotationReader(), new ArrayCache());
-        }
+        $this->annotationReader = new CachedReader(new AnnotationReader(), new ArrayCache());
 
         return $this;
     }

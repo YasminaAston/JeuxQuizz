@@ -4,7 +4,6 @@ namespace Doctrine\DBAL\Driver\SQLSrv;
 
 use Doctrine\DBAL\Driver\AbstractSQLServerDriver;
 use Doctrine\DBAL\Driver\AbstractSQLServerDriver\Exception\PortWithoutHost;
-use Doctrine\Deprecations\Deprecation;
 
 /**
  * Driver for ext/sqlsrv.
@@ -58,12 +57,6 @@ class Driver extends AbstractSQLServerDriver
      */
     public function getName()
     {
-        Deprecation::trigger(
-            'doctrine/dbal',
-            'https://github.com/doctrine/dbal/issues/3580',
-            'Driver::getName() is deprecated'
-        );
-
         return 'sqlsrv';
     }
 }

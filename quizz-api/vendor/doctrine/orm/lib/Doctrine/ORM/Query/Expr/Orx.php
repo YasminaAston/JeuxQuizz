@@ -1,5 +1,4 @@
 <?php
-
 /*
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
@@ -24,25 +23,30 @@ namespace Doctrine\ORM\Query\Expr;
  * Expression class for building DQL OR clauses.
  *
  * @link    www.doctrine-project.org
+ * @since   2.0
+ * @author  Guilherme Blanco <guilhermeblanco@hotmail.com>
+ * @author  Jonathan Wage <jonwage@gmail.com>
+ * @author  Roman Borschel <roman@code-factory.org>
  */
 class Orx extends Composite
 {
-    /** @var string */
+    /**
+     * @var string
+     */
     protected $separator = ' OR ';
 
-    /** @var string[] */
+    /**
+     * @var array
+     */
     protected $allowedClasses = [
         Comparison::class,
         Func::class,
         Andx::class,
-        self::class,
+        Orx::class,
     ];
 
-    /** @psalm-var list<string|Comparison|Func|Andx|self> */
-    protected $parts = [];
-
     /**
-     * @psalm-return list<string|Comparison|Func|Andx|self>
+     * @return array
      */
     public function getParts()
     {

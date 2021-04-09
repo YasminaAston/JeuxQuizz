@@ -35,9 +35,12 @@ final class UserValueResolver implements ArgumentValueResolverInterface
 
     public function supports(Request $request, ArgumentMetadata $argument): bool
     {
-        // with the attribute, the type can be any UserInterface implementation
-        // otherwise, the type must be UserInterface
-        if (UserInterface::class !== $argument->getType() && !$argument->getAttribute() instanceof CurrentUser) {
+        if ($argument->getAttribute() instanceof CurrentUser) {
+            return true;
+        }
+
+        // only security user implementations are supported
+        if (UserInterface::class !== $argument->getType()) {
             return false;
         }
 

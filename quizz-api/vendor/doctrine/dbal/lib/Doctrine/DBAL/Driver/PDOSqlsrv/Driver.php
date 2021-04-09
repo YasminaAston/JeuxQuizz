@@ -5,7 +5,6 @@ namespace Doctrine\DBAL\Driver\PDOSqlsrv;
 use Doctrine\DBAL\Driver\AbstractSQLServerDriver;
 use Doctrine\DBAL\Driver\AbstractSQLServerDriver\Exception\PortWithoutHost;
 use Doctrine\DBAL\Driver\PDO;
-use Doctrine\Deprecations\Deprecation;
 
 use function is_int;
 use function sprintf;
@@ -96,12 +95,6 @@ class Driver extends AbstractSQLServerDriver
      */
     public function getName()
     {
-        Deprecation::trigger(
-            'doctrine/dbal',
-            'https://github.com/doctrine/dbal/issues/3580',
-            'Driver::getName() is deprecated'
-        );
-
         return 'pdo_sqlsrv';
     }
 }

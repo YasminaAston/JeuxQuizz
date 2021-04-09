@@ -71,14 +71,10 @@ final class MakeRegistrationForm extends AbstractMaker
         return 'make:registration-form';
     }
 
-    public static function getCommandDescription(): string
-    {
-        return 'Creates a new registration form system';
-    }
-
     public function configureCommand(Command $command, InputConfiguration $inputConf)
     {
         $command
+            ->setDescription('Creates a new registration form system')
             ->setHelp(file_get_contents(__DIR__.'/../Resources/help/MakeRegistrationForm.txt'))
         ;
     }

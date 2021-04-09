@@ -110,7 +110,6 @@ abstract class AbstractTagAwareAdapter implements TagAwareAdapterInterface, TagA
                     }
 
                     $byLifetime[$ttl][$getId($key)] = $value;
-                    $item->metadata = $item->newMetadata;
                 }
 
                 return $byLifetime;

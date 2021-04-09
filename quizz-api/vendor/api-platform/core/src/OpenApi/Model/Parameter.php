@@ -56,13 +56,11 @@ final class Parameter
         }
     }
 
-    // TODO: string not ?string
     public function getName(): ?string
     {
         return $this->name;
     }
 
-    // TODO: string not ?string
     public function getIn(): ?string
     {
         return $this->in;

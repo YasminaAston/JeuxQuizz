@@ -8,13 +8,15 @@ use Doctrine\DBAL\Tools\Console\Command\ReservedWordsCommand;
 use Doctrine\DBAL\Tools\Console\Command\RunSqlCommand;
 use Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper;
 use Doctrine\DBAL\Version;
-use Doctrine\Deprecations\Deprecation;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\HelperSet;
 use TypeError;
 
 use function sprintf;
+use function trigger_error;
+
+use const E_USER_DEPRECATED;
 
 /**
  * Handles running the Console Tools inside Symfony Console context.
@@ -51,13 +53,11 @@ class ConsoleRunner
 
         $connectionProvider = null;
         if ($helperSetOrConnectionProvider instanceof HelperSet) {
-            Deprecation::trigger(
-                'doctrine/dbal',
-                'https://github.com/doctrine/dbal/pull/3956',
+            @trigger_error(sprintf(
                 'Passing an instance of "%s" as the first argument is deprecated. Pass an instance of "%s" instead.',
                 HelperSet::class,
                 ConnectionProvider::class
-            );
+            ), E_USER_DEPRECATED);
             $connectionProvider = null;
             $cli->setHelperSet($helperSetOrConnectionProvider);
         } elseif ($helperSetOrConnectionProvider instanceof ConnectionProvider) {

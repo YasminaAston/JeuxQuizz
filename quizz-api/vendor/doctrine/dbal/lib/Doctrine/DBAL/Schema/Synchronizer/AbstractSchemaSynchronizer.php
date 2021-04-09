@@ -3,7 +3,6 @@
 namespace Doctrine\DBAL\Schema\Synchronizer;
 
 use Doctrine\DBAL\Connection;
-use Doctrine\Deprecations\Deprecation;
 use Throwable;
 
 /**
@@ -19,12 +18,6 @@ abstract class AbstractSchemaSynchronizer implements SchemaSynchronizer
     public function __construct(Connection $conn)
     {
         $this->conn = $conn;
-
-        Deprecation::trigger(
-            'doctrine/dbal',
-            'https://github.com/doctrine/dbal/pull/4213',
-            'SchemaSynchronizer API is deprecated without a replacement and will be removed in DBAL 3.0'
-        );
     }
 
     /**

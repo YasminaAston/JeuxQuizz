@@ -9,7 +9,6 @@ use Doctrine\DBAL\Event\SchemaIndexDefinitionEventArgs;
 use Doctrine\DBAL\Events;
 use Doctrine\DBAL\Exception;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
-use Doctrine\Deprecations\Deprecation;
 use Throwable;
 
 use function array_filter;
@@ -20,8 +19,8 @@ use function assert;
 use function call_user_func_array;
 use function count;
 use function func_get_args;
+use function is_array;
 use function is_callable;
-use function is_string;
 use function preg_match;
 use function str_replace;
 use function strtolower;
@@ -199,15 +198,6 @@ abstract class AbstractSchemaManager
      */
     public function tablesExist($names)
     {
-        if (is_string($names)) {
-            Deprecation::trigger(
-                'doctrine/dbal',
-                'https://github.com/doctrine/dbal/issues/3580',
-                'The usage of a string $tableNames in AbstractSchemaManager::tablesExist is deprecated. ' .
-                'Pass a one-element array instead.'
-            );
-        }
-
         $names = array_map('strtolower', (array) $names);
 
         return count($names) === count(array_intersect($names, array_map('strtolower', $this->listTableNames())));
@@ -608,7 +598,12 @@ abstract class AbstractSchemaManager
      */
     public function alterTable(TableDiff $tableDiff)
     {
-        foreach ($this->_platform->getAlterTableSQL($tableDiff) as $ddlQuery) {
+        $queries = $this->_platform->getAlterTableSQL($tableDiff);
+        if (! is_array($queries) || ! count($queries)) {
+            return;
+        }
+
+        foreach ($queries as $ddlQuery) {
             $this->_execSql($ddlQuery);
         }
     }

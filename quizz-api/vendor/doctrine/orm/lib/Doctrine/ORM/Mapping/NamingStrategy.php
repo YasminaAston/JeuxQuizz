@@ -23,7 +23,10 @@ namespace Doctrine\ORM\Mapping;
 /**
  * A set of rules for determining the physical column and table names
  *
+ * 
  * @link    www.doctrine-project.org
+ * @since   2.3
+ * @author  Fabio B. Silva <fabio.bat.silva@gmail.com>
  */
 interface NamingStrategy
 {
@@ -34,7 +37,7 @@ interface NamingStrategy
      *
      * @return string A table name.
      */
-    public function classToTableName($className);
+    function classToTableName($className);
 
     /**
      * Returns a column name for a property.
@@ -44,26 +47,26 @@ interface NamingStrategy
      *
      * @return string A column name.
      */
-    public function propertyToColumnName($propertyName, $className = null);
+    function propertyToColumnName($propertyName, $className = null);
 
     /**
      * Returns a column name for an embedded property.
      *
-     * @param string $propertyName
-     * @param string $embeddedColumnName
-     * @param string $className
-     * @param string $embeddedClassName
+     * @param string    $propertyName
+     * @param string    $embeddedColumnName
+     * @param string    $className
+     * @param string    $embeddedClassName
      *
      * @return string
      */
-    public function embeddedFieldToColumnName($propertyName, $embeddedColumnName, $className = null, $embeddedClassName = null);
+    function embeddedFieldToColumnName($propertyName, $embeddedColumnName, $className = null, $embeddedClassName = null);
 
     /**
      * Returns the default reference column name.
      *
      * @return string A column name.
      */
-    public function referenceColumnName();
+    function referenceColumnName();
 
     /**
      * Returns a join column name for a property.
@@ -72,7 +75,7 @@ interface NamingStrategy
      *
      * @return string A join column name.
      */
-    public function joinColumnName($propertyName);
+    function joinColumnName($propertyName);
 
     /**
      * Returns a join table name.
@@ -83,7 +86,7 @@ interface NamingStrategy
      *
      * @return string A join table name.
      */
-    public function joinTableName($sourceEntity, $targetEntity, $propertyName = null);
+    function joinTableName($sourceEntity, $targetEntity, $propertyName = null);
 
     /**
      * Returns the foreign key column name for the given parameters.
@@ -93,5 +96,5 @@ interface NamingStrategy
      *
      * @return string A join column name.
      */
-    public function joinKeyColumnName($entityName, $referencedColumnName = null);
+    function joinKeyColumnName($entityName, $referencedColumnName = null);
 }

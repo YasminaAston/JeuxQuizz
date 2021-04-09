@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Doctrine\DBAL\Driver;
 
-use Doctrine\Deprecations\Deprecation;
 use Exception as BaseException;
 
 /**
@@ -48,13 +47,6 @@ abstract class AbstractException extends BaseException implements DriverExceptio
      */
     public function getErrorCode()
     {
-        /** @psalm-suppress ImpureMethodCall */
-        Deprecation::triggerIfCalledFromOutside(
-            'doctrine/dbal',
-            'https://github.com/doctrine/dbal/pull/4112',
-            'Driver\AbstractException::getErrorCode() is deprecated, use getSQLState() or getCode() instead.'
-        );
-
         return $this->errorCode;
     }
 

@@ -355,7 +355,6 @@
     <service id="App\Controller\CategoryController" class="App\Controller\CategoryController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
-      <argument type="service" id="App\Service\CategoryServiceImpl"/>
       <argument type="service" id="App\Repository\CategoryRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\CategoryController"/>
@@ -458,10 +457,6 @@
     <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
-    </service>
-    <service id="App\Service\CategoryServiceImpl" class="App\Service\CategoryServiceImpl" autowire="true" autoconfigure="true">
-      <argument type="service" id="App\Repository\CategoryRepository"/>
-      <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
@@ -2020,22 +2015,13 @@
       <tag name="annotations.cached_reader"/>
       <argument type="service" id="annotations.reader"/>
       <argument type="service">
-        <service class="Symfony\Component\Cache\DoctrineProvider">
-          <argument type="service">
-            <service class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
-          </argument>
-        </service>
+        <service class="Doctrine\Common\Cache\ArrayCache"/>
       </argument>
       <argument>true</argument>
       <property name="cacheProviderBackup" type="service" id="annotations.cache"/>
     </service>
-    <service id="annotations.filesystem_cache_adapter" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
-      <argument></argument>
-      <argument>0</argument>
+    <service id="annotations.filesystem_cache" class="Doctrine\Common\Cache\FilesystemCache">
       <argument type="abstract">Cache-Directory</argument>
-    </service>
-    <service id="annotations.filesystem_cache" class="Symfony\Component\Cache\DoctrineProvider">
-      <argument type="service" id="annotations.filesystem_cache_adapter"/>
     </service>
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
@@ -2045,7 +2031,6 @@
       <argument>true</argument>
     </service>
     <service id="annotations.cache" class="Symfony\Component\Cache\DoctrineProvider">
-      <tag name="container.hot_path"/>
       <argument type="service">
         <service class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
           <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/annotations.php</argument>
@@ -2079,12 +2064,12 @@
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
       <argument type="collection">
         <argument type="service" id="serializer.denormalizer.unwrapping"/>
-        <argument type="service" id="api_platform.openapi.normalizer.api_gateway"/>
         <argument type="service" id="api_platform.swagger.normalizer.api_gateway"/>
+        <argument type="service" id="api_platform.openapi.normalizer.api_gateway"/>
         <argument type="service" id="api_platform.hydra.normalizer.constraint_violation_list"/>
         <argument type="service" id="api_platform.problem.normalizer.constraint_violation_list"/>
-        <argument type="service" id="api_platform.swagger.normalizer.api_gateway"/>
         <argument type="service" id="api_platform.openapi.normalizer.api_gateway"/>
+        <argument type="service" id="api_platform.swagger.normalizer.api_gateway"/>
         <argument type="service" id="api_platform.hydra.normalizer.documentation"/>
         <argument type="service" id="api_platform.hydra.normalizer.entrypoint"/>
         <argument type="service" id="api_platform.hydra.normalizer.error"/>
@@ -2507,20 +2492,15 @@
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/doctrine/doctrine-migrations-bundle/Resources/views</argument>
-        <argument>DoctrineMigrations</argument>
-      </call>
-      <call method="addPath">
-        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/doctrine/doctrine-migrations-bundle/Resources/views</argument>
-        <argument>!DoctrineMigrations</argument>
-      </call>
-      <call method="addPath">
         <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/api-platform/core/src/Bridge/Symfony/Bundle/Resources/views</argument>
         <argument>ApiPlatform</argument>
       </call>
       <call method="addPath">
         <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/api-platform/core/src/Bridge/Symfony/Bundle/Resources/views</argument>
         <argument>!ApiPlatform</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/templates</argument>
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader"/>
@@ -3292,13 +3272,12 @@
     </service>
     <service id="doctrine.dbal.default_connection" class="Doctrine\DBAL\Connection" public="true">
       <argument type="collection">
-        <argument key="connection_override_options" type="collection"/>
         <argument key="url">%env(resolve:DATABASE_URL)%</argument>
-        <argument key="driver">pdo_mysql</argument>
         <argument key="host">localhost</argument>
         <argument key="port">null</argument>
         <argument key="user">root</argument>
         <argument key="password">null</argument>
+        <argument key="driver">pdo_mysql</argument>
         <argument key="driverOptions" type="collection"/>
         <argument key="defaultTableOptions" type="collection"/>
       </argument>
@@ -3372,10 +3351,6 @@
     </service>
     <service id="doctrine.orm.quote_strategy.default" class="Doctrine\ORM\Mapping\DefaultQuoteStrategy"/>
     <service id="doctrine.orm.quote_strategy.ansi" class="Doctrine\ORM\Mapping\AnsiQuoteStrategy"/>
-    <service id="doctrine.ulid_generator" class="Symfony\Bridge\Doctrine\IdGenerator\UlidGenerator">
-      <tag name="doctrine.id_generator"/>
-      <argument>null</argument>
-    </service>
     <service id="doctrine.cache_clear_metadata_command" class="Doctrine\Bundle\DoctrineBundle\Command\Proxy\ClearMetadataCacheDoctrineCommand">
       <tag name="console.command" command="doctrine:cache:clear-metadata"/>
       <tag name="container.no_preload"/>
@@ -3484,7 +3459,6 @@
       </call>
     </service>
     <service id="doctrine.orm.default_configuration" class="Doctrine\ORM\Configuration">
-      <tag name="doctrine.orm.configuration"/>
       <call method="setEntityNamespaces">
         <argument type="collection">
           <argument key="App">App\Entity</argument>
@@ -3500,7 +3474,7 @@
         <argument type="service" id="doctrine.orm.cache.provider.cache.doctrine.orm.default.result"/>
       </call>
       <call method="setMetadataDriverImpl">
-        <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
+        <argument type="service" id="doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
         <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/doctrine/orm/Proxies</argument>
@@ -3512,7 +3486,7 @@
         <argument>true</argument>
       </call>
       <call method="setClassMetadataFactoryName">
-        <argument>Doctrine\Bundle\DoctrineBundle\Mapping\ClassMetadataFactory</argument>
+        <argument>Doctrine\ORM\Mapping\ClassMetadataFactory</argument>
       </call>
       <call method="setDefaultRepositoryClassName">
         <argument>Doctrine\ORM\EntityRepository</argument>
@@ -3535,6 +3509,12 @@
       <argument type="collection">
         <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/src/Entity</argument>
       </argument>
+    </service>
+    <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
+        <argument>App\Entity</argument>
+      </call>
     </service>
     <service id="cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\Adapter\ArrayAdapter">
       <tag name="cache.pool"/>
@@ -3584,22 +3564,16 @@
     </service>
     <service id="doctrine.migrations.dependency_factory" class="Doctrine\Migrations\DependencyFactory">
       <argument type="service" id="doctrine.migrations.configuration_loader"/>
-      <argument type="service" id="doctrine.migrations.registry_loader"/>
+      <argument type="service" id="doctrine.migrations.em_loader"/>
       <argument type="service" id="logger" on-invalid="null"/>
-      <call method="setDefinition">
-        <argument>Doctrine\Migrations\Version\MigrationFactory</argument>
-        <argument type="service" id="doctrine.migrations.container_aware_migrations_factory"/>
-      </call>
       <factory class="Doctrine\Migrations\DependencyFactory" method="fromEntityManager"/>
     </service>
     <service id="doctrine.migrations.configuration_loader" class="Doctrine\Migrations\Configuration\Migration\ExistingConfiguration">
       <argument type="service" id="doctrine.migrations.configuration"/>
     </service>
     <service id="doctrine.migrations.connection_loader" class="Doctrine\Migrations\Configuration\Connection\ExistingConnection"/>
-    <service id="doctrine.migrations.em_loader" class="Doctrine\Migrations\Configuration\EntityManager\ExistingEntityManager"/>
-    <service id="doctrine.migrations.registry_loader" class="Doctrine\Migrations\Configuration\EntityManager\ManagerRegistryEntityManager">
-      <argument type="service" id="doctrine"/>
-      <factory class="Doctrine\Migrations\Configuration\EntityManager\ManagerRegistryEntityManager" method="withSimpleDefault"/>
+    <service id="doctrine.migrations.em_loader" class="Doctrine\Migrations\Configuration\EntityManager\ExistingEntityManager">
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
     <service id="doctrine.migrations.configuration" class="Doctrine\Migrations\Configuration\Configuration">
       <call method="addMigrationsDirectory">
@@ -3615,10 +3589,6 @@
       <call method="setMetadataStorageConfiguration">
         <argument type="service" id="doctrine.migrations.storage.table_storage"/>
       </call>
-    </service>
-    <service id="doctrine.migrations.container_aware_migrations_factory" class="Doctrine\Bundle\MigrationsBundle\MigrationsFactory\ContainerAwareMigrationFactory">
-      <argument type="service" id="doctrine.migrations.container_aware_migrations_factory.inner"/>
-      <argument type="service" id="service_container"/>
     </service>
     <service id="doctrine_migrations.diff_command" class="Doctrine\Migrations\Tools\Console\Command\DiffCommand">
       <tag name="console.command" command="doctrine:migrations:diff"/>
@@ -3925,7 +3895,7 @@
       <argument>1.0.0</argument>
       <argument>null</argument>
       <argument>%api_platform.swagger.versions%</argument>
-      <argument type="service" id="api_platform.openapi.factory" on-invalid="null"/>
+      <argument type="service" id="api_platform.openapi.factory"/>
     </service>
     <service id="api_platform.action.exception" class="ApiPlatform\Core\Action\ExceptionAction" public="true">
       <argument type="service" id="serializer"/>
@@ -3944,10 +3914,10 @@
       <argument type="tagged_iterator" tag="api_platform.identifier.denormalizer"/>
     </service>
     <service id="api_platform.identifier.integer" class="ApiPlatform\Core\Identifier\Normalizer\IntegerDenormalizer">
-      <tag name="api_platform.identifier.denormalizer" priority="-100"/>
+      <tag name="api_platform.identifier.denormalizer"/>
     </service>
     <service id="api_platform.identifier.date_normalizer" class="ApiPlatform\Core\Identifier\Normalizer\DateTimeIdentifierDenormalizer">
-      <tag name="api_platform.identifier.denormalizer" priority="-100"/>
+      <tag name="api_platform.identifier.denormalizer"/>
     </service>
     <service id="api_platform.subresource_operation_factory.cached" class="ApiPlatform\Core\Operation\Factory\CachedSubresourceOperationFactory">
       <argument type="service" id="api_platform.cache.subresource_operation_factory"/>
@@ -4171,19 +4141,23 @@
         <argument>api:json-schema:generate</argument>
       </call>
     </service>
-    <service id=".2_ObjectNormalizer~y0CQVjI" class="Symfony\Component\Serializer\Normalizer\ObjectNormalizer">
-      <argument>null</argument>
-      <argument>null</argument>
-      <argument type="service" id="property_accessor"/>
-      <argument type="service" id="property_info"/>
+    <service id="api_platform.swagger.normalizer.api_gateway" class="ApiPlatform\Core\Swagger\Serializer\ApiGatewayNormalizer">
+      <tag name="serializer.normalizer" priority="-780"/>
+      <argument type="service" id="api_platform.swagger.normalizer.api_gateway.inner"/>
     </service>
-    <service id=".1_Serializer~y0CQVjI" class="Symfony\Component\Serializer\Serializer">
-      <argument type="collection">
-        <argument type="service" id=".2_ObjectNormalizer~y0CQVjI"/>
-      </argument>
-      <argument type="collection">
-        <argument type="service" id="serializer.encoder.json"/>
-      </argument>
+    <service id="api_platform.swagger.command.swagger_command" class="ApiPlatform\Core\Bridge\Symfony\Bundle\Command\SwaggerCommand">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="serializer"/>
+      <argument type="service" id="api_platform.metadata.resource.name_collection_factory.cached"/>
+      <argument>REST API du projet Quizz</argument>
+      <argument>A Symfony API to manage quizz application.</argument>
+      <argument>1.0.0</argument>
+      <argument>null</argument>
+      <argument>%api_platform.swagger.versions%</argument>
+      <call method="setName">
+        <argument>api:swagger:export</argument>
+      </call>
     </service>
     <service id="api_platform.openapi.options" class="ApiPlatform\Core\OpenApi\Options">
       <argument>REST API du projet Quizz</argument>
@@ -4231,24 +4205,6 @@
     <service id="api_platform.openapi.normalizer.api_gateway" class="ApiPlatform\Core\Swagger\Serializer\ApiGatewayNormalizer">
       <tag name="serializer.normalizer" priority="-780"/>
       <argument type="service" id="api_platform.openapi.normalizer.api_gateway.inner"/>
-    </service>
-    <service id="api_platform.swagger.normalizer.api_gateway" class="ApiPlatform\Core\Swagger\Serializer\ApiGatewayNormalizer">
-      <tag name="serializer.normalizer" priority="-780"/>
-      <argument type="service" id="api_platform.swagger.normalizer.api_gateway.inner"/>
-    </service>
-    <service id="api_platform.swagger.command.swagger_command" class="ApiPlatform\Core\Bridge\Symfony\Bundle\Command\SwaggerCommand">
-      <tag name="console.command"/>
-      <tag name="container.no_preload"/>
-      <argument type="service" id="serializer"/>
-      <argument type="service" id="api_platform.metadata.resource.name_collection_factory.cached"/>
-      <argument>REST API du projet Quizz</argument>
-      <argument>A Symfony API to manage quizz application.</argument>
-      <argument>1.0.0</argument>
-      <argument>null</argument>
-      <argument>%api_platform.swagger.versions%</argument>
-      <call method="setName">
-        <argument>api:swagger:export</argument>
-      </call>
     </service>
     <service id="api_platform.swagger.listener.ui" class="ApiPlatform\Core\Bridge\Symfony\Bundle\EventListener\SwaggerUiListener">
       <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
@@ -4640,14 +4596,6 @@
     <service id="maker.doctrine_helper" class="Symfony\Bundle\MakerBundle\Doctrine\DoctrineHelper">
       <argument>App\Entity</argument>
       <argument type="service" id="doctrine" on-invalid="ignore"/>
-      <argument type="collection">
-        <argument key="default" type="collection">
-          <argument type="collection">
-            <argument>App\Entity</argument>
-            <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
-          </argument>
-        </argument>
-      </argument>
     </service>
     <service id="maker.auto_command.abstract" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" abstract="true">
       <argument></argument>
@@ -4715,7 +4663,6 @@
     </service>
     <service id="maker.maker.make_functional_test" class="Symfony\Bundle\MakerBundle\Maker\MakeFunctionalTest">
       <tag name="maker.command"/>
-      <deprecated package="symfony/maker-bundle" version="1.29">The "%service_id%" service is deprecated, use "maker.maker.make_test" instead.</deprecated>
     </service>
     <service id="maker.maker.make_message" class="Symfony\Bundle\MakerBundle\Maker\MakeMessage">
       <tag name="maker.command"/>
@@ -4750,12 +4697,8 @@
     <service id="maker.maker.make_twig_extension" class="Symfony\Bundle\MakerBundle\Maker\MakeTwigExtension">
       <tag name="maker.command"/>
     </service>
-    <service id="maker.maker.make_test" class="Symfony\Bundle\MakerBundle\Maker\MakeTest">
-      <tag name="maker.command"/>
-    </service>
     <service id="maker.maker.make_unit_test" class="Symfony\Bundle\MakerBundle\Maker\MakeUnitTest">
       <tag name="maker.command"/>
-      <deprecated package="symfony/maker-bundle" version="1.29">The "%service_id%" service is deprecated, use "maker.maker.make_test" instead.</deprecated>
     </service>
     <service id="maker.maker.make_validator" class="Symfony\Bundle\MakerBundle\Maker\MakeValidator">
       <tag name="maker.command"/>
@@ -4768,6 +4711,7 @@
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.user_class_builder"/>
       <argument type="service" id="maker.security_config_updater"/>
+      <argument type="service" id="maker.doctrine_helper"/>
       <argument type="service" id="maker.entity_class_generator"/>
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
@@ -4915,9 +4859,6 @@
       <argument type="service" id="maker.maker.make_authenticator"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a Guard authenticator of different flavors</argument>
-      </call>
       <call method="setName">
         <argument>make:auth</argument>
       </call>
@@ -4928,9 +4869,6 @@
       <argument type="service" id="maker.maker.make_command"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new console command class</argument>
-      </call>
       <call method="setName">
         <argument>make:command</argument>
       </call>
@@ -4941,9 +4879,6 @@
       <argument type="service" id="maker.maker.make_controller"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new controller class</argument>
-      </call>
       <call method="setName">
         <argument>make:controller</argument>
       </call>
@@ -4954,9 +4889,6 @@
       <argument type="service" id="maker.maker.make_crud"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates CRUD for Doctrine entity class</argument>
-      </call>
       <call method="setName">
         <argument>make:crud</argument>
       </call>
@@ -4967,9 +4899,6 @@
       <argument type="service" id="maker.maker.make_docker_database"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Adds a database container to your docker-compose.yaml file</argument>
-      </call>
       <call method="setName">
         <argument>make:docker:database</argument>
       </call>
@@ -4980,9 +4909,6 @@
       <argument type="service" id="maker.maker.make_entity"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates or updates a Doctrine entity class, and optionally an API Platform resource</argument>
-      </call>
       <call method="setName">
         <argument>make:entity</argument>
       </call>
@@ -4993,9 +4919,6 @@
       <argument type="service" id="maker.maker.make_fixtures"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new class to load Doctrine fixtures</argument>
-      </call>
       <call method="setName">
         <argument>make:fixtures</argument>
       </call>
@@ -5006,11 +4929,18 @@
       <argument type="service" id="maker.maker.make_form"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new form class</argument>
-      </call>
       <call method="setName">
         <argument>make:form</argument>
+      </call>
+    </service>
+    <service id="maker.auto_command.make_functional_test" class="Symfony\Bundle\MakerBundle\Command\MakerCommand">
+      <tag name="console.command" command="make:functional-test"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="maker.maker.make_functional_test"/>
+      <argument type="service" id="maker.file_manager"/>
+      <argument type="service" id="maker.generator"/>
+      <call method="setName">
+        <argument>make:functional-test</argument>
       </call>
     </service>
     <service id="maker.auto_command.make_message" class="Symfony\Bundle\MakerBundle\Command\MakerCommand">
@@ -5019,9 +4949,6 @@
       <argument type="service" id="maker.maker.make_message"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new message and handler</argument>
-      </call>
       <call method="setName">
         <argument>make:message</argument>
       </call>
@@ -5032,9 +4959,6 @@
       <argument type="service" id="maker.maker.make_messenger_middleware"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new messenger middleware</argument>
-      </call>
       <call method="setName">
         <argument>make:messenger-middleware</argument>
       </call>
@@ -5045,9 +4969,6 @@
       <argument type="service" id="maker.maker.make_registration_form"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new registration form system</argument>
-      </call>
       <call method="setName">
         <argument>make:registration-form</argument>
       </call>
@@ -5058,9 +4979,6 @@
       <argument type="service" id="maker.maker.make_reset_password"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Create controller, entity, and repositories for use with symfonycasts/reset-password-bundle</argument>
-      </call>
       <call method="setName">
         <argument>make:reset-password</argument>
       </call>
@@ -5071,9 +4989,6 @@
       <argument type="service" id="maker.maker.make_serializer_encoder"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new serializer encoder class</argument>
-      </call>
       <call method="setName">
         <argument>make:serializer:encoder</argument>
       </call>
@@ -5084,9 +4999,6 @@
       <argument type="service" id="maker.maker.make_serializer_normalizer"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new serializer normalizer class</argument>
-      </call>
       <call method="setName">
         <argument>make:serializer:normalizer</argument>
       </call>
@@ -5097,9 +5009,6 @@
       <argument type="service" id="maker.maker.make_subscriber"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new event subscriber class</argument>
-      </call>
       <call method="setName">
         <argument>make:subscriber</argument>
       </call>
@@ -5110,32 +5019,18 @@
       <argument type="service" id="maker.maker.make_twig_extension"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new Twig extension class</argument>
-      </call>
       <call method="setName">
         <argument>make:twig-extension</argument>
       </call>
     </service>
-    <service id="maker.auto_command.make_test" class="Symfony\Bundle\MakerBundle\Command\MakerCommand">
-      <tag name="console.command" command="make:test"/>
-      <tag name="console.command" command="make:unit-test" description="Deprecated alias of &quot;make:test&quot;"/>
-      <tag name="console.command" command="make:functional-test" description="Deprecated alias of &quot;make:test&quot;"/>
+    <service id="maker.auto_command.make_unit_test" class="Symfony\Bundle\MakerBundle\Command\MakerCommand">
+      <tag name="console.command" command="make:unit-test"/>
       <tag name="container.no_preload"/>
-      <argument type="service" id="maker.maker.make_test"/>
+      <argument type="service" id="maker.maker.make_unit_test"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new test class</argument>
-      </call>
       <call method="setName">
-        <argument>make:test</argument>
-      </call>
-      <call method="setAliases">
-        <argument type="collection">
-          <argument>make:unit-test</argument>
-          <argument>make:functional-test</argument>
-        </argument>
+        <argument>make:unit-test</argument>
       </call>
     </service>
     <service id="maker.auto_command.make_validator" class="Symfony\Bundle\MakerBundle\Command\MakerCommand">
@@ -5144,9 +5039,6 @@
       <argument type="service" id="maker.maker.make_validator"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new validator and constraint class</argument>
-      </call>
       <call method="setName">
         <argument>make:validator</argument>
       </call>
@@ -5157,9 +5049,6 @@
       <argument type="service" id="maker.maker.make_voter"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new security voter class</argument>
-      </call>
       <call method="setName">
         <argument>make:voter</argument>
       </call>
@@ -5170,9 +5059,6 @@
       <argument type="service" id="maker.maker.make_user"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new security user class</argument>
-      </call>
       <call method="setName">
         <argument>make:user</argument>
       </call>
@@ -5183,9 +5069,6 @@
       <argument type="service" id="maker.maker.make_migration"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
-      <call method="setDescription">
-        <argument>Creates a new migration based on database changes</argument>
-      </call>
       <call method="setName">
         <argument>make:migration</argument>
       </call>
@@ -5442,16 +5325,6 @@
         <argument key="App\Repository\UserRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.Hllcktv" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="doctrine.ulid_generator" type="service" id="doctrine.ulid_generator"/>
-      </argument>
-    </service>
-    <service id=".doctrine.orm.default_metadata_driver" class="Doctrine\Bundle\DoctrineBundle\Mapping\MappingDriver">
-      <argument type="service" id=".doctrine.orm.default_metadata_driver.inner"/>
-      <argument type="service" id=".service_locator.Hllcktv"/>
-    </service>
     <service id="logger" class="Symfony\Component\HttpKernel\Log\Logger"/>
     <service id=".service_locator.5nX7ca3" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -5647,9 +5520,6 @@
       <argument>false</argument>
       <argument>true</argument>
     </service>
-    <service id="doctrine.migrations.container_aware_migrations_factory.inner" class="Doctrine\Migrations\Version\MigrationFactory">
-      <factory service="doctrine.migrations.dependency_factory" method="getMigrationFactory"/>
-    </service>
     <service id="api_platform.serializer.context_builder.filter.inner" class="ApiPlatform\Core\Serializer\SerializerContextBuilder">
       <argument type="service" id="api_platform.metadata.resource.metadata_factory.cached"/>
     </service>
@@ -5698,15 +5568,6 @@
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <argument type="service" id=".service_locator.8IqZjq4"/>
     </service>
-    <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
-      <call method="addDriver">
-        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
-        <argument>App\Entity</argument>
-      </call>
-    </service>
-    <service id="api_platform.openapi.normalizer.api_gateway.inner" class="ApiPlatform\Core\OpenApi\Serializer\OpenApiNormalizer">
-      <argument type="service" id=".1_Serializer~y0CQVjI"/>
-    </service>
     <service id="api_platform.swagger.normalizer.api_gateway.inner" class="ApiPlatform\Core\Swagger\Serializer\DocumentationNormalizer">
       <argument type="service" id="api_platform.metadata.resource.metadata_factory.cached"/>
       <argument type="service" id="api_platform.metadata.property.name_collection_factory.cached"/>
@@ -5735,11 +5596,9 @@
       <argument type="collection"/>
       <argument>%api_platform.swagger.versions%</argument>
       <argument type="service" id="api_platform.identifiers_extractor.cached"/>
-      <argument type="service">
-        <service class="ApiPlatform\Core\OpenApi\Serializer\OpenApiNormalizer">
-          <argument type="service" id=".1_Serializer~y0CQVjI"/>
-        </service>
-      </argument>
+    </service>
+    <service id="api_platform.openapi.normalizer.api_gateway.inner" class="ApiPlatform\Core\OpenApi\Serializer\OpenApiNormalizer">
+      <argument type="service" id="serializer.normalizer.object"/>
     </service>
     <service id="api_platform.route_name_resolver.cached.inner" class="ApiPlatform\Core\Bridge\Symfony\Routing\RouteNameResolver">
       <argument type="service" id="api_platform.router"/>
@@ -5755,7 +5614,7 @@
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.y5PARUu"/>
+      <argument type="service" id=".service_locator.BAG8uZ5"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -5819,8 +5678,8 @@
         <argument key="doctrine:migrations:up-to-date">doctrine_migrations.up_to_date_command</argument>
         <argument key="doctrine:migrations:version">doctrine_migrations.version_command</argument>
         <argument key="api:json-schema:generate">api_platform.json_schema.json_schema_generate_command</argument>
-        <argument key="api:openapi:export">api_platform.openapi.command</argument>
         <argument key="api:swagger:export">api_platform.swagger.command.swagger_command</argument>
+        <argument key="api:openapi:export">api_platform.openapi.command</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:controller">maker.auto_command.make_controller</argument>
@@ -5829,6 +5688,7 @@
         <argument key="make:entity">maker.auto_command.make_entity</argument>
         <argument key="make:fixtures">maker.auto_command.make_fixtures</argument>
         <argument key="make:form">maker.auto_command.make_form</argument>
+        <argument key="make:functional-test">maker.auto_command.make_functional_test</argument>
         <argument key="make:message">maker.auto_command.make_message</argument>
         <argument key="make:messenger-middleware">maker.auto_command.make_messenger_middleware</argument>
         <argument key="make:registration-form">maker.auto_command.make_registration_form</argument>
@@ -5837,16 +5697,14 @@
         <argument key="make:serializer:normalizer">maker.auto_command.make_serializer_normalizer</argument>
         <argument key="make:subscriber">maker.auto_command.make_subscriber</argument>
         <argument key="make:twig-extension">maker.auto_command.make_twig_extension</argument>
-        <argument key="make:test">maker.auto_command.make_test</argument>
-        <argument key="make:unit-test">maker.auto_command.make_test</argument>
-        <argument key="make:functional-test">maker.auto_command.make_test</argument>
+        <argument key="make:unit-test">maker.auto_command.make_unit_test</argument>
         <argument key="make:validator">maker.auto_command.make_validator</argument>
         <argument key="make:voter">maker.auto_command.make_voter</argument>
         <argument key="make:user">maker.auto_command.make_user</argument>
         <argument key="make:migration">maker.auto_command.make_migration</argument>
       </argument>
     </service>
-    <service id=".service_locator.y5PARUu" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.BAG8uZ5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Doctrine\DBAL\Tools\Console\Command\RunSqlCommand" type="service" id="Doctrine\DBAL\Tools\Console\Command\RunSqlCommand"/>
@@ -5917,6 +5775,7 @@
         <argument key="maker.auto_command.make_entity" type="service" id="maker.auto_command.make_entity"/>
         <argument key="maker.auto_command.make_fixtures" type="service" id="maker.auto_command.make_fixtures"/>
         <argument key="maker.auto_command.make_form" type="service" id="maker.auto_command.make_form"/>
+        <argument key="maker.auto_command.make_functional_test" type="service" id="maker.auto_command.make_functional_test"/>
         <argument key="maker.auto_command.make_message" type="service" id="maker.auto_command.make_message"/>
         <argument key="maker.auto_command.make_messenger_middleware" type="service" id="maker.auto_command.make_messenger_middleware"/>
         <argument key="maker.auto_command.make_migration" type="service" id="maker.auto_command.make_migration"/>
@@ -5925,8 +5784,8 @@
         <argument key="maker.auto_command.make_serializer_encoder" type="service" id="maker.auto_command.make_serializer_encoder"/>
         <argument key="maker.auto_command.make_serializer_normalizer" type="service" id="maker.auto_command.make_serializer_normalizer"/>
         <argument key="maker.auto_command.make_subscriber" type="service" id="maker.auto_command.make_subscriber"/>
-        <argument key="maker.auto_command.make_test" type="service" id="maker.auto_command.make_test"/>
         <argument key="maker.auto_command.make_twig_extension" type="service" id="maker.auto_command.make_twig_extension"/>
+        <argument key="maker.auto_command.make_unit_test" type="service" id="maker.auto_command.make_unit_test"/>
         <argument key="maker.auto_command.make_user" type="service" id="maker.auto_command.make_user"/>
         <argument key="maker.auto_command.make_validator" type="service" id="maker.auto_command.make_validator"/>
         <argument key="maker.auto_command.make_voter" type="service" id="maker.auto_command.make_voter"/>
@@ -5949,7 +5808,6 @@
     <service id="Symfony\Component\DependencyInjection\ContainerInterface" alias="service_container">
       <deprecated package="symfony/dependency-injection" version="5.1">The "%alias_id%" autowiring alias is deprecated. Define it explicitly in your app if you want to keep using it.</deprecated>
     </service>
-    <service id="App\Service\CategoryService" alias="App\Service\CategoryServiceImpl"/>
     <service id="App\Kernel" alias="kernel" public="true"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface" alias="parameter_bag"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface" alias="parameter_bag"/>
@@ -6048,14 +5906,12 @@
     <service id="Doctrine\Common\Persistence\ManagerRegistry" alias="doctrine"/>
     <service id="database_connection" alias="doctrine.dbal.default_connection" public="true"/>
     <service id="doctrine.dbal.event_manager" alias="doctrine.dbal.default_connection.event_manager"/>
-    <service id="Doctrine\DBAL\Connection $defaultConnection" alias="doctrine.dbal.default_connection"/>
     <service id="Doctrine\ORM\EntityManagerInterface" alias="doctrine.orm.default_entity_manager"/>
     <service id="doctrine.orm.metadata.annotation_reader" alias="annotations.cached_reader"/>
     <service id="doctrine.orm.entity_manager" alias="doctrine.orm.default_entity_manager" public="true"/>
     <service id="doctrine.orm.default_metadata_cache" alias="doctrine.orm.cache.provider.cache.doctrine.orm.default.metadata"/>
     <service id="doctrine.orm.default_result_cache" alias="doctrine.orm.cache.provider.cache.doctrine.orm.default.result"/>
     <service id="doctrine.orm.default_query_cache" alias="doctrine.orm.cache.provider.cache.doctrine.orm.default.query"/>
-    <service id="Doctrine\ORM\EntityManagerInterface $defaultEntityManager" alias="doctrine.orm.default_entity_manager"/>
     <service id="doctrine.orm.default_entity_manager.event_manager" alias="doctrine.dbal.default_connection.event_manager"/>
     <service id="doctrine.migrations.metadata_storage" alias="doctrine.migrations.storage.table_storage"/>
     <service id="api_platform.serializer" alias="serializer"/>
@@ -6123,7 +5979,6 @@
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
     <service id="argument_resolver.controller_locator" alias=".service_locator.8IqZjq4"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
-    <service id="doctrine.id_generator_locator" alias=".service_locator.Hllcktv"/>
     <service id="api_platform.doctrine.listener.mercure.publish" alias="api_platform.doctrine.orm.listener.mercure.publish">
       <deprecated package="api-platform/core" version="2.6">Using "%alias_id%" service is deprecated since API Platform 2.6. Use "api_platform.doctrine.orm.listener.mercure.publish" instead.</deprecated>
     </service>
@@ -6155,7 +6010,6 @@
     <service id="var_dumper.cli_dumper" alias="var_dumper.contextualized_cli_dumper"/>
     <service id="twig.error_renderer.html.inner" alias="error_handler.error_renderer.html"/>
     <service id="security.access.decision_manager" alias="debug.security.access.decision_manager"/>
-    <service id="doctrine.migrations.migrations_factory" alias="doctrine.migrations.container_aware_migrations_factory"/>
     <service id="api_platform.serializer.context_builder" alias="api_platform.serializer.context_builder.filter"/>
     <service id="api_platform.identifiers_extractor" alias="api_platform.identifiers_extractor.cached"/>
     <service id="api_platform.metadata.property.name_collection_factory.xml.inner" alias="api_platform.metadata.property.name_collection_factory.property_info"/>
@@ -6177,9 +6031,8 @@
     <service id="argument_resolver.default" alias="debug.argument_resolver.default"/>
     <service id="argument_resolver.variadic" alias="debug.argument_resolver.variadic"/>
     <service id="argument_resolver.not_tagged_controller" alias="debug.argument_resolver.not_tagged_controller"/>
-    <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
-    <service id="api_platform.openapi.normalizer" alias="api_platform.openapi.normalizer.api_gateway"/>
     <service id="api_platform.swagger.normalizer.documentation" alias="api_platform.swagger.normalizer.api_gateway"/>
+    <service id="api_platform.openapi.normalizer" alias="api_platform.openapi.normalizer.api_gateway"/>
     <service id="api_platform.route_name_resolver" alias="api_platform.route_name_resolver.cached"/>
     <service id="api_platform.subresource_operation_factory" alias="api_platform.subresource_operation_factory.cached"/>
     <service id="api_platform.metadata.resource.name_collection_factory.cached.inner" alias="api_platform.metadata.resource.name_collection_factory.yaml"/>

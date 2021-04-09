@@ -1,5 +1,4 @@
 <?php
-
 /*
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
@@ -20,19 +19,14 @@
 
 namespace Doctrine\ORM;
 
-use BadMethodCallException;
-use DateTimeInterface;
-use Doctrine\Common\EventManager;
-use Doctrine\DBAL\Connection;
-use Doctrine\ORM\Internal\Hydration\AbstractHydrator;
-use Doctrine\ORM\Proxy\ProxyFactory;
-use Doctrine\ORM\Query\Expr;
-use Doctrine\ORM\Query\FilterCollection;
 use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\Persistence\ObjectManager;
 
 /**
  * EntityManager interface
+ *
+ * @since   2.4
+ * @author  Lars Strojny <lars@strojny.net>
  *
  * @method Mapping\ClassMetadata getClassMetadata($className)
  */
@@ -41,14 +35,14 @@ interface EntityManagerInterface extends ObjectManager
     /**
      * Returns the cache API for managing the second level cache regions or NULL if the cache is not enabled.
      *
-     * @return Cache|null
+     * @return \Doctrine\ORM\Cache|null
      */
     public function getCache();
 
     /**
      * Gets the database connection object used by the EntityManager.
      *
-     * @return Connection
+     * @return \Doctrine\DBAL\Connection
      */
     public function getConnection();
 
@@ -64,7 +58,7 @@ interface EntityManagerInterface extends ObjectManager
      *         ->where($expr->orX($expr->eq('u.id', 1), $expr->eq('u.id', 2)));
      * </code>
      *
-     * @return Expr
+     * @return \Doctrine\ORM\Query\Expr
      */
     public function getExpressionBuilder();
 
@@ -202,21 +196,21 @@ interface EntityManagerInterface extends ObjectManager
      *
      * @deprecated 2.7 This method is being removed from the ORM and won't have any replacement
      *
-     * @param object $entity The entity to copy.
-     * @param bool   $deep   FALSE for a shallow copy, TRUE for a deep copy.
+     * @param object  $entity The entity to copy.
+     * @param boolean $deep   FALSE for a shallow copy, TRUE for a deep copy.
      *
      * @return object The new entity.
      *
-     * @throws BadMethodCallException
+     * @throws \BadMethodCallException
      */
     public function copy($entity, $deep = false);
 
     /**
      * Acquire a lock on the given entity.
      *
-     * @param object                     $entity
-     * @param int                        $lockMode
-     * @param int|DateTimeInterface|null $lockVersion
+     * @param object   $entity
+     * @param int      $lockMode
+     * @param int|null $lockVersion
      *
      * @return void
      *
@@ -228,7 +222,7 @@ interface EntityManagerInterface extends ObjectManager
     /**
      * Gets the EventManager used by the EntityManager.
      *
-     * @return EventManager
+     * @return \Doctrine\Common\EventManager
      */
     public function getEventManager();
 
@@ -254,17 +248,17 @@ interface EntityManagerInterface extends ObjectManager
     public function getUnitOfWork();
 
     /**
-     * Gets a hydrator for the given hydration mode.
-     *
-     * This method caches the hydrator instances which is used for all queries that don't
-     * selectively iterate over the result.
-     *
-     * @deprecated
-     *
-     * @param string|int $hydrationMode
-     *
-     * @return AbstractHydrator
-     */
+    * Gets a hydrator for the given hydration mode.
+    *
+    * This method caches the hydrator instances which is used for all queries that don't
+    * selectively iterate over the result.
+    *
+    * @deprecated
+    *
+    * @param string|int $hydrationMode
+    *
+    * @return \Doctrine\ORM\Internal\Hydration\AbstractHydrator
+    */
     public function getHydrator($hydrationMode);
 
     /**
@@ -272,7 +266,7 @@ interface EntityManagerInterface extends ObjectManager
      *
      * @param string|int $hydrationMode
      *
-     * @return AbstractHydrator
+     * @return \Doctrine\ORM\Internal\Hydration\AbstractHydrator
      *
      * @throws ORMException
      */
@@ -281,28 +275,28 @@ interface EntityManagerInterface extends ObjectManager
     /**
      * Gets the proxy factory used by the EntityManager to create entity proxies.
      *
-     * @return ProxyFactory
+     * @return \Doctrine\ORM\Proxy\ProxyFactory
      */
     public function getProxyFactory();
 
     /**
      * Gets the enabled filters.
      *
-     * @return FilterCollection The active filter collection.
+     * @return \Doctrine\ORM\Query\FilterCollection The active filter collection.
      */
     public function getFilters();
 
     /**
      * Checks whether the state of the filter collection is clean.
      *
-     * @return bool True, if the filter collection is clean.
+     * @return boolean True, if the filter collection is clean.
      */
     public function isFiltersStateClean();
 
     /**
      * Checks whether the Entity Manager has filters.
      *
-     * @return bool True, if the EM has a filter collection.
+     * @return boolean True, if the EM has a filter collection.
      */
     public function hasFilters();
 }

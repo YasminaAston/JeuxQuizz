@@ -195,7 +195,7 @@ class OracleSchemaManager extends AbstractSchemaManager
         }
 
         $options = [
-            'notnull'    => $tableColumn['nullable'] === 'N',
+            'notnull'    => (bool) ($tableColumn['nullable'] === 'N'),
             'fixed'      => (bool) $fixed,
             'unsigned'   => (bool) $unsigned,
             'default'    => $tableColumn['data_default'],
@@ -302,18 +302,15 @@ class OracleSchemaManager extends AbstractSchemaManager
             $database = $this->_conn->getDatabase();
         }
 
-        $statement = 'CREATE USER ' . $database;
+        $params   = $this->_conn->getParams();
+        $username = $database;
+        $password = $params['password'];
 
-        $params = $this->_conn->getParams();
+        $query = 'CREATE USER ' . $username . ' IDENTIFIED BY ' . $password;
+        $this->_conn->executeStatement($query);
 
-        if (isset($params['password'])) {
-            $statement .= ' IDENTIFIED BY ' . $params['password'];
-        }
-
-        $this->_conn->executeStatement($statement);
-
-        $statement = 'GRANT DBA TO ' . $database;
-        $this->_conn->executeStatement($statement);
+        $query = 'GRANT DBA TO ' . $username;
+        $this->_conn->executeStatement($query);
     }
 
     /**

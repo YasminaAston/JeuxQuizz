@@ -32,7 +32,7 @@ class DropSchemaSqlCollector extends AbstractVisitor
     public function __construct(AbstractPlatform $platform)
     {
         $this->platform = $platform;
-        $this->initializeQueries();
+        $this->clearQueries();
     }
 
     /**
@@ -68,7 +68,9 @@ class DropSchemaSqlCollector extends AbstractVisitor
      */
     public function clearQueries()
     {
-        $this->initializeQueries();
+        $this->constraints = new SplObjectStorage();
+        $this->sequences   = new SplObjectStorage();
+        $this->tables      = new SplObjectStorage();
     }
 
     /**
@@ -95,12 +97,5 @@ class DropSchemaSqlCollector extends AbstractVisitor
         }
 
         return $sql;
-    }
-
-    private function initializeQueries(): void
-    {
-        $this->constraints = new SplObjectStorage();
-        $this->sequences   = new SplObjectStorage();
-        $this->tables      = new SplObjectStorage();
     }
 }

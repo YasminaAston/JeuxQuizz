@@ -184,10 +184,6 @@ final class SubresourceOperationFactory implements SubresourceOperationFactoryIn
                 }
             }
 
-            if (isset($subresourceOperation['openapi_context'])) {
-                $operation['openapi_context'] = $subresourceOperation['openapi_context'];
-            }
-
             foreach (self::ROUTE_OPTIONS as $routeOption => $defaultValue) {
                 $operation[$routeOption] = $subresourceOperation[$routeOption] ?? $defaultValue;
             }

@@ -73,14 +73,10 @@ final class MakeAuthenticator extends AbstractMaker
         return 'make:auth';
     }
 
-    public static function getCommandDescription(): string
-    {
-        return 'Creates a Guard authenticator of different flavors';
-    }
-
     public function configureCommand(Command $command, InputConfiguration $inputConfig)
     {
         $command
+            ->setDescription('Creates a Guard authenticator of different flavors')
             ->setHelp(file_get_contents(__DIR__.'/../Resources/help/MakeAuth.txt'));
     }
 
@@ -283,7 +279,7 @@ final class MakeAuthenticator extends AbstractMaker
                 'user_class_name' => $userClassNameDetails->getShortName(),
                 'username_field' => $userNameField,
                 'username_field_label' => Str::asHumanWords($userNameField),
-                'username_field_var' => Str::asLowerCamelCase($userNameField),
+                'username_field_var' => Str::asCamelCase($userNameField),
                 'user_needs_encoder' => $this->userClassHasEncoder($securityData, $userClass),
                 'user_is_entity' => $this->doctrineHelper->isClassAMappedEntity($userClass),
                 'provider_key_type_hint' => $this->providerKeyTypeHint(),
@@ -403,12 +399,11 @@ final class MakeAuthenticator extends AbstractMaker
     private function providerKeyTypeHint(): string
     {
         $reflectionMethod = new \ReflectionMethod(AbstractFormLoginAuthenticator::class, 'onAuthenticationSuccess');
-        $type = $reflectionMethod->getParameters()[2]->getType();
-
-        if (!$type instanceof \ReflectionNamedType) {
-            return '';
+        $typeHint = (string) $reflectionMethod->getParameters()[2]->getType();
+        if ($typeHint) {
+            $typeHint .= ' ';
         }
 
-        return sprintf('%s ', $type->getName());
+        return $typeHint;
     }
 }

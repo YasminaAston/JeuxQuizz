@@ -77,27 +77,22 @@ final class SearchFilter extends AbstractFilter implements SearchFilterInterface
 
         $matchField = $field = $property;
 
-        $values = $this->normalizeValues((array) $value, $property);
-        if (null === $values) {
-            return;
-        }
-
         $associations = [];
         if ($this->isPropertyNested($property, $resourceClass)) {
             [$matchField, $field, $associations] = $this->addLookupsForNestedProperty($property, $aggregationBuilder, $resourceClass);
         }
 
-        $caseSensitive = true;
-        $strategy = $this->properties[$property] ?? self::STRATEGY_EXACT;
+        /**
+         * @var MongoDBClassMetadata
+         */
+        $metadata = $this->getNestedMetadata($resourceClass, $associations);
 
-        // prefixing the strategy with i makes it case insensitive
-        if (0 === strpos($strategy, 'i')) {
-            $strategy = substr($strategy, 1);
-            $caseSensitive = false;
+        $values = $this->normalizeValues((array) $value, $property);
+        if (null === $values) {
+            return;
         }
 
-        /** @var MongoDBClassMetadata */
-        $metadata = $this->getNestedMetadata($resourceClass, $associations);
+        $caseSensitive = true;
 
         if ($metadata->hasField($field) && !$metadata->hasAssociation($field)) {
             if ('id' === $field) {
@@ -112,9 +107,23 @@ final class SearchFilter extends AbstractFilter implements SearchFilterInterface
                 return;
             }
 
-            $this->addEqualityMatchStrategy($strategy, $aggregationBuilder, $field, $matchField, $values, $caseSensitive, $metadata);
+            $strategy = $this->properties[$property] ?? self::STRATEGY_EXACT;
 
-            return;
+            // prefixing the strategy with i makes it case insensitive
+            if (0 === strpos($strategy, 'i')) {
+                $strategy = substr($strategy, 1);
+                $caseSensitive = false;
+            }
+
+            $inValues = [];
+            foreach ($values as $inValue) {
+                $inValues[] = $this->addEqualityMatchStrategy($strategy, $field, $inValue, $caseSensitive, $metadata);
+            }
+
+            $aggregationBuilder
+                ->match()
+                ->field($matchField)
+                ->in($inValues);
         }
 
         // metadata doesn't have the field, nor an association on the field
@@ -123,6 +132,7 @@ final class SearchFilter extends AbstractFilter implements SearchFilterInterface
         }
 
         $values = array_map([$this, 'getIdFromValue'], $values);
+        $associationFieldIdentifier = 'id';
         $doctrineTypeField = $this->getDoctrineFieldType($property, $resourceClass);
 
         if (null !== $this->identifiersExtractor) {
@@ -139,39 +149,23 @@ final class SearchFilter extends AbstractFilter implements SearchFilterInterface
             return;
         }
 
-        $this->addEqualityMatchStrategy($strategy, $aggregationBuilder, $field, $matchField, $values, $caseSensitive, $metadata);
+        $aggregationBuilder
+            ->match()
+            ->field($matchField)
+            ->in($values);
     }
 
     /**
      * Add equality match stage according to the strategy.
-     */
-    private function addEqualityMatchStrategy(string $strategy, Builder $aggregationBuilder, string $field, string $matchField, $values, bool $caseSensitive, ClassMetadata $metadata): void
-    {
-        $inValues = [];
-        foreach ($values as $inValue) {
-            $inValues[] = $this->getEqualityMatchStrategyValue($strategy, $field, $inValue, $caseSensitive, $metadata);
-        }
-
-        $aggregationBuilder
-            ->match()
-            ->field($matchField)
-            ->in($inValues);
-    }
-
-    /**
-     * Get equality match value according to the strategy.
      *
      * @throws InvalidArgumentException If strategy does not exist
      *
      * @return Regex|string
      */
-    private function getEqualityMatchStrategyValue(string $strategy, string $field, $value, bool $caseSensitive, ClassMetadata $metadata)
+    private function addEqualityMatchStrategy(string $strategy, string $field, $value, bool $caseSensitive, ClassMetadata $metadata)
     {
         $type = $metadata->getTypeOfField($field);
 
-        if (!MongoDbType::hasType($type)) {
-            return $value;
-        }
         if (MongoDbType::STRING !== $type) {
             return MongoDbType::getType($type)->convertToDatabaseValue($value);
         }

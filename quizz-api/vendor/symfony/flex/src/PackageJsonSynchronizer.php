@@ -71,14 +71,7 @@ class PackageJsonSynchronizer
 
         $manipulator = new JsonManipulator(file_get_contents($this->rootDir.'/package.json'));
         $manipulator->addSubNode('devDependencies', '@'.$phpPackage, 'file:vendor/'.$phpPackage.$assetsDir);
-
-        $content = json_decode($manipulator->getContents(), true);
-
-        $devDependencies = $content['devDependencies'];
-        uksort($devDependencies, 'strnatcmp');
-        $content['devDependencies'] = $devDependencies;
-
-        file_put_contents($this->rootDir.'/package.json', $manipulator->format($content, -1));
+        file_put_contents($this->rootDir.'/package.json', $manipulator->getContents());
     }
 
     private function registerWebpackResources(array $phpPackages)
@@ -110,7 +103,7 @@ class PackageJsonSynchronizer
                 if (!isset($previousControllersJson['controllers']['@'.$phpPackage][$controllerName])) {
                     $config = [];
                     $config['enabled'] = $defaultConfig['enabled'];
-                    $config['fetch'] = $defaultConfig['fetch'] ?? 'eager';
+                    $config['webpackMode'] = $defaultConfig['webpackMode'];
 
                     if (isset($defaultConfig['autoimport'])) {
                         $config['autoimport'] = $defaultConfig['autoimport'];
@@ -126,7 +119,7 @@ class PackageJsonSynchronizer
 
                 $config = [];
                 $config['enabled'] = $previousConfig['enabled'];
-                $config['fetch'] = $previousConfig['fetch'] ?? 'eager';
+                $config['webpackMode'] = $previousConfig['webpackMode'];
 
                 if (isset($defaultConfig['autoimport'])) {
                     $config['autoimport'] = [];
@@ -147,7 +140,7 @@ class PackageJsonSynchronizer
             }
         }
 
-        file_put_contents($controllersJsonPath, json_encode($newControllersJson, \JSON_PRETTY_PRINT | \JSON_UNESCAPED_SLASHES)."\n");
+        file_put_contents($controllersJsonPath, json_encode($newControllersJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)."\n");
     }
 
     private function resolveAssetsDir(string $phpPackage)

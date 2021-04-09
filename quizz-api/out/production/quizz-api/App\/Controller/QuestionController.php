@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use App\Dto\QuestionDt;
-use App\Dto\QuestionDto;
 use App\Entity\Category;
 use App\Entity\Question;
 use App\Form\QuestionType;
@@ -34,64 +32,49 @@ class QuestionController extends AbstractController
         if(sizeof($questions) == 0){
             return $this-> json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'No question found '] , 404, []);
         }
-        return  $this->json($questions, 200, [], ['groups'=>['question', 'quizz']]);
+        return  $this->json($questions);
     }
 
     /**
-     * @Route("/new", name="question_new", methods={"POST"})
+     * @Route("/new", name="question_new", methods={"PUT"})
      */
     public function new(
                         Request $request,
                         SerializerInterface $serializer,
-                        ValidatorInterface $validator,
-                        CategoryRepository $categoryRepository,
-                        QuestionRepository $questionRepository
+                        ValidatorInterface $validator
                         ): Response
     {
         // deserialize the json
         try {
-            $questionDto = $serializer->deserialize($request->getContent(), QuestionDto::class, 'json');
+            $question = $serializer->deserialize($request->getContent(), Question::class, 'json');
         } catch (NotEncodableValueException $exception) {
-            return $this-> json(['status'=> Response::HTTP_BAD_REQUEST, 'message'=> 'Invalid Json '] , 400, []);
+            throw new HttpException(Response::HTTP_BAD_REQUEST, 'Invalid Json');
         }
-        $errors = $validator->validate($questionDto);
+        $errors = $validator->validate($question);
 
         if (count($errors) > 0) {
             $json = $serializer->serialize($errors, 'json', array_merge([
                 'json_encode_options' => JsonResponse::DEFAULT_ENCODING_OPTIONS,
             ], []));
-            return $this->json($json, Response::HTTP_BAD_REQUEST, [], true);
+            return new JsonResponse($json, Response::HTTP_BAD_REQUEST, [], true);
         }
-
-        $questionCheck = $questionRepository ->findOneBy(array('label' =>$questionDto->getLabel()));
-        if($questionCheck){
-            return $this-> json(['status'=> Response::HTTP_BAD_REQUEST, 'message'=> 'Question exist '] , 400, []);
-        }
-        $category = $categoryRepository ->find($questionDto->getCategoryId());
-        if(!$category){
-            return $this-> json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'Category not found '] , 404, []);
-        }
-        $question = new Question();
-        $question->setCategory($category);
-        $question->setLabel($questionDto->getLabel());
-        $question->setDifficulty($questionDto->getDifficulty());
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($question);
         $entityManager->flush();
-        return $this->json($question, 201, [], ['groups'=>['question', 'quizz']]);
+        return new Response( $this -> json($question, 201));
 
     }
 
     /**
      * @Route("/{id}", name="question_show", methods={"GET"})
      */
-    public function show(QuestionRepository $questionRepository, int $id)
+    public function show(QuestionRepository $questionRepository, int $id): Response
     {
-        $question = $questionRepository->find($id);
+        $question = $this->json($questionRepository->find($id));
         if(!$question){
             return $this-> json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'Question Not Found '] , 404, []);
         }
-        return  $this->json($question, 200, [], ['groups'=>['question', 'quizz']]);
+        return  $this->json($question);
     }
 
     /**
@@ -131,7 +114,7 @@ class QuestionController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($question);
         $entityManager->flush();
-        return  $this -> json($question, 200, [], ['groups'=>['question', 'quizz']]);
+        return  $this -> json($question, 200);
     }
 
     /**

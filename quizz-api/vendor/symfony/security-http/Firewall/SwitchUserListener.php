@@ -207,7 +207,6 @@ class SwitchUserListener extends AbstractListener
 
         if (null !== $this->dispatcher && $original->getUser() instanceof UserInterface) {
             $user = $this->provider->refreshUser($original->getUser());
-            $original->setUser($user);
             $switchEvent = new SwitchUserEvent($request, $user, $original);
             $this->dispatcher->dispatch($switchEvent, SecurityEvents::SWITCH_USER);
             $original = $switchEvent->getToken();

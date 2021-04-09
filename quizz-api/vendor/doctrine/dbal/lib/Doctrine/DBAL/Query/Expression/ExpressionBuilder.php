@@ -3,7 +3,6 @@
 namespace Doctrine\DBAL\Query\Expression;
 
 use Doctrine\DBAL\Connection;
-use Doctrine\Deprecations\Deprecation;
 
 use function func_get_arg;
 use function func_get_args;
@@ -72,12 +71,6 @@ class ExpressionBuilder
      */
     public function andX($x = null)
     {
-        Deprecation::trigger(
-            'doctrine/dbal',
-            'https://github.com/doctrine/dbal/pull/3851',
-            'ExpressionBuilder::andX() is deprecated, use ExpressionBuilder::and() instead.'
-        );
-
         return new CompositeExpression(CompositeExpression::TYPE_AND, func_get_args());
     }
 
@@ -91,12 +84,6 @@ class ExpressionBuilder
      */
     public function orX($x = null)
     {
-        Deprecation::trigger(
-            'doctrine/dbal',
-            'https://github.com/doctrine/dbal/pull/3851',
-            'ExpressionBuilder::orX() is deprecated, use ExpressionBuilder::or() instead.'
-        );
-
         return new CompositeExpression(CompositeExpression::TYPE_OR, func_get_args());
     }
 

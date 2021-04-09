@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use ApiPlatform\Core\DataPersister\DataPersisterInterface;
 use ApiPlatform\Core\Exception\ExceptionInterface;
-use App\Service\CategoryService;
 use http\Exception\BadMessageException;
 use phpDocumentor\Reflection\Types\Boolean;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
@@ -26,26 +25,18 @@ use Symfony\Component\Serializer\SerializerInterface;
 class CategoryController extends AbstractController
 {
 
-<<<<<<< HEAD
 
-     //protected CategoryRepository $categoryRepository;
-     //protected EntityManagerInterface $entityManager;
-=======
-    protected CategoryService $categoryService;
      protected CategoryRepository $categoryRepository;
      protected EntityManagerInterface $entityManager;
-
->>>>>>> 02bd3902fd4f2f1c551b8206afd34daec3bcab4c
     /**
      * CategoryController constructor.
-     * @param CategoryService $categoryService
      * @param CategoryRepository $categoryRepository
      */
-    public function __construct(CategoryService $categoryService, CategoryRepository $categoryRepository)
+    public function __construct(CategoryRepository $categoryRepository)
     {
-        $this->categoryService = $categoryService;
         $this->categoryRepository = $categoryRepository;
     }
+
 
 
     /**
@@ -53,7 +44,7 @@ class CategoryController extends AbstractController
      */
     public function show(int $id): Response
     {
-        $category = $this-> categoryService ->get($id);
+        $category = $this-> categoryRepository ->find($id);
         if(!$category){
             return $this-> json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'Not found '] , 404, []);
         }
@@ -66,7 +57,7 @@ class CategoryController extends AbstractController
      */
     public function getAll(CategoryRepository $categoryRepository): Response
     {
-        $category = $this-> categoryService->getAll();
+        $category = $categoryRepository->findAll();
         if (sizeof($category) > 0){
             return $this -> json($category, 200);
         }else {

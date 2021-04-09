@@ -19,7 +19,6 @@ use ApiPlatform\Core\Metadata\Property\PropertyMetadata;
 use ApiPlatform\Core\Metadata\Property\SubresourceMetadata;
 use ApiPlatform\Core\Util\Reflection;
 use Doctrine\Common\Annotations\Reader;
-use Symfony\Component\PropertyInfo\Type;
 
 /**
  * Adds subresources to the properties metadata from {@see ApiResource} annotations.
@@ -93,16 +92,7 @@ final class AnnotationSubresourceMetadataFactory implements PropertyMetadataFact
             throw new InvalidResourceException(sprintf('Property "%s" on resource "%s" is declared as a subresource, but its type could not be determined.', $propertyName, $originResourceClass));
         }
         $isCollection = $type->isCollection();
-
-        if (
-            $isCollection &&
-            $collectionValueType = method_exists(Type::class, 'getCollectionValueTypes') ? ($type->getCollectionValueTypes()[0] ?? null) : $type->getCollectionValueType()
-        ) {
-            $resourceClass = $collectionValueType->getClassName();
-        } else {
-            $resourceClass = $type->getClassName();
-        }
-
+        $resourceClass = $isCollection && ($collectionValueType = $type->getCollectionValueType()) ? $collectionValueType->getClassName() : $type->getClassName();
         $maxDepth = $annotation->maxDepth;
         // @ApiSubresource is on the class identifier (/collection/{id}/subcollection/{subcollectionId})
         if (null === $resourceClass) {

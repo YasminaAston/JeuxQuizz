@@ -27,7 +27,7 @@ class Statement implements IteratorAggregate, DriverStatement, Result
     /** @var DriverStatement|ResultStatement */
     private $stmt;
 
-    /** @var int|null */
+    /** @var int */
     private $case;
 
     /** @var int */

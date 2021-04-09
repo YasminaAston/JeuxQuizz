@@ -180,16 +180,14 @@ class Router extends BaseRouter implements WarmableInterface, ServiceSubscriberI
 
             $resolved = ($this->paramFetcher)($match[1]);
 
-            if (is_scalar($resolved)) {
+            if (\is_bool($resolved)) {
+                $resolved = (string) (int) $resolved;
+            }
+
+            if (\is_string($resolved) || is_numeric($resolved)) {
                 $this->collectedParameters[$match[1]] = $resolved;
 
-                if (\is_string($resolved)) {
-                    $resolved = $this->resolve($resolved);
-                }
-
-                if (is_scalar($resolved)) {
-                    return false === $resolved ? '0' : (string) $resolved;
-                }
+                return (string) $this->resolve($resolved);
             }
 
             throw new RuntimeException(sprintf('The container parameter "%s", used in the route configuration value "%s", must be a string or numeric, but it is of type "%s".', $match[1], $value, get_debug_type($resolved)));

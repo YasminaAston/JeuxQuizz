@@ -19,13 +19,11 @@ class Category
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups("question")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=55, unique=true)
-     * @Groups("question")
      */
     private $name;
 

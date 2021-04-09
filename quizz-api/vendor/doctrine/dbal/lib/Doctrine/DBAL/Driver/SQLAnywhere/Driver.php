@@ -4,7 +4,6 @@ namespace Doctrine\DBAL\Driver\SQLAnywhere;
 
 use Doctrine\DBAL\Driver\AbstractSQLAnywhereDriver;
 use Doctrine\DBAL\Exception;
-use Doctrine\Deprecations\Deprecation;
 
 use function array_keys;
 use function array_map;
@@ -47,12 +46,6 @@ class Driver extends AbstractSQLAnywhereDriver
      */
     public function getName()
     {
-        Deprecation::trigger(
-            'doctrine/dbal',
-            'https://github.com/doctrine/dbal/issues/3580',
-            'Driver::getName() is deprecated'
-        );
-
         return 'sqlanywhere';
     }
 

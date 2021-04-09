@@ -100,7 +100,7 @@ class ConstraintViolation implements ConstraintViolationInterface
      */
     public function getMessageTemplate()
     {
-        return (string) $this->messageTemplate;
+        return $this->messageTemplate;
     }
 
     /**
@@ -140,7 +140,7 @@ class ConstraintViolation implements ConstraintViolationInterface
      */
     public function getPropertyPath()
     {
-        return (string) $this->propertyPath;
+        return $this->propertyPath;
     }
 
     /**

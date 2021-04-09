@@ -1,5 +1,4 @@
 <?php
-
 /*
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
@@ -24,20 +23,25 @@ namespace Doctrine\ORM\Query\Expr;
  * Expression class for generating DQL functions.
  *
  * @link    www.doctrine-project.org
+ * @since   2.0
+ * @author  Guilherme Blanco <guilhermeblanco@hotmail.com>
+ * @author  Jonathan Wage <jonwage@gmail.com>
+ * @author  Roman Borschel <roman@code-factory.org>
  */
 class Literal extends Base
 {
-    /** @var string */
-    protected $preSeparator = '';
-
-    /** @var string */
-    protected $postSeparator = '';
-
-    /** @psalm-var list<string> */
-    protected $parts = [];
+    /**
+     * @var string
+     */
+    protected $preSeparator  = '';
 
     /**
-     * @psalm-return list<string>
+     * @var string
+     */
+    protected $postSeparator = '';
+
+    /**
+     * @return array
      */
     public function getParts()
     {

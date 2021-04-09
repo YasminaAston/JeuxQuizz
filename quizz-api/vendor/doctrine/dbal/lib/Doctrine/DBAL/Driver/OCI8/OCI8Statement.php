@@ -167,7 +167,7 @@ class OCI8Statement implements IteratorAggregate, StatementInterface, Result
             }
         } while ($result);
 
-        if ($currentLiteralDelimiter !== null) {
+        if ($currentLiteralDelimiter) {
             throw NonTerminatedStringLiteral::new($tokenOffset - 1);
         }
 
@@ -232,8 +232,6 @@ class OCI8Statement implements IteratorAggregate, StatementInterface, Result
      * @param string $currentLiteralDelimiter The delimiter of the current string literal
      *
      * @return bool Whether the token was found
-     *
-     * @param-out string|null $currentLiteralDelimiter
      */
     private static function findClosingQuote(
         $statement,
@@ -250,7 +248,7 @@ class OCI8Statement implements IteratorAggregate, StatementInterface, Result
             return false;
         }
 
-        $currentLiteralDelimiter = null;
+        $currentLiteralDelimiter = false;
         ++$tokenOffset;
 
         return true;

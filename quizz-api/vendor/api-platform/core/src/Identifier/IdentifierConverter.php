@@ -56,9 +56,8 @@ final class IdentifierConverter implements ContextAwareIdentifierConverterInterf
         }
 
         $identifiers = $data;
-
-        foreach ($data as $parameter => $value) {
-            if (null === $type = $this->getIdentifierType($context['identifiers'][$parameter][0] ?? $class, $context['identifiers'][$parameter][1] ?? $parameter)) {
+        foreach ($data as $identifier => $value) {
+            if (null === $type = $this->getIdentifierType($class, $identifier)) {
                 continue;
             }
 
@@ -69,10 +68,9 @@ final class IdentifierConverter implements ContextAwareIdentifierConverterInterf
                 }
 
                 try {
-                    $identifiers[$parameter] = $identifierTransformer->denormalize($value, $type);
-                    break;
+                    $identifiers[$identifier] = $identifierTransformer->denormalize($value, $type);
                 } catch (InvalidIdentifierException $e) {
-                    throw new InvalidIdentifierException(sprintf('Identifier "%s" could not be denormalized.', $parameter), $e->getCode(), $e);
+                    throw new InvalidIdentifierException(sprintf('Identifier "%s" could not be denormalized.', $identifier), $e->getCode(), $e);
                 }
             }
         }

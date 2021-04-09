@@ -108,7 +108,7 @@ class RememberMeFactory implements SecurityFactoryInterface, AuthenticatorFactor
         $container
             ->setDefinition($authenticatorId, new ChildDefinition('security.authenticator.remember_me'))
             ->replaceArgument(0, new Reference($rememberMeServicesId))
-            ->replaceArgument(3, $container->getDefinition($rememberMeServicesId)->getArgument(3))
+            ->replaceArgument(3, array_intersect_key($config, $this->options))
         ;
 
         foreach ($container->findTaggedServiceIds('security.remember_me_aware') as $serviceId => $attributes) {
@@ -201,12 +201,7 @@ class RememberMeFactory implements SecurityFactoryInterface, AuthenticatorFactor
         }
 
         // remember-me options
-        $mergedOptions = array_intersect_key($config, $this->options);
-        if ('auto' === $mergedOptions['secure']) {
-            $mergedOptions['secure'] = null;
-        }
-
-        $rememberMeServices->replaceArgument(3, $mergedOptions);
+        $rememberMeServices->replaceArgument(3, array_intersect_key($config, $this->options));
 
         if ($config['user_providers']) {
             $userProviders = [];

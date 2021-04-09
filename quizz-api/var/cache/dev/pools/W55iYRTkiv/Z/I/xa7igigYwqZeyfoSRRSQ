@@ -1,0 +1,3 @@
+<?php //route_name_5954fa4f747d07dc393a7e77a099686b
+
+return [PHP_INT_MAX, 'api_roles_get_collection'];

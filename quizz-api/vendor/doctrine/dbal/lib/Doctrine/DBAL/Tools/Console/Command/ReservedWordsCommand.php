@@ -23,7 +23,6 @@ use Doctrine\DBAL\Platforms\Keywords\SQLServer2008Keywords;
 use Doctrine\DBAL\Platforms\Keywords\SQLServer2012Keywords;
 use Doctrine\DBAL\Platforms\Keywords\SQLServerKeywords;
 use Doctrine\DBAL\Tools\Console\ConnectionProvider;
-use Doctrine\Deprecations\Deprecation;
 use Exception;
 use InvalidArgumentException;
 use Symfony\Component\Console\Command\Command;
@@ -37,6 +36,9 @@ use function count;
 use function implode;
 use function is_array;
 use function is_string;
+use function trigger_error;
+
+use const E_USER_DEPRECATED;
 
 class ReservedWordsCommand extends Command
 {
@@ -72,10 +74,9 @@ class ReservedWordsCommand extends Command
             return;
         }
 
-        Deprecation::trigger(
-            'doctrine/dbal',
-            'https://github.com/doctrine/dbal/pull/3956',
-            'Not passing a connection provider as the first constructor argument is deprecated'
+        @trigger_error(
+            'Not passing a connection provider as the first constructor argument is deprecated',
+            E_USER_DEPRECATED
         );
     }
 

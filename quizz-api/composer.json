@@ -4,11 +4,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-<<<<<<< HEAD
-        "php": "^7.3|^8.0.0",
-=======
-        "php": "^7.4|^8.0.0",
->>>>>>> 02bd3902fd4f2f1c551b8206afd34daec3bcab4c
+        "php": ">=7.4",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",

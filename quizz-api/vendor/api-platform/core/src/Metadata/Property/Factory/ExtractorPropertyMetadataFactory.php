@@ -17,7 +17,6 @@ use ApiPlatform\Core\Exception\PropertyNotFoundException;
 use ApiPlatform\Core\Metadata\Extractor\ExtractorInterface;
 use ApiPlatform\Core\Metadata\Property\PropertyMetadata;
 use ApiPlatform\Core\Metadata\Property\SubresourceMetadata;
-use Symfony\Component\PropertyInfo\Type;
 
 /**
  * Creates properties's metadata using an extractor.
@@ -140,14 +139,7 @@ final class ExtractorPropertyMetadataFactory implements PropertyMetadataFactoryI
 
         if (null !== $type) {
             $isCollection = $type->isCollection();
-            if (
-                $isCollection &&
-                $collectionValueType = method_exists(Type::class, 'getCollectionValueTypes') ? ($type->getCollectionValueTypes()[0] ?? null) : $type->getCollectionValueType()
-            ) {
-                $resourceClass = $collectionValueType->getClassName();
-            } else {
-                $resourceClass = $type->getClassName();
-            }
+            $resourceClass = $isCollection && ($collectionValueType = $type->getCollectionValueType()) ? $collectionValueType->getClassName() : $type->getClassName();
         } elseif (\is_array($subresource) && isset($subresource['resourceClass'])) {
             $resourceClass = $subresource['resourceClass'];
             $isCollection = $subresource['collection'] ?? true;

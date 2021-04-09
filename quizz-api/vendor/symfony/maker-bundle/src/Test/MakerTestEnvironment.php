@@ -254,7 +254,7 @@ final class MakerTestEnvironment
 
         $matches = [];
 
-        preg_match_all('#(created|updated): (]8;;[^]*\\\)?(.*?)(]8;;\\\)?\n#iu', $output, $matches, \PREG_PATTERN_ORDER);
+        preg_match_all('#(created|updated): (]8;;[^]*\\\)?(.*?)(]8;;\\\)?\n#iu', $output, $matches, PREG_PATTERN_ORDER);
 
         return array_map('trim', $matches[3]);
     }
@@ -272,7 +272,7 @@ final class MakerTestEnvironment
 
     public function runTwigCSLint(string $file)
     {
-        return MakerTestProcess::create(sprintf('php vendor/bin/twigcs --config ./.twig_cs.dist %s', $this->path.'/'.$file), $this->rootPath)
+        return MakerTestProcess::create(sprintf('php vendor/bin/twigcs lint %s', $this->path.'/'.$file), $this->rootPath)
                                ->run(true);
     }
 

@@ -13,14 +13,9 @@ use Doctrine\DBAL\Driver\Result;
 class Connection extends PDO\Connection
 {
     /**
-     * {@inheritdoc}
-     *
      * @internal The connection can be only instantiated by its driver.
      *
-     * @param string       $dsn
-     * @param string|null  $user
-     * @param string|null  $password
-     * @param mixed[]|null $options
+     * {@inheritdoc}
      */
     public function __construct($dsn, $user = null, $password = null, ?array $options = null)
     {

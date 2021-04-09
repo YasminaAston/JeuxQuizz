@@ -6,7 +6,6 @@ use Doctrine\DBAL\Driver\AbstractSQLiteDriver;
 use Doctrine\DBAL\Driver\PDO;
 use Doctrine\DBAL\Exception;
 use Doctrine\DBAL\Platforms\SqlitePlatform;
-use Doctrine\Deprecations\Deprecation;
 use PDOException;
 
 use function array_merge;
@@ -82,12 +81,6 @@ class Driver extends AbstractSQLiteDriver
      */
     public function getName()
     {
-        Deprecation::trigger(
-            'doctrine/dbal',
-            'https://github.com/doctrine/dbal/issues/3580',
-            'Driver::getName() is deprecated'
-        );
-
         return 'pdo_sqlite';
     }
 }

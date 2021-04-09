@@ -10,7 +10,6 @@ use Doctrine\DBAL\Driver\OCI8;
 use Doctrine\DBAL\Driver\PDO;
 use Doctrine\DBAL\Driver\SQLAnywhere;
 use Doctrine\DBAL\Driver\SQLSrv;
-use Doctrine\Deprecations\Deprecation;
 
 use function array_keys;
 use function array_merge;
@@ -28,56 +27,19 @@ use function strpos;
 use function substr;
 
 /**
- * Factory for creating {@link Connection} instances.
- *
- * @psalm-type OverrideParams = array{
- *     charset?: string,
- *     dbname?: string,
- *     default_dbname?: string,
- *     driver?: key-of<self::DRIVER_MAP>,
- *     driverClass?: class-string<Driver>,
- *     driverOptions?: array<mixed>,
- *     host?: string,
- *     password?: string,
- *     path?: string,
- *     pdo?: \PDO,
- *     platform?: Platforms\AbstractPlatform,
- *     port?: int,
- *     user?: string,
- * }
- * @psalm-type Params = array{
- *     charset?: string,
- *     dbname?: string,
- *     default_dbname?: string,
- *     driver?: key-of<self::DRIVER_MAP>,
- *     driverClass?: class-string<Driver>,
- *     driverOptions?: array<mixed>,
- *     host?: string,
- *     keepSlave?: bool,
- *     keepReplica?: bool,
- *     master?: OverrideParams,
- *     memory?: bool,
- *     password?: string,
- *     path?: string,
- *     pdo?: \PDO,
- *     platform?: Platforms\AbstractPlatform,
- *     port?: int,
- *     primary?: OverrideParams,
- *     replica?: array<OverrideParams>,
- *     sharding?: array<string,mixed>,
- *     slaves?: array<OverrideParams>,
- *     user?: string,
- *     wrapperClass?: class-string<Connection>,
- * }
+ * Factory for creating Doctrine\DBAL\Connection instances.
  */
 final class DriverManager
 {
     /**
      * List of supported drivers and their mappings to the driver classes.
      *
-     * To add your own driver use the 'driverClass' parameter to {@link DriverManager::getConnection()}.
+     * To add your own driver use the 'driverClass' parameter to
+     * {@link DriverManager::getConnection()}.
+     *
+     * @var string[]
      */
-    private const DRIVER_MAP = [
+    private static $_driverMap = [
         'pdo_mysql'          => PDO\MySQL\Driver::class,
         'pdo_sqlite'         => PDO\SQLite\Driver::class,
         'pdo_pgsql'          => PDO\PgSQL\Driver::class,
@@ -124,7 +86,7 @@ final class DriverManager
      *
      * $params must contain at least one of the following.
      *
-     * Either 'driver' with one of the array keys of {@link DRIVER_MAP},
+     * Either 'driver' with one of the array keys of {@link $_driverMap},
      * OR 'driverClass' that contains the full class name (with namespace) of the
      * driver class to instantiate.
      *
@@ -151,14 +113,12 @@ final class DriverManager
      * <b>driverClass</b>:
      * The driver class to use.
      *
-     * @param array<string,mixed> $params
-     * @param Configuration|null  $config       The configuration to use.
-     * @param EventManager|null   $eventManager The event manager to use.
+     * @param array{wrapperClass?: class-string<T>} $params
+     * @param Configuration|null                    $config       The configuration to use.
+     * @param EventManager|null                     $eventManager The event manager to use.
      *
      * @throws Exception
      *
-     * @phpstan-param array<string,mixed> $params
-     * @psalm-param Params $params
      * @psalm-return ($params is array{wrapperClass:mixed} ? T : Connection)
      * @template T of Connection
      */
@@ -218,17 +178,15 @@ final class DriverManager
         }
 
         if (isset($params['pdo'])) {
-            Deprecation::trigger(
-                'doctrine/dbal',
-                'https://github.com/doctrine/dbal/pull/3554',
-                'Passing a user provided PDO instance directly to Doctrine is deprecated.'
-            );
-
             $params['pdo']->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             $params['driver'] = 'pdo_' . $params['pdo']->getAttribute(\PDO::ATTR_DRIVER_NAME);
+        } else {
+            self::_checkParams($params);
         }
 
-        $driver = self::createDriver($params);
+        $className = $params['driverClass'] ?? self::$_driverMap[$params['driver']];
+
+        $driver = new $className();
 
         $wrapperClass = Connection::class;
         if (isset($params['wrapperClass'])) {
@@ -250,40 +208,38 @@ final class DriverManager
      */
     public static function getAvailableDrivers(): array
     {
-        return array_keys(self::DRIVER_MAP);
+        return array_keys(self::$_driverMap);
     }
 
     /**
-     * @param array<string,mixed> $params
+     * Checks the list of parameters.
+     *
+     * @param mixed[] $params The list of parameters.
      *
      * @throws Exception
-     *
-     * @phpstan-param array<string,mixed> $params
-     * @psalm-param Params $params
      */
-    private static function createDriver(array $params): Driver
+    private static function _checkParams(array $params): void
     {
-        if (isset($params['driverClass'])) {
-            $interfaces = class_implements($params['driverClass'], true);
+        // check existence of mandatory parameters
 
-            if ($interfaces === false || ! in_array(Driver::class, $interfaces)) {
-                throw Exception::invalidDriverClass($params['driverClass']);
-            }
-
-            return new $params['driverClass']();
+        // driver
+        if (! isset($params['driver']) && ! isset($params['driverClass'])) {
+            throw Exception::driverRequired();
         }
 
-        if (isset($params['driver'])) {
-            if (! isset(self::DRIVER_MAP[$params['driver']])) {
-                throw Exception::unknownDriver($params['driver'], array_keys(self::DRIVER_MAP));
-            }
+        // check validity of parameters
 
-            $class = self::DRIVER_MAP[$params['driver']];
-
-            return new $class();
+        // driver
+        if (isset($params['driver']) && ! isset(self::$_driverMap[$params['driver']])) {
+            throw Exception::unknownDriver($params['driver'], array_keys(self::$_driverMap));
         }
 
-        throw Exception::driverRequired();
+        if (
+            isset($params['driverClass'])
+            && ! in_array(Driver::class, class_implements($params['driverClass'], true))
+        ) {
+            throw Exception::invalidDriverClass($params['driverClass']);
+        }
     }
 
     /**
@@ -307,11 +263,6 @@ final class DriverManager
      *                 URL extracted into indidivual parameter parts.
      *
      * @throws Exception
-     *
-     * @phpstan-param array<string,mixed> $params
-     * @phpstan-return array<string,mixed>
-     * @psalm-param Params $params
-     * @psalm-return Params
      */
     private static function parseDatabaseUrl(array $params): array
     {

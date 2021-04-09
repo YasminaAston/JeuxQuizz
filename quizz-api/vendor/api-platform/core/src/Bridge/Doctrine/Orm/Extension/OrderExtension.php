@@ -80,11 +80,6 @@ final class OrderExtension implements ContextAwareQueryCollectionExtensionInterf
         }
 
         if (null !== $this->order) {
-            // A foreign identifier cannot be used for ordering.
-            if ($classMetaData->containsForeignIdentifier) {
-                return;
-            }
-
             foreach ($identifiers as $identifier) {
                 $queryBuilder->addOrderBy("{$rootAlias}.{$identifier}", $this->order);
             }

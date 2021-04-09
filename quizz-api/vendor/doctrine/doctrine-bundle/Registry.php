@@ -9,9 +9,6 @@ use Psr\Container\ContainerInterface;
 use Symfony\Bridge\Doctrine\ManagerRegistry;
 use Symfony\Contracts\Service\ResetInterface;
 
-use function array_keys;
-use function assert;
-
 /**
  * References all Doctrine connections and entity managers in a given Container.
  */
@@ -42,14 +39,8 @@ class Registry extends ManagerRegistry implements ResetInterface
     public function getAliasNamespace($alias)
     {
         foreach (array_keys($this->getManagers()) as $name) {
-            $objectManager = $this->getManager($name);
-
-            if (! $objectManager instanceof EntityManagerInterface) {
-                continue;
-            }
-
             try {
-                return $objectManager->getConfiguration()->getEntityNamespace($alias);
+                return $this->getManager($name)->getConfiguration()->getEntityNamespace($alias);
             } catch (ORMException $e) {
             }
         }
