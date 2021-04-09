@@ -1,3 +1,0 @@
-<?php //route_name_3c34dc6cb53f71fe585ad6005329e04e
-
-return [PHP_INT_MAX, 'api_games_get_collection'];
