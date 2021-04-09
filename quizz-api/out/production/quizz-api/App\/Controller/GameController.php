@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Dto\QuizzDto;
 use App\Entity\Category;
 use App\Entity\Game;
 use App\Entity\Quizz;
@@ -45,7 +44,7 @@ class GameController extends AbstractController
     {
         $games = $gameRepository->findAll();
         if (sizeof($games) > 0){
-            return $this -> json($gameRepository->findAll(), 200, [], ['groups'=>['quizz']]);
+            return $this -> json($gameRepository->findAll(), 200);
         }else {
             return $this -> json(['status'=> Response::HTTP_OK, 'message'=> 'Entity game is empty'], 200);
         }
@@ -60,44 +59,26 @@ class GameController extends AbstractController
         if(!$game){
             return $this-> json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'Game Not Found '] , 404, []);
         }
-        return  $this->json($game, 200, [], ['groups'=>['quizz']]);
+        return  $this->json($game);
     }
 
     /**
-     * @Route("/new", name="game_new", methods={"POST"})
+     * @Route("/new/{user_id}/{category_id}/{difficulty}", name="game_new", methods={"POST"})
      */
     public function new(
-        GameRepository $gameRepository,
         QuestionRepository $questionRepository,
         CategoryRepository $categoryRepository,
         UserRepository $userRepository,
-        SerializerInterface $serializer,
-        ValidatorInterface $validator,
-        Request $request
+        $category_id, $difficulty,
+        $user_id
     ): Response
     {
-        // deserialize the json
-        try {
-            $quizzDto = $serializer->deserialize($request->getContent(), QuizzDto::class, 'json');
-        } catch (NotEncodableValueException $exception) {
-            return $this-> json(['status'=> Response::HTTP_BAD_REQUEST, 'message'=> 'Bad request '] , 400, []);
-        }
-        $errors = $validator->validate($quizzDto);
-        if (count($errors) > 0) {
-            $json = $serializer->serialize($errors, 'json', array_merge([
-                'json_encode_options' => JsonResponse::DEFAULT_ENCODING_OPTIONS,
-            ], []));
-            return $this-> json($json , 400, []);
-
-        }
-
-        $user = $userRepository-> find($quizzDto->getUserId());
+        $user = $userRepository-> find($user_id);
         if(!$user) {
             return new JsonResponse($this-> json(['status'=>404, 'meassage'=>'User not found']), Response::HTTP_BAD_REQUEST, [], true);
         }
-
-        $category = $categoryRepository->find($quizzDto->getCategoryId());
-        $questions = $questionRepository->findBy(array('category' => $category, 'difficulty' => $quizzDto->getDifficulty()));
+        $category = $categoryRepository->find($category_id);
+        $questions = $questionRepository->findBy(array('category' => $category, 'difficulty' => $difficulty));
         if (sizeof($questions) > 0){
             $entityManager = $this->getDoctrine()->getManager();
             $game = new Game();
@@ -105,6 +86,7 @@ class GameController extends AbstractController
             $questionsQuizz = array_rand($questions, 10);
 
             foreach ($questionsQuizz as $key => $value) {
+                echo "{$key} => {$value} ";
                 $quizz = new Quizz();
                 $quizz->setQuestion($value);
                 $entityManager->persist($quizz);
@@ -116,8 +98,9 @@ class GameController extends AbstractController
             $entityManager->flush();
             return $this -> json($game, 200);
         }else {
-            return $this -> json(['status'=> Response::HTTP_OK, 'message'=> 'Entity question is empty'], 200, [], ['groups'=>['quizz']]);
+            return $this -> json(['status'=> Response::HTTP_OK, 'message'=> 'Entity question is empty'], 200);
         }
+        //return $this -> json(['category_id'=> $category_id, 'difficulty'=> $difficulty], 200);
     }
 
     /**
@@ -152,7 +135,7 @@ class GameController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($game);
         $entityManager->flush();
-        return  $this -> json($game, 200, [], ['groups'=>['quizz']]);
+        return  $this -> json($game, 200);
     }
 
     /**

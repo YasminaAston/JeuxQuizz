@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
+<<<<<<< HEAD
     <parameter key="kernel.project_dir">/home/yasmina/Documents/JeuxQuizz/quizz-api</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
@@ -8,6 +9,15 @@
     <parameter key="kernel.build_dir">/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev</parameter>
     <parameter key="kernel.cache_dir">/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev</parameter>
     <parameter key="kernel.logs_dir">/home/yasmina/Documents/JeuxQuizz/quizz-api/var/log</parameter>
+=======
+    <parameter key="kernel.project_dir">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api</parameter>
+    <parameter key="kernel.environment">dev</parameter>
+    <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
+    <parameter key="kernel.debug">true</parameter>
+    <parameter key="kernel.build_dir">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/log</parameter>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
@@ -22,6 +32,7 @@
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
+<<<<<<< HEAD
         <parameter key="path">/home/yasmina/Documents/JeuxQuizz/quizz-api/vendor/symfony/framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
@@ -59,6 +70,45 @@
       </parameter>
       <parameter key="SensioFrameworkExtraBundle" type="collection">
         <parameter key="path">/home/yasmina/Documents/JeuxQuizz/quizz-api/vendor/sensio/framework-extra-bundle/src</parameter>
+=======
+        <parameter key="path">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/symfony/framework-bundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
+      </parameter>
+      <parameter key="DebugBundle" type="collection">
+        <parameter key="path">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/symfony/debug-bundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
+      </parameter>
+      <parameter key="TwigBundle" type="collection">
+        <parameter key="path">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/symfony/twig-bundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
+      </parameter>
+      <parameter key="SecurityBundle" type="collection">
+        <parameter key="path">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/symfony/security-bundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
+      </parameter>
+      <parameter key="DoctrineBundle" type="collection">
+        <parameter key="path">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/doctrine/doctrine-bundle</parameter>
+        <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
+      </parameter>
+      <parameter key="DoctrineMigrationsBundle" type="collection">
+        <parameter key="path">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/doctrine/doctrine-migrations-bundle</parameter>
+        <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
+      </parameter>
+      <parameter key="NelmioCorsBundle" type="collection">
+        <parameter key="path">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/nelmio/cors-bundle</parameter>
+        <parameter key="namespace">Nelmio\CorsBundle</parameter>
+      </parameter>
+      <parameter key="ApiPlatformBundle" type="collection">
+        <parameter key="path">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/api-platform/core/src/Bridge/Symfony/Bundle</parameter>
+        <parameter key="namespace">ApiPlatform\Core\Bridge\Symfony\Bundle</parameter>
+      </parameter>
+      <parameter key="MakerBundle" type="collection">
+        <parameter key="path">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/symfony/maker-bundle/src</parameter>
+        <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
+      </parameter>
+      <parameter key="SensioFrameworkExtraBundle" type="collection">
+        <parameter key="path">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/sensio/framework-extra-bundle/src</parameter>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
         <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
       </parameter>
     </parameter>
@@ -90,7 +140,11 @@
     <parameter key="kernel.default_locale">en</parameter>
     <parameter key="kernel.error_controller">error_controller</parameter>
     <parameter key="debug.file_link_format">null</parameter>
+<<<<<<< HEAD
     <parameter key="cache.prefix.seed">_/home/yasmina/Documents/JeuxQuizz/quizz-api.App_KernelDevDebugContainer</parameter>
+=======
+    <parameter key="cache.prefix.seed">_/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api.App_KernelDevDebugContainer</parameter>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -99,6 +153,7 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
+<<<<<<< HEAD
     <parameter key="session.save_path">/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="asset.request_context.base_path">null</parameter>
@@ -108,18 +163,37 @@
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
     <parameter key="debug.container.dump">/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
+=======
+    <parameter key="session.save_path">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/sessions</parameter>
+    <parameter key="session.metadata.update_threshold">0</parameter>
+    <parameter key="asset.request_context.base_path">null</parameter>
+    <parameter key="asset.request_context.secure">null</parameter>
+    <parameter key="validator.mapping.cache.file">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/validation.php</parameter>
+    <parameter key="validator.translation_domain">validators</parameter>
+    <parameter key="data_collector.templates" type="collection"/>
+    <parameter key="debug.error_handler.throw_at">-1</parameter>
+    <parameter key="debug.container.dump">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
+<<<<<<< HEAD
     <parameter key="serializer.mapping.cache.file">/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/serialization.php</parameter>
+=======
+    <parameter key="serializer.mapping.cache.file">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/serialization.php</parameter>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
+<<<<<<< HEAD
     <parameter key="twig.default_path">/home/yasmina/Documents/JeuxQuizz/quizz-api/templates</parameter>
+=======
+    <parameter key="twig.default_path">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/templates</parameter>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
     <parameter key="security.role_hierarchy.roles" type="collection"/>
     <parameter key="security.access.denied_url">null</parameter>
     <parameter key="security.authentication.manager.erase_credentials">true</parameter>
@@ -196,7 +270,11 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
+<<<<<<< HEAD
     <parameter key="doctrine.orm.proxy_dir">/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/doctrine/orm/Proxies</parameter>
+=======
+    <parameter key="doctrine.orm.proxy_dir">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/doctrine/orm/Proxies</parameter>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -313,7 +391,11 @@
       <parameter key="attributes" type="collection"/>
     </parameter>
     <parameter key="api_platform.resource_class_directories" type="collection">
+<<<<<<< HEAD
       <parameter>/home/yasmina/Documents/JeuxQuizz/quizz-api/src/Entity</parameter>
+=======
+      <parameter>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/src/Entity</parameter>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
     </parameter>
     <parameter key="api_platform.oauth.enabled">false</parameter>
     <parameter key="api_platform.oauth.clientId"></parameter>
@@ -355,7 +437,6 @@
     <service id="App\Controller\CategoryController" class="App\Controller\CategoryController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
-      <argument type="service" id="App\Service\CategoryServiceImpl"/>
       <argument type="service" id="App\Repository\CategoryRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\CategoryController"/>
@@ -459,10 +540,6 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Service\CategoryServiceImpl" class="App\Service\CategoryServiceImpl" autowire="true" autoconfigure="true">
-      <argument type="service" id="App\Repository\CategoryRepository"/>
-      <argument type="service" id="doctrine.orm.default_entity_manager"/>
-    </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
       <tag name="kernel.event_subscriber"/>
@@ -525,7 +602,11 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/http_cache</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/http_cache</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -535,7 +616,11 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -688,7 +773,11 @@
       </argument>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service">
         <service>
           <argument type="service" id="request_stack"/>
@@ -718,7 +807,11 @@
       <tag name="console.command" command="assets:install"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="filesystem"/>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -923,9 +1016,15 @@
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
+<<<<<<< HEAD
       <argument>SmTq3Y--iI</argument>
       <argument>0</argument>
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+=======
+      <argument>3oKUEzCMaE</argument>
+      <argument>0</argument>
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -937,50 +1036,85 @@
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
+<<<<<<< HEAD
       <argument>EW-gkey51t</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+=======
+      <argument>aNEo-e5ylx</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
+<<<<<<< HEAD
       <argument>YCQRTJlSsh</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+=======
+      <argument>3Z+cu5Knue</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
+<<<<<<< HEAD
       <argument>fWb-+mjqda</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+=======
+      <argument>5FaJdZRtos</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
+<<<<<<< HEAD
       <argument>PYcxlzaOgJ</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+=======
+      <argument>QAvI554r7K</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
+<<<<<<< HEAD
       <argument>Gjdqz85Hxs</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+=======
+      <argument>YVmGnORkvC</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -990,7 +1124,11 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1019,7 +1157,11 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1180,14 +1322,22 @@
       <deprecated package="symfony/framework-bundle" version="5.1">The "%service_id%" service is deprecated, use "$session-&gt;getAttributeBag()" instead.</deprecated>
     </service>
     <service id="session.storage.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/sessions</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/sessions</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler">
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
+<<<<<<< HEAD
           <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/sessions</argument>
+=======
+          <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/sessions</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
         </service>
       </argument>
     </service>
@@ -1304,10 +1454,17 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/validation.php</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/validation.php</argument>
+    </service>
+    <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/validation.php</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -1922,7 +2079,11 @@
       <argument type="service" id=".service_locator.WOytlHA.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
+<<<<<<< HEAD
         <argument key="cache_dir">/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev</argument>
+=======
+        <argument key="cache_dir">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -1972,7 +2133,11 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="logger" on-invalid="ignore"/>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -2031,14 +2196,22 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/annotations.php</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/annotations.php</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache" class="Symfony\Component\Cache\DoctrineProvider">
       <argument type="service">
         <service class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
+<<<<<<< HEAD
           <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/annotations.php</argument>
+=======
+          <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/annotations.php</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
           <argument type="service" id="cache.annotations"/>
           <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
         </service>
@@ -2054,7 +2227,11 @@
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
       <tag name="container.env_var_loader"/>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="secrets.decryption_key" on-invalid="ignore"/>
     </service>
     <service id="secrets.decryption_key" class="Symfony\Component\String\LazyString">
@@ -2063,7 +2240,11 @@
       <factory class="Symfony\Component\String\LazyString" method="fromCallable"/>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/.env.dev.local</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/.env.dev.local</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
     </service>
     <service id="serializer" class="Symfony\Component\Serializer\Serializer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -2181,10 +2362,17 @@
           </service>
         </argument>
       </argument>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/serialization.php</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/serialization.php</argument>
+    </service>
+    <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/serialization.php</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -2307,7 +2495,11 @@
         <argument key="source" type="service">
           <service class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider">
             <argument>UTF-8</argument>
+<<<<<<< HEAD
             <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api</argument>
+=======
+            <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
             <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
           </service>
         </argument>
@@ -2329,7 +2521,11 @@
         <argument key="source" type="service">
           <service class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider">
             <argument>UTF-8</argument>
+<<<<<<< HEAD
             <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api</argument>
+=======
+            <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
             <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
           </service>
         </argument>
@@ -2381,7 +2577,11 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
+<<<<<<< HEAD
         <argument key="cache">/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/twig</argument>
+=======
+        <argument key="cache">/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/twig</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -2460,7 +2660,11 @@
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator">
       <argument type="service" id="kernel"/>
       <argument type="collection"/>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/templates</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/templates</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
     </service>
     <service id="twig.template_cache_warmer" class="Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer">
       <tag name="kernel.cache_warmer"/>
@@ -2471,6 +2675,7 @@
     <service id="twig.loader.native_filesystem" class="Twig\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="collection"/>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api</argument>
       <call method="addPath">
         <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/vendor/symfony/debug-bundle/Resources/views</argument>
@@ -2504,6 +2709,44 @@
         <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/vendor/api-platform/core/src/Bridge/Symfony/Bundle/Resources/views</argument>
         <argument>!ApiPlatform</argument>
       </call>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api</argument>
+      <call method="addPath">
+        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/symfony/debug-bundle/Resources/views</argument>
+        <argument>Debug</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/symfony/debug-bundle/Resources/views</argument>
+        <argument>!Debug</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/symfony/security-bundle/Resources/views</argument>
+        <argument>Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/symfony/security-bundle/Resources/views</argument>
+        <argument>!Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/doctrine/doctrine-bundle/Resources/views</argument>
+        <argument>Doctrine</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/doctrine/doctrine-bundle/Resources/views</argument>
+        <argument>!Doctrine</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/api-platform/core/src/Bridge/Symfony/Bundle/Resources/views</argument>
+        <argument>ApiPlatform</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/vendor/api-platform/core/src/Bridge/Symfony/Bundle/Resources/views</argument>
+        <argument>!ApiPlatform</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/templates</argument>
+      </call>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader"/>
     <service id="twig.extension.profiler" class="Symfony\Bridge\Twig\Extension\ProfilerExtension">
@@ -2528,7 +2771,11 @@
     <service id="twig.extension.code" class="Symfony\Bridge\Twig\Extension\CodeExtension">
       <tag name="twig.extension"/>
       <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"/>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument>UTF-8</argument>
     </service>
     <service id="twig.extension.routing" class="Symfony\Bridge\Twig\Extension\RoutingExtension">
@@ -2588,9 +2835,15 @@
       <tag name="console.command" command="debug:twig"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="twig"/>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api</argument>
       <argument>%kernel.bundles_metadata%</argument>
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/templates</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api</argument>
+      <argument>%kernel.bundles_metadata%</argument>
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/templates</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
       <call method="setName">
         <argument>debug:twig</argument>
@@ -2734,10 +2987,17 @@
     <service id="cache.security_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
+<<<<<<< HEAD
       <argument>DN5neIoQjB</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+=======
+      <argument>69QfNOZTls</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3303,7 +3563,11 @@
         </service>
       </argument>
     </service>
+<<<<<<< HEAD
     <service id=".1_ServiceLocator~6DRJCIa" class="Symfony\Component\DependencyInjection\ServiceLocator">
+=======
+    <service id=".1_ServiceLocator~UBXyzIn" class="Symfony\Component\DependencyInjection\ServiceLocator">
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="collection"/>
     </service>
     <service id="doctrine.orm.proxy_cache_warmer" class="Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer">
@@ -3479,7 +3743,11 @@
         <argument type="service" id="doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
+<<<<<<< HEAD
         <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/doctrine/orm/Proxies</argument>
+=======
+        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/doctrine/orm/Proxies</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -3509,7 +3777,11 @@
     <service id="doctrine.orm.default_annotation_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AnnotationDriver">
       <argument type="service" id="annotations.cached_reader"/>
       <argument type="collection">
+<<<<<<< HEAD
         <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/src/Entity</argument>
+=======
+        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/src/Entity</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       </argument>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
@@ -3580,7 +3852,11 @@
     <service id="doctrine.migrations.configuration" class="Doctrine\Migrations\Configuration\Configuration">
       <call method="addMigrationsDirectory">
         <argument>DoctrineMigrations</argument>
+<<<<<<< HEAD
         <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/migrations</argument>
+=======
+        <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/migrations</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       </call>
       <call method="setAllOrNothing">
         <argument>false</argument>
@@ -3928,30 +4204,51 @@
     <service id="api_platform.cache.route_name_resolver" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
+<<<<<<< HEAD
       <argument>pohs7TAhr2</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+=======
+      <argument>H+MI+Fkc-H</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="api_platform.cache.identifiers_extractor" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
+<<<<<<< HEAD
       <argument>kVgd5Vcm2J</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+=======
+      <argument>DWVeirzI6w</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="api_platform.cache.subresource_operation_factory" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
+<<<<<<< HEAD
       <argument>h1--O3S517</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+=======
+      <argument>nb9481rCr4</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -4048,20 +4345,34 @@
     <service id="api_platform.cache.metadata.resource" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
+<<<<<<< HEAD
       <argument>e0mXOSy3We</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+=======
+      <argument>MwuoVjK3D0</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="api_platform.cache.metadata.property" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
+<<<<<<< HEAD
       <argument>y3Wd-IGJu4</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+=======
+      <argument>2vxHiQ3KFK</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/var/cache/dev/pools</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -4576,8 +4887,13 @@
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
       <argument type="service" id="maker.file_link_formatter"/>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api</argument>
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api/templates</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api</argument>
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api/templates</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder">
       <argument>App</argument>
@@ -4651,7 +4967,11 @@
       <tag name="maker.command"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.doctrine_helper"/>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
       <argument type="service" id="maker.generator"/>
       <argument type="service" id="maker.entity_class_generator"/>
     </service>
@@ -4718,7 +5038,11 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
+<<<<<<< HEAD
       <argument>/home/yasmina/Documents/JeuxQuizz/quizz-api</argument>
+=======
+      <argument>/Users/fouziahajji/Desktop/Desktop/Bureau - MacBook Pro de fouzia/Aston/Projet 2/JeuxQuizz/JeuxQuizz/quizz-api</argument>
+>>>>>>> 5166ca28a3d41949ea98bf17d519da96d99ea32f
     </service>
     <service id="sensio_framework_extra.controller.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener">
       <tag name="kernel.event_subscriber"/>
@@ -5810,7 +6134,6 @@
     <service id="Symfony\Component\DependencyInjection\ContainerInterface" alias="service_container">
       <deprecated package="symfony/dependency-injection" version="5.1">The "%alias_id%" autowiring alias is deprecated. Define it explicitly in your app if you want to keep using it.</deprecated>
     </service>
-    <service id="App\Service\CategoryService" alias="App\Service\CategoryServiceImpl"/>
     <service id="App\Kernel" alias="kernel" public="true"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface" alias="parameter_bag"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface" alias="parameter_bag"/>
