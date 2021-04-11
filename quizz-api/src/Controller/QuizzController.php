@@ -24,7 +24,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
- * @Route("/quizz")
+ * @Route("/quizzes")
  */
 class QuizzController extends AbstractController
 {
@@ -109,7 +109,7 @@ class QuizzController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="quizz_edit", methods={"PUT"})
+     * @Route("/{id}/update", name="quizz_edit", methods={"PUT"})
      */
     public function edit(
                          Request $request,
