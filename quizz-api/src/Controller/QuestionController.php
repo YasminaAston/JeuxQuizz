@@ -40,13 +40,7 @@ class QuestionController extends AbstractController
     /**
      * @Route("/new", name="question_new", methods={"POST"})
      */
-    public function new(
-                        Request $request,
-                        SerializerInterface $serializer,
-                        ValidatorInterface $validator,
-                        CategoryRepository $categoryRepository,
-                        QuestionRepository $questionRepository
-                        ): Response
+    public function new( Request $request, SerializerInterface $serializer, ValidatorInterface $validator,CategoryRepository $categoryRepository, QuestionRepository $questionRepository ): Response
     {
         // deserialize the json
         try {

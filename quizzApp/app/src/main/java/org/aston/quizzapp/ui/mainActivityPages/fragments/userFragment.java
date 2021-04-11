@@ -1,4 +1,4 @@
-package org.aston.quizzapp;
+package org.aston.quizzapp.ui.mainActivityPages.fragments;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import org.aston.quizzapp.R;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -1,4 +1,4 @@
-package org.aston.quizzapp;
+package org.aston.quizzapp.ui.mainActivityPages;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -11,6 +11,8 @@ import androidx.navigation.ui.NavigationUI;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.aston.quizzapp.R;
 
 import static androidx.navigation.Navigation.findNavController;
 

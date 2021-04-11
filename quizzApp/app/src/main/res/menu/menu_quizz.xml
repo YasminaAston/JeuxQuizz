@@ -5,5 +5,4 @@
     <item android:id="@+id/gameFragment" android:title="Jouer" android:icon="@drawable/ic_baseline_games_24"/>
     <item android:id="@+id/userFragment" android:title="Compte" android:icon="@drawable/ic_person" />
     <item android:id="@+id/settingsFragment" android:title="Réglages" android:icon="@drawable/ic_settings"/>
-    <item android:title="Item" android:id="@+id/itemFragment" android:icon="@drawable/abc_vector_test" />
 </menu>

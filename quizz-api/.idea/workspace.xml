@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddace3e5-cd51-4cbf-8ed0-79adc1b97d9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Service/CategoryService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/CategoryServiceImpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/quizz-api/App\/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/quizz-api/App\/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/QuestionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/QuizzController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/QuizzController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/ui/mainActivityPages/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/gameFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/ui/mainActivityPages/fragments/gameFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/homeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/ui/mainActivityPages/fragments/homeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/itemFragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/settingsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/ui/mainActivityPages/fragments/settingsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/userFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/ui/mainActivityPages/fragments/userFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/res/layout/fragment_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/res/layout/fragment_game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/res/layout/fragment_item.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/res/layout/fragment_user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/res/layout/fragment_user.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/res/menu/menu_quizz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/res/menu/menu_quizz.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/res/navigation/quizz_nav.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/res/navigation/quizz_nav.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +188,7 @@
       <workItem from="1617875799212" duration="1212000" />
       <workItem from="1617877209719" duration="311000" />
       <workItem from="1617877570213" duration="434000" />
-      <workItem from="1617891264396" duration="7811000" />
+      <workItem from="1617891264396" duration="13441000" />
     </task>
     <servers />
   </component>
