@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddace3e5-cd51-4cbf-8ed0-79adc1b97d9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/dto/GameDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/dto/QuizzDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/repository/GameApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/repository/QuizzApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/repository/UserApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/QuizzController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/QuizzController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/QuestionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ResponseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ResponseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RoleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ScoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ScoreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/repository/AnalyticsModule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/repository/NetworkModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/repository/NetworkModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/repository/QuizzApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/repository/QuizzApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/repository/QuizzService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/app/src/main/java/org/aston/quizzapp/repository/QuizzService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzApp/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzApp/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +180,7 @@
       <workItem from="1617875799212" duration="1212000" />
       <workItem from="1617877209719" duration="311000" />
       <workItem from="1617877570213" duration="434000" />
-      <workItem from="1617891264396" duration="16117000" />
+      <workItem from="1617891264396" duration="20330000" />
     </task>
     <servers />
   </component>

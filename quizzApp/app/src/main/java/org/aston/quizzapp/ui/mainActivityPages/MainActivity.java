@@ -13,10 +13,20 @@ import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.aston.quizzapp.R;
+import org.aston.quizzapp.repository.UserService;
+
+import javax.inject.Inject;
 
 import static androidx.navigation.Navigation.findNavController;
 
 public class MainActivity extends AppCompatActivity {
+
+    private final UserService userService;
+
+    @Inject
+     public MainActivity(UserService userService){
+         this.userService = userService;
+     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

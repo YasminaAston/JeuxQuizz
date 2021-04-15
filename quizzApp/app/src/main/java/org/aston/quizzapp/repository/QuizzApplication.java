@@ -1,4 +1,4 @@
-package org.aston.quizzapp;
+package org.aston.quizzapp.repository;
 
 import android.app.Application;
 
