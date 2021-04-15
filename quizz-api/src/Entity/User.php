@@ -67,7 +67,7 @@ class User
     /**
      * @ORM\ManyToOne(targetEntity=Role::class)
      * @ORM\JoinColumn(nullable=false)
-     * @Groups({"userInfos"})
+     * @Groups({"quizz", "userInfos"})
      */
     private $role;
 
