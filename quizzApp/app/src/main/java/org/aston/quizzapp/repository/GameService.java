@@ -14,7 +14,7 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
 
-public interface GameApi {
+public interface GameService {
 
     @POST("/games/new")
     Call<Game> startNewGame(@Body QuizzDto quizzDto);
