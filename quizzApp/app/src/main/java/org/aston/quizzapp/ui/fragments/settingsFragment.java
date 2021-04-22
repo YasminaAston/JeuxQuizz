@@ -1,4 +1,4 @@
-package org.aston.quizzapp.ui.mainActivityPages.fragments;
+package org.aston.quizzapp.ui.fragments;
 
 import android.os.Bundle;
 
@@ -10,12 +10,15 @@ import android.view.ViewGroup;
 
 import org.aston.quizzapp.R;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link homeFragment#newInstance} factory method to
+ * Use the {@link settingsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class homeFragment extends Fragment {
+//@AndroidEntryPoint
+public class settingsFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +29,7 @@ public class homeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public homeFragment() {
+    public settingsFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +39,11 @@ public class homeFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment homeFragment.
+     * @return A new instance of fragment settingsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static homeFragment newInstance(String param1, String param2) {
-        homeFragment fragment = new homeFragment();
+    public static settingsFragment newInstance(String param1, String param2) {
+        settingsFragment fragment = new settingsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +64,6 @@ public class homeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_settings, container, false);
     }
 }

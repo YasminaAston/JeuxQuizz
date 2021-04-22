@@ -1,4 +1,4 @@
-package org.aston.quizzapp.ui.mainActivityPages.fragments;
+package org.aston.quizzapp.ui.fragments;
 
 import android.os.Bundle;
 
@@ -10,12 +10,16 @@ import android.view.ViewGroup;
 
 import org.aston.quizzapp.R;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link gameFragment#newInstance} factory method to
+ * Use the {@link userFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class gameFragment extends Fragment {
+
+//@AndroidEntryPoint
+public class userFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +30,7 @@ public class gameFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public gameFragment() {
+    public userFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +40,11 @@ public class gameFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment gameFragment.
+     * @return A new instance of fragment userFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static gameFragment newInstance(String param1, String param2) {
-        gameFragment fragment = new gameFragment();
+    public static userFragment newInstance(String param1, String param2) {
+        userFragment fragment = new userFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +65,6 @@ public class gameFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_game, container, false);
+        return inflater.inflate(R.layout.fragment_user, container, false);
     }
 }

@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="org.aston.quizzapp.ui.mainActivityPages.fragments.homeFragment"
+        android:name="org.aston.quizzapp.ui.fragments.homeFragment"
         android:label="Accueil"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/gameFragment"
-        android:name="org.aston.quizzapp.ui.mainActivityPages.fragments.gameFragment"
+        android:name="org.aston.quizzapp.ui.fragments.gameFragment"
         android:label="Jouer"
         tools:layout="@layout/fragment_game" />
     <fragment
         android:id="@+id/userFragment"
-        android:name="org.aston.quizzapp.ui.mainActivityPages.fragments.userFragment"
+        android:name="org.aston.quizzapp.ui.fragments.userFragment"
         android:label="Mon Compte"
         tools:layout="@layout/fragment_user" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="org.aston.quizzapp.ui.mainActivityPages.fragments.settingsFragment"
+        android:name="org.aston.quizzapp.ui.fragments.settingsFragment"
         android:label="Réglages"
         tools:layout="@layout/fragment_settings" />
 </navigation>

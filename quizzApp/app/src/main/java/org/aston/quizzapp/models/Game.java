@@ -51,4 +51,14 @@ public class Game {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	@Override
+	public String toString() {
+		return "Game{" +
+				"id=" + id +
+				", score=" + score +
+				", quizzes=" + quizzes +
+				", user=" + user +
+				'}';
+	}
 }

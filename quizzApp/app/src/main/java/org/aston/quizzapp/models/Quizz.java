@@ -38,4 +38,13 @@ public class Quizz {
 	public void setCorrect(boolean correct) {
 		isCorrect = correct;
 	}
+
+	@Override
+	public String toString() {
+		return "Quizz{" +
+				"id=" + id +
+				", question=" + question +
+				", isCorrect=" + isCorrect +
+				'}';
+	}
 }

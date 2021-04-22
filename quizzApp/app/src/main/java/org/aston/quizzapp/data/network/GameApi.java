@@ -1,27 +1,27 @@
-package org.aston.quizzapp.repository;
+package org.aston.quizzapp.data.network;
 
 import org.aston.quizzapp.dto.GameDto;
 import org.aston.quizzapp.dto.QuizzDto;
 import org.aston.quizzapp.models.Game;
 
-import java.util.Map;
 
+import io.reactivex.rxjava3.core.Observable;
 import retrofit2.Call;
+import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
-import retrofit2.http.QueryMap;
 
-public interface GameService {
+public interface GameApi {
 
-    @POST("/games/new")
+    @POST("games/new")
     Call<Game> startNewGame(@Body QuizzDto quizzDto);
 
-    @PUT("/games/update_score")
+    @PUT("games/update_score")
     Call<Game> updateGame(@Body GameDto gameDto);
 
-    @GET("/games/{id}")
-    Call<Game> startNewGame(@Path("id") Integer gameId);
+    @GET("games/{id}")
+    Call<Game> getGameById(@Path("id") int gameId);
 }

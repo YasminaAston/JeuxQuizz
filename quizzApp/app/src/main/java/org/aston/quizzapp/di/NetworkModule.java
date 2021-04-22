@@ -1,9 +1,13 @@
-package org.aston.quizzapp.repository;
+package org.aston.quizzapp.di;
 
 
-import com.google.gson.internal.GsonBuildConfig;
+import android.content.Context;
 
-import org.aston.quizzapp.Constants;
+import org.aston.quizzapp.data.network.CategoryApi;
+import org.aston.quizzapp.util.Constants;
+import org.aston.quizzapp.data.network.GameApi;
+import org.aston.quizzapp.data.network.QuizzApi;
+import org.aston.quizzapp.data.network.UserApi;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,19 +17,20 @@ import dagger.Module;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.components.ActivityComponent;
+import dagger.hilt.android.components.ApplicationComponent;
+import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 @Module
-@InstallIn(ActivityComponent.class)
+@InstallIn(ApplicationComponent.class)
 public class NetworkModule {
 
 
 
-
-    @Singleton
     @Provides
+    @Singleton
     public static OkHttpClient provideHttpClient(
 
     ) {
@@ -35,8 +40,8 @@ public class NetworkModule {
                 .build();
     }
 
-    @Singleton
     @Provides
+    @Singleton
     public static GsonConverterFactory provideConverterFactory(
 
     ) {
@@ -44,8 +49,8 @@ public class NetworkModule {
                 .create();
     }
 
-    @Singleton
     @Provides
+    @Singleton
     public static Retrofit provideRetrofitInstance(
             OkHttpClient okHttpClient,
             GsonConverterFactory gsonConverterFactory
@@ -54,32 +59,42 @@ public class NetworkModule {
                 .baseUrl(Constants.API_URL)
                 .client(okHttpClient)
                 .addConverterFactory(gsonConverterFactory)
+                //.addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                 .build();
     }
 
 
-    @Singleton
     @Provides
-    public static GameService provideGameService(
+    @Singleton
+    public static GameApi provideGameApi(
             Retrofit retrofit
     ) {
-        return retrofit.create(GameService.class);
+        return retrofit.create(GameApi.class);
     }
 
-    @Singleton
     @Provides
-    public static QuizzService provideQuizzService(
+    @Singleton
+    public static CategoryApi provideCategoryApi(
             Retrofit retrofit
     ) {
-        return retrofit.create(QuizzService.class);
+        return retrofit.create(CategoryApi.class);
     }
 
-    @Singleton
+
     @Provides
-    public static UserService provideUserService(
+    @Singleton
+    public static QuizzApi provideQuizzApi(
             Retrofit retrofit
     ) {
-        return retrofit.create(UserService.class);
+        return retrofit.create(QuizzApi.class);
+    }
+
+    @Provides
+    @Singleton
+    public static UserApi provideUserApi(
+            Retrofit retrofit
+    ) {
+        return retrofit.create(UserApi.class);
     }
 
 }
