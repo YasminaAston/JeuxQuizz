@@ -6,7 +6,7 @@
     <data>
 
       <variable
-          name="game"
+          name="gameViewModel"
           type="org.aston.quizzapp.viewmodel.GameViewModel" />
     </data>
 
@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24dp"
-            android:text="ddddddd"
+            android:text="@{gameViewModel.gameMutableLiveData.getUser().getEmail()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

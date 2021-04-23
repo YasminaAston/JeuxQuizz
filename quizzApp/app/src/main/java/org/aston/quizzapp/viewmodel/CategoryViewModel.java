@@ -49,7 +49,7 @@ public class CategoryViewModel extends AndroidViewModel {
                         if (response.isSuccessful()){
                             categoriesMutableLiveData.setValue(response.body());
                             Toast.makeText(getApplication(), "Getting Categories Successfuly", Toast.LENGTH_SHORT).show();
-                            System.out.println(categoriesMutableLiveData.getValue().size());
+                            System.out.println(categoriesMutableLiveData.getValue());
                         }
                     }
 
