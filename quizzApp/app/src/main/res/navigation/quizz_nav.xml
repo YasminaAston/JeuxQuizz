@@ -11,11 +11,6 @@
         android:label="Accueil"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/gameFragment"
-        android:name="org.aston.quizzapp.ui.fragments.gameFragment"
-        android:label="Jouer"
-        tools:layout="@layout/fragment_game" />
-    <fragment
         android:id="@+id/userFragment"
         android:name="org.aston.quizzapp.ui.fragments.userFragment"
         android:label="Mon Compte"

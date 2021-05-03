@@ -9,13 +9,6 @@
         android:icon="@drawable/icon_home" />
 
     <item
-        android:id="@+id/gameFragment"
-        android:enabled="true"
-        android:title="@string/jouer"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_baseline_games_24"/>
-
-    <item
         android:id="@+id/userFragment"
         android:enabled="true"
         android:title="@string/compte"
