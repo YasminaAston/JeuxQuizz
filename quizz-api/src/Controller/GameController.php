@@ -22,7 +22,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
- * @Route("/game")
+ * @Route("/games")
  */
 class GameController extends AbstractController
 {
@@ -121,7 +121,7 @@ class GameController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="game_edit", methods={"PUT"})
+     * @Route("/{id}/update_score", name="update_score", methods={"PUT"})
      */
     public function edit(
                           Request $request,

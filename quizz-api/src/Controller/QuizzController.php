@@ -24,7 +24,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
- * @Route("/quizz")
+ * @Route("/quizzes")
  */
 class QuizzController extends AbstractController
 {
@@ -67,35 +67,21 @@ class QuizzController extends AbstractController
      * @Route("/new", name="quizz_getBycategoryAndDifficulty", methods={"POST"})
      */
     public function getBycategoryAndDifficulty(
-                                               GameRepository $gameRepository,
-                                               QuestionRepository $questionRepository,
-                                               CategoryRepository $categoryRepository,
-                                               UserRepository $userRepository,
-                                               SerializerInterface $serializer,
-                                               ValidatorInterface $validator,
-                                               Request $request
-                                                ): Response
+                                               GameRepository $gameRepository, QuestionRepository $questionRepository, CategoryRepository $categoryRepository,
+                                               UserRepository $userRepository, SerializerInterface $serializer, ValidatorInterface $validator, Request $request ): Response
     {
         // deserialize the json
-        try {
-            $quizzDto = $serializer->deserialize($request->getContent(), QuizzDto::class, 'json');
+        try { $quizzDto = $serializer->deserialize($request->getContent(), QuizzDto::class, 'json');
         } catch (NotEncodableValueException $exception) {
-            return $this-> json(['status'=> Response::HTTP_BAD_REQUEST, 'message'=> 'Bad request '] , 400, []);
-        }
+            return $this-> json(['status'=> Response::HTTP_BAD_REQUEST, 'message'=> 'Bad request '] , 400, []); }
         $errors = $validator->validate($quizzDto);
         if (count($errors) > 0) {
-            $json = $serializer->serialize($errors, 'json', array_merge([
-                'json_encode_options' => JsonResponse::DEFAULT_ENCODING_OPTIONS,
-            ], []));
-            return $this-> json($json , 400, []);
-
-        }
-
+            $json = $serializer->serialize($errors, 'json', array_merge(['json_encode_options' => JsonResponse::DEFAULT_ENCODING_OPTIONS,], []));
+            return $this-> json($json , 400, []); }
         $user = $userRepository-> find($quizzDto->getUserId());
         if(!$user) {
             return new JsonResponse($this-> json(['status'=>404, 'meassage'=>'User not found']), Response::HTTP_BAD_REQUEST, [], true);
         }
-
          $category = $categoryRepository->find($quizzDto->getCategoryId());
          $questions = $questionRepository->findBy(array('category' => $category, 'difficulty' => $quizzDto->getDifficulty()));
         if (sizeof($questions) > 0){
@@ -104,9 +90,7 @@ class QuizzController extends AbstractController
             $game->setUser($user);
             $indexs = array_rand($questions, 10);
             $questionsQuizz = array();
-            foreach ($indexs as $key => $value) {
-                $questionsQuizz[$key] = $questions[$value];
-            }
+            foreach ($indexs as $key => $value) { $questionsQuizz[$key] = $questions[$value]; }
             foreach ($questionsQuizz as $key=> $value){
                 $quizz = new Quizz();
                 $quizz->setQuestion($value);
@@ -125,7 +109,7 @@ class QuizzController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="quizz_edit", methods={"PUT"})
+     * @Route("/{id}/update", name="quizz_edit", methods={"PUT"})
      */
     public function edit(
                          Request $request,

@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeFragment"
+        android:enabled="true"
+        android:title="@string/accueil"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/icon_home" />
 
-    <item android:id="@+id/homeFragment" android:title="Accueil" android:icon="@drawable/icon_home" />
-    <item android:id="@+id/gameFragment" android:title="Jouer" android:icon="@drawable/ic_baseline_games_24"/>
-    <item android:id="@+id/userFragment" android:title="Compte" android:icon="@drawable/ic_person" />
-    <item android:id="@+id/settingsFragment" android:title="Réglages" android:icon="@drawable/ic_settings"/>
-    <item android:title="Item" android:id="@+id/itemFragment" android:icon="@drawable/abc_vector_test" />
+    <item
+        android:id="@+id/userFragment"
+        android:enabled="true"
+        android:title="@string/compte"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_person" />
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:enabled="true"
+        android:title="@string/reglages"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_settings"/>
 </menu>

@@ -1,20 +1,29 @@
-package org.aston.quizzapp;
+package org.aston.quizzapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.aston.quizzapp.R;
+
+import dagger.hilt.android.AndroidEntryPoint;
+
 import static androidx.navigation.Navigation.findNavController;
 
+@AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {
+
+    //private final UserService userService;
+
+    //@Inject
+    // public MainActivity(UserService userService){
+     //    this.userService = userService;
+     //}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = navHostFragment.getNavController();
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigation);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
-        NavigationUI.setupActionBarWithNavController(this, navController);
+        //NavigationUI.setupActionBarWithNavController(this, navController);
 
     }
 
