@@ -56,11 +56,13 @@ final class Parameter
         }
     }
 
+    // TODO: string not ?string
     public function getName(): ?string
     {
         return $this->name;
     }
 
+    // TODO: string not ?string
     public function getIn(): ?string
     {
         return $this->in;
@@ -86,6 +88,11 @@ final class Parameter
         return $this->allowEmptyValue;
     }
 
+    public function getAllowEmptyValue(): bool
+    {
+        return $this->allowEmptyValue;
+    }
+
     public function getSchema(): array
     {
         return $this->schema;
@@ -101,7 +108,17 @@ final class Parameter
         return $this->explode;
     }
 
+    public function getExplode(): bool
+    {
+        return $this->explode;
+    }
+
     public function canAllowReserved(): bool
+    {
+        return $this->allowReserved;
+    }
+
+    public function getAllowReserved(): bool
     {
         return $this->allowReserved;
     }

@@ -16,26 +16,19 @@ use function strtolower;
 
 class ParameterGenerator extends AbstractGenerator
 {
-    /** @var string */
-    protected $name;
+    protected string $name = '';
 
-    /** @var TypeGenerator|null */
-    protected $type;
+    protected ?TypeGenerator $type = null;
 
-    /** @var ValueGenerator */
-    protected $defaultValue;
+    protected ?ValueGenerator $defaultValue = null;
 
-    /** @var int */
-    protected $position;
+    protected int $position = 0;
 
-    /** @var bool */
-    protected $passedByReference = false;
+    protected bool $passedByReference = false;
 
-    /** @var bool */
-    private $variadic = false;
+    private bool $variadic = false;
 
-    /** @var bool */
-    private $omitDefaultValue = false;
+    private bool $omitDefaultValue = false;
 
     /**
      * @return ParameterGenerator
@@ -128,10 +121,10 @@ class ParameterGenerator extends AbstractGenerator
     }
 
     /**
-     * @param  string $name
-     * @param  string $type
-     * @param  mixed $defaultValue
-     * @param  int $position
+     * @param  ?string $name
+     * @param  ?string $type
+     * @param  ?mixed $defaultValue
+     * @param  ?int $position
      * @param  bool $passByReference
      */
     public function __construct(
@@ -207,6 +200,10 @@ class ParameterGenerator extends AbstractGenerator
      */
     public function setDefaultValue($defaultValue)
     {
+        if ($this->variadic) {
+            throw new Exception\InvalidArgumentException('Variadic parameter cannot have a default value');
+        }
+
         if (! $defaultValue instanceof ValueGenerator) {
             $defaultValue = new ValueGenerator($defaultValue);
         }
@@ -216,7 +213,7 @@ class ParameterGenerator extends AbstractGenerator
     }
 
     /**
-     * @return ValueGenerator
+     * @return ?ValueGenerator
      */
     public function getDefaultValue()
     {
@@ -265,6 +262,10 @@ class ParameterGenerator extends AbstractGenerator
      */
     public function setVariadic($variadic)
     {
+        if (isset($this->defaultValue)) {
+            throw new Exception\InvalidArgumentException('Variadic parameter cannot have a default value');
+        }
+
         $this->variadic = (bool) $variadic;
 
         return $this;

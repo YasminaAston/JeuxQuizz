@@ -79,14 +79,23 @@ class SearchFilter extends AbstractContextAwareFilter implements SearchFilterInt
         $alias = $queryBuilder->getRootAliases()[0];
         $field = $property;
 
+        $values = $this->normalizeValues((array) $value, $property);
+        if (null === $values) {
+            return;
+        }
+
         $associations = [];
         if ($this->isPropertyNested($property, $resourceClass)) {
             [$alias, $field, $associations] = $this->addJoinsForNestedProperty($property, $alias, $queryBuilder, $queryNameGenerator, $resourceClass);
         }
 
-        $values = $this->normalizeValues((array) $value, $property);
-        if (null === $values) {
-            return;
+        $caseSensitive = true;
+        $strategy = $this->properties[$property] ?? self::STRATEGY_EXACT;
+
+        // prefixing the strategy with i makes it case insensitive
+        if (0 === strpos($strategy, 'i')) {
+            $strategy = substr($strategy, 1);
+            $caseSensitive = false;
         }
 
         $metadata = $this->getNestedMetadata($resourceClass, $associations);
@@ -102,15 +111,6 @@ class SearchFilter extends AbstractContextAwareFilter implements SearchFilterInt
                 ]);
 
                 return;
-            }
-
-            $caseSensitive = true;
-            $strategy = $this->properties[$property] ?? self::STRATEGY_EXACT;
-
-            // prefixing the strategy with i makes it case insensitive
-            if (0 === strpos($strategy, 'i')) {
-                $strategy = substr($strategy, 1);
-                $caseSensitive = false;
             }
 
             $this->addWhereByStrategy($strategy, $queryBuilder, $queryNameGenerator, $alias, $field, $values, $caseSensitive);
@@ -143,21 +143,12 @@ class SearchFilter extends AbstractContextAwareFilter implements SearchFilterInt
 
         $associationAlias = $alias;
         $associationField = $field;
-        $valueParameter = $queryNameGenerator->generateParameterName($associationField);
         if ($metadata->isCollectionValuedAssociation($associationField)) {
             $associationAlias = QueryBuilderHelper::addJoinOnce($queryBuilder, $queryNameGenerator, $alias, $associationField);
             $associationField = $associationFieldIdentifier;
         }
 
-        if (1 === \count($values)) {
-            $queryBuilder
-                ->andWhere($queryBuilder->expr()->eq($associationAlias.'.'.$associationField, ':'.$valueParameter))
-                ->setParameter($valueParameter, $values[0]);
-        } else {
-            $queryBuilder
-                ->andWhere($queryBuilder->expr()->in($associationAlias.'.'.$associationField, ':'.$valueParameter))
-                ->setParameter($valueParameter, $values);
-        }
+        $this->addWhereByStrategy($strategy, $queryBuilder, $queryNameGenerator, $associationAlias, $associationField, $values, $caseSensitive);
     }
 
     /**
@@ -175,8 +166,8 @@ class SearchFilter extends AbstractContextAwareFilter implements SearchFilterInt
         $valueParameter = ':'.$queryNameGenerator->generateParameterName($field);
         $aliasedField = sprintf('%s.%s', $alias, $field);
 
-        if (null == $strategy || self::STRATEGY_EXACT == $strategy) {
-            if (1 == \count($values)) {
+        if (!$strategy || self::STRATEGY_EXACT === $strategy) {
+            if (1 === \count($values)) {
                 $queryBuilder
                     ->andWhere($queryBuilder->expr()->eq($wrapCase($aliasedField), $wrapCase($valueParameter)))
                     ->setParameter($valueParameter, $values[0]);
