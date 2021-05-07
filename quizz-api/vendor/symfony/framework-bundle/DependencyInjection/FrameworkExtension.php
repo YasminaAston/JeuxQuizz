@@ -166,12 +166,8 @@ use Symfony\Contracts\Service\ServiceSubscriberInterface;
 use Symfony\Contracts\Translation\LocaleAwareInterface;
 
 /**
- * FrameworkExtension.
- *
- * @author Fabien Potencier <fabien@symfony.com>
- * @author Jeremy Mikola <jmikola@gmail.com>
- * @author Kévin Dunglas <dunglas@gmail.com>
- * @author Grégoire Pineau <lyrixx@lyrixx.info>
+ * Process the configuration and prepare the dependency injection container with
+ * parameters and services.
  */
 class FrameworkExtension extends Extension
 {
@@ -392,7 +388,7 @@ class FrameworkExtension extends Extension
 
         $propertyInfoEnabled = $this->isConfigEnabled($container, $config['property_info']);
         $this->registerValidationConfiguration($config['validation'], $container, $loader, $propertyInfoEnabled);
-        $this->registerHttpCacheConfiguration($config['http_cache'], $container);
+        $this->registerHttpCacheConfiguration($config['http_cache'], $container, $config['http_method_override']);
         $this->registerEsiConfiguration($config['esi'], $container, $loader);
         $this->registerSsiConfiguration($config['ssi'], $container, $loader);
         $this->registerFragmentsConfiguration($config['fragments'], $container, $loader);
@@ -580,7 +576,7 @@ class FrameworkExtension extends Extension
         }
     }
 
-    private function registerHttpCacheConfiguration(array $config, ContainerBuilder $container)
+    private function registerHttpCacheConfiguration(array $config, ContainerBuilder $container, bool $httpMethodOverride)
     {
         $options = $config;
         unset($options['enabled']);
@@ -592,6 +588,13 @@ class FrameworkExtension extends Extension
         $container->getDefinition('http_cache')
             ->setPublic($config['enabled'])
             ->replaceArgument(3, $options);
+
+        if ($httpMethodOverride) {
+            $container->getDefinition('http_cache')
+                  ->addArgument((new Definition('void'))
+                      ->setFactory([Request::class, 'enableHttpMethodParameterOverride'])
+                  );
+        }
     }
 
     private function registerEsiConfiguration(array $config, ContainerBuilder $container, PhpFileLoader $loader)
@@ -1220,24 +1223,26 @@ class FrameworkExtension extends Extension
         // Register translation resources
         if ($dirs) {
             $files = [];
-            $finder = Finder::create()
-                ->followLinks()
-                ->files()
-                ->filter(function (\SplFileInfo $file) {
-                    return 2 <= substr_count($file->getBasename(), '.') && preg_match('/\.\w+$/', $file->getBasename());
-                })
-                ->in($dirs)
-                ->sortByName()
-            ;
 
-            foreach ($finder as $file) {
-                $fileNameParts = explode('.', basename($file));
-                $locale = $fileNameParts[\count($fileNameParts) - 2];
-                if (!isset($files[$locale])) {
-                    $files[$locale] = [];
+            foreach ($dirs as $dir) {
+                $finder = Finder::create()
+                    ->followLinks()
+                    ->files()
+                    ->filter(function (\SplFileInfo $file) {
+                        return 2 <= substr_count($file->getBasename(), '.') && preg_match('/\.\w+$/', $file->getBasename());
+                    })
+                    ->in($dir)
+                    ->sortByName()
+                ;
+                foreach ($finder as $file) {
+                    $fileNameParts = explode('.', basename($file));
+                    $locale = $fileNameParts[\count($fileNameParts) - 2];
+                    if (!isset($files[$locale])) {
+                        $files[$locale] = [];
+                    }
+
+                    $files[$locale][] = (string) $file;
                 }
-
-                $files[$locale][] = (string) $file;
             }
 
             $projectDir = $container->getParameter('kernel.project_dir');
@@ -1310,7 +1315,7 @@ class FrameworkExtension extends Extension
 
         if (\array_key_exists('enable_annotations', $config) && $config['enable_annotations']) {
             if (!$this->annotationsConfigEnabled && \PHP_VERSION_ID < 80000) {
-                throw new \LogicException('"enable_annotations" on the validator cannot be set as Doctrine Annotations support is disabled.');
+                throw new \LogicException('"enable_annotations" on the validator cannot be set as the PHP version is lower than 8 and Doctrine Annotations support is disabled. Consider upgrading PHP.');
             }
 
             $validatorBuilder->addMethodCall('enableAnnotationMapping', [true]);
@@ -1441,8 +1446,8 @@ class FrameworkExtension extends Extension
                 }
 
                 $container
-                    ->getDefinition('annotations.filesystem_cache')
-                    ->replaceArgument(0, $cacheDir)
+                    ->getDefinition('annotations.filesystem_cache_adapter')
+                    ->replaceArgument(2, $cacheDir)
                 ;
 
                 $cacheService = 'annotations.filesystem_cache';
@@ -1574,7 +1579,7 @@ class FrameworkExtension extends Extension
         $serializerLoaders = [];
         if (isset($config['enable_annotations']) && $config['enable_annotations']) {
             if (\PHP_VERSION_ID < 80000 && !$this->annotationsConfigEnabled) {
-                throw new \LogicException('"enable_annotations" on the serializer cannot be set as Annotations support is disabled.');
+                throw new \LogicException('"enable_annotations" on the serializer cannot be set as the PHP version is lower than 8 and Annotations support is disabled. Consider upgrading PHP.');
             }
 
             $annotationLoader = new Definition(
@@ -1966,6 +1971,12 @@ class FrameworkExtension extends Extension
                     ->setPublic($pool['public'])
                 ;
 
+                if (method_exists(TagAwareAdapter::class, 'setLogger')) {
+                    $container
+                        ->getDefinition($name)
+                        ->addMethodCall('setLogger', [new Reference('logger', ContainerInterface::IGNORE_ON_INVALID_REFERENCE)]);
+                }
+
                 $pool['name'] = $tagAwareId = $name;
                 $pool['public'] = false;
                 $name = '.'.$name.'.inner';
@@ -1995,7 +2006,7 @@ class FrameworkExtension extends Extension
 
             if (!$container->getParameter('kernel.debug')) {
                 $propertyAccessDefinition->setFactory([PropertyAccessor::class, 'createCache']);
-                $propertyAccessDefinition->setArguments([null, 0, $version, new Reference('logger', ContainerInterface::IGNORE_ON_INVALID_REFERENCE)]);
+                $propertyAccessDefinition->setArguments(['', 0, $version, new Reference('logger', ContainerInterface::IGNORE_ON_INVALID_REFERENCE)]);
                 $propertyAccessDefinition->addTag('cache.pool', ['clearer' => 'cache.system_clearer']);
                 $propertyAccessDefinition->addTag('monolog.logger', ['channel' => 'cache']);
             } else {
@@ -2303,6 +2314,7 @@ class FrameworkExtension extends Extension
                 case 'x-forwarded-host': $trustedHeaders |= Request::HEADER_X_FORWARDED_HOST; break;
                 case 'x-forwarded-proto': $trustedHeaders |= Request::HEADER_X_FORWARDED_PROTO; break;
                 case 'x-forwarded-port': $trustedHeaders |= Request::HEADER_X_FORWARDED_PORT; break;
+                case 'x-forwarded-prefix': $trustedHeaders |= Request::HEADER_X_FORWARDED_PREFIX; break;
             }
         }
 

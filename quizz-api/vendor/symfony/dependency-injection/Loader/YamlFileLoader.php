@@ -416,7 +416,7 @@ class YamlFileLoader extends FileLoader
                         trigger_deprecation('symfony/dependency-injection', '5.1', 'Not setting the attribute "version" of the "deprecated" option in "%s" is deprecated.', $file);
                     }
 
-                    $alias->setDeprecated($deprecation['package'] ?? '', $deprecation['version'] ?? '', $deprecation['message']);
+                    $alias->setDeprecated($deprecation['package'] ?? '', $deprecation['version'] ?? '', $deprecation['message'] ?? '');
                 }
             }
 
@@ -485,7 +485,7 @@ class YamlFileLoader extends FileLoader
                 trigger_deprecation('symfony/dependency-injection', '5.1', 'Not setting the attribute "version" of the "deprecated" option in "%s" is deprecated.', $file);
             }
 
-            $definition->setDeprecated($deprecation['package'] ?? '', $deprecation['version'] ?? '', $deprecation['message']);
+            $definition->setDeprecated($deprecation['package'] ?? '', $deprecation['version'] ?? '', $deprecation['message'] ?? '');
         }
 
         if (isset($service['factory'])) {
@@ -522,7 +522,7 @@ class YamlFileLoader extends FileLoader
                     throw new InvalidArgumentException(sprintf('Invalid method call for service "%s", did you forgot a leading dash before "%s: ..." in "%s"?', $id, $k, $file));
                 }
 
-                if (isset($call['method'])) {
+                if (isset($call['method']) && \is_string($call['method'])) {
                     $method = $call['method'];
                     $args = $call['arguments'] ?? [];
                     $returnsClone = $call['returns_clone'] ?? false;

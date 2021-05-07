@@ -8,6 +8,7 @@ use Doctrine\DBAL\Connection;
 use Doctrine\Migrations\Metadata\MigrationPlanList;
 use Doctrine\Migrations\Query\Query;
 use Doctrine\Migrations\Tools\BytesFormatter;
+use Doctrine\Migrations\Tools\TransactionHelper;
 use Doctrine\Migrations\Version\Executor;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Stopwatch\Stopwatch;
@@ -75,14 +76,14 @@ class DbalMigrator implements Migrator
             $this->dispatcher->dispatchMigrationEvent(Events::onMigrationsMigrated, $migrationsPlan, $migratorConfiguration);
         } catch (Throwable $e) {
             if ($allOrNothing) {
-                $this->connection->rollBack();
+                TransactionHelper::rollbackIfInTransaction($this->connection);
             }
 
             throw $e;
         }
 
         if ($allOrNothing) {
-            $this->connection->commit();
+            TransactionHelper::commitIfInTransaction($this->connection);
         }
 
         return $sql;

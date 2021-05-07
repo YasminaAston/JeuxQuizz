@@ -18,7 +18,9 @@ use Doctrine\Migrations\ParameterFormatter;
 use Doctrine\Migrations\Provider\SchemaDiffProvider;
 use Doctrine\Migrations\Query\Query;
 use Doctrine\Migrations\Tools\BytesFormatter;
+use Doctrine\Migrations\Tools\TransactionHelper;
 use Psr\Log\LoggerInterface;
+use Psr\Log\LogLevel;
 use Symfony\Component\Stopwatch\Stopwatch;
 use Throwable;
 
@@ -177,7 +179,7 @@ final class DbalExecutor implements Executor
                 $this->executeResult($configuration);
             } else {
                 foreach ($this->sql as $query) {
-                    $this->outputSqlQuery($query);
+                    $this->outputSqlQuery($query, $configuration);
                 }
             }
         } else {
@@ -211,8 +213,7 @@ final class DbalExecutor implements Executor
         }
 
         if ($migration->isTransactional()) {
-            //commit only if running in transactional mode
-            $this->connection->commit();
+            TransactionHelper::commitIfInTransaction($this->connection);
         }
 
         $plan->markAsExecuted($result);
@@ -253,7 +254,7 @@ final class DbalExecutor implements Executor
         $migration = $plan->getMigration();
         if ($migration->isTransactional()) {
             //only rollback transaction if in transactional mode
-            $this->connection->rollBack();
+            TransactionHelper::rollbackIfInTransaction($this->connection);
         }
 
         $plan->markAsExecuted($result);
@@ -292,7 +293,7 @@ final class DbalExecutor implements Executor
     private function executeResult(MigratorConfiguration $configuration): void
     {
         foreach ($this->sql as $key => $query) {
-            $this->outputSqlQuery($query);
+            $this->outputSqlQuery($query, $configuration);
 
             $stopwatchEvent = $this->stopwatch->start('query');
             // executeQuery() must be used here because $query might return a result set, for instance REPAIR does
@@ -303,23 +304,27 @@ final class DbalExecutor implements Executor
                 continue;
             }
 
-            $this->logger->debug('{duration}ms', [
+            $this->logger->notice('Query took {duration}ms', [
                 'duration' => $stopwatchEvent->getDuration(),
             ]);
         }
     }
 
-    private function outputSqlQuery(Query $query): void
+    private function outputSqlQuery(Query $query, MigratorConfiguration $configuration): void
     {
         $params = $this->parameterFormatter->formatParameters(
             $query->getParameters(),
             $query->getTypes()
         );
 
-        $this->logger->debug('{query} {params}', [
-            'query' => $query->getStatement(),
-            'params' => $params,
-        ]);
+        $this->logger->log(
+            $configuration->getTimeAllQueries() ? LogLevel::NOTICE : LogLevel::DEBUG,
+            '{query} {params}',
+            [
+                'query'  => $query->getStatement(),
+                'params' => $params,
+            ]
+        );
     }
 
     private function getFromSchema(MigratorConfiguration $configuration): Schema

@@ -160,7 +160,7 @@ final class QueryBuilderHelper
     /**
      * Gets the existing join from QueryBuilder DQL parts.
      */
-    private static function getExistingJoin(QueryBuilder $queryBuilder, string $alias, string $association, string $originAlias = null): ?Join
+    public static function getExistingJoin(QueryBuilder $queryBuilder, string $alias, string $association, string $originAlias = null): ?Join
     {
         $parts = $queryBuilder->getDQLPart('join');
         $rootAlias = $originAlias ?? $queryBuilder->getRootAliases()[0];
@@ -186,6 +186,7 @@ final class QueryBuilderHelper
      */
     private static function mapRootAliases(array $rootAliases, array $rootEntities): array
     {
+        /** @var false|array $aliasMap */
         $aliasMap = array_combine($rootAliases, $rootEntities);
         if (false === $aliasMap) {
             throw new \LogicException('Number of root aliases and root entities do not match.');

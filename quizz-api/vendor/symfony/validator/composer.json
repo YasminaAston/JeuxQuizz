@@ -42,7 +42,7 @@
         "symfony/translation": "^4.4|^5.0",
         "doctrine/annotations": "^1.10.4",
         "doctrine/cache": "~1.0",
-        "egulias/email-validator": "^2.1.10"
+        "egulias/email-validator": "^2.1.10|^3"
     },
     "conflict": {
         "doctrine/lexer": "<1.0.2",
@@ -56,8 +56,6 @@
     },
     "suggest": {
         "psr/cache-implementation": "For using the mapping cache.",
-        "doctrine/annotations": "For using the annotation mapping. You will also need doctrine/cache.",
-        "doctrine/cache": "For using the default cached annotation reader.",
         "symfony/http-foundation": "",
         "symfony/intl": "",
         "symfony/translation": "For translating validation errors.",
