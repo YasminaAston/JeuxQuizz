@@ -2,9 +2,7 @@ package org.aston.quizzapp.data;
 
 
 import org.aston.quizzapp.data.network.CategoryApi;
-import org.aston.quizzapp.data.network.UserApi;
 import org.aston.quizzapp.models.Category;
-import org.aston.quizzapp.models.User;
 
 import java.util.List;
 
