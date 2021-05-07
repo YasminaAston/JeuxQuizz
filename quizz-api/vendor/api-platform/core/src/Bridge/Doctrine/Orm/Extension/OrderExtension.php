@@ -56,7 +56,7 @@ final class OrderExtension implements ContextAwareQueryCollectionExtensionInterf
             if (empty($defaultOrder)) {
                 $defaultOrder = $this->resourceMetadataFactory->create($resourceClass)->getAttribute('order');
             }
-            if (\is_array($defaultOrder)) {
+            if (null !== $defaultOrder) {
                 foreach ($defaultOrder as $field => $order) {
                     if (\is_int($field)) {
                         // Default direction
@@ -80,6 +80,11 @@ final class OrderExtension implements ContextAwareQueryCollectionExtensionInterf
         }
 
         if (null !== $this->order) {
+            // A foreign identifier cannot be used for ordering.
+            if ($classMetaData->containsForeignIdentifier) {
+                return;
+            }
+
             foreach ($identifiers as $identifier) {
                 $queryBuilder->addOrderBy("{$rootAlias}.{$identifier}", $this->order);
             }

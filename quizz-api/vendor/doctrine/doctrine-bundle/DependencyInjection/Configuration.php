@@ -13,8 +13,23 @@ use Symfony\Component\DependencyInjection\Exception\LogicException;
 
 use function array_key_exists;
 use function assert;
+use function class_exists;
+use function constant;
 use function in_array;
 use function is_array;
+use function is_bool;
+use function is_int;
+use function is_string;
+use function key;
+use function method_exists;
+use function reset;
+use function strlen;
+use function strpos;
+use function strtoupper;
+use function substr;
+use function trigger_error;
+
+use const E_USER_DEPRECATED;
 
 /**
  * This class contains the configuration information for the bundle
@@ -32,7 +47,7 @@ class Configuration implements ConfigurationInterface
      */
     public function __construct(bool $debug)
     {
-        $this->debug = (bool) $debug;
+        $this->debug = $debug;
     }
 
     public function getConfigTreeBuilder(): TreeBuilder
@@ -194,13 +209,18 @@ class Configuration implements ConfigurationInterface
         $shardNode = $connectionNode
             ->children()
                 ->arrayNode('shards')
-                    ->prototype('array')
-                    ->children()
-                        ->integerNode('id')
-                            ->min(1)
-                            ->isRequired()
-                        ->end()
-                    ->end();
+                    ->prototype('array');
+
+        // TODO: Remove when https://github.com/psalm/psalm-plugin-symfony/pull/168 is released
+        assert($shardNode instanceof ArrayNodeDefinition);
+
+        $shardNode
+            ->children()
+                ->integerNode('id')
+                    ->min(1)
+                    ->isRequired()
+                ->end()
+            ->end();
         $this->configureDbalDriverNode($shardNode);
 
         return $node;
@@ -217,10 +237,11 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('url')->info('A URL with connection information; any parameter value parsed from this string will override explicitly set parameters')->end()
                 ->scalarNode('dbname')->end()
-                ->scalarNode('host')->defaultValue('localhost')->end()
-                ->scalarNode('port')->defaultNull()->end()
-                ->scalarNode('user')->defaultValue('root')->end()
-                ->scalarNode('password')->defaultNull()->end()
+                ->scalarNode('host')->info('Defaults to "localhost" at runtime.')->end()
+                ->scalarNode('port')->info('Defaults to null at runtime.')->end()
+                ->scalarNode('user')->info('Defaults to "root" at runtime.')->end()
+                ->scalarNode('password')->info('Defaults to null at runtime.')->end()
+                ->booleanNode('override_url')->defaultValue(false)->info('Allows overriding parts of the "url" parameter with dbname, host, port, user, and/or password parameters.')->end()
                 ->scalarNode('application_name')->end()
                 ->scalarNode('charset')->end()
                 ->scalarNode('path')->end()
@@ -312,6 +333,16 @@ class Configuration implements ConfigurationInterface
                 ->then(static function ($v) {
                     $v['MultipleActiveResultSets'] = $v['multiple_active_result_sets'];
                     unset($v['multiple_active_result_sets']);
+
+                    return $v;
+                })
+            ->end()
+            ->beforeNormalization()
+                ->ifTrue(static function ($v) {
+                    return empty($v['override_url']) && isset($v['url']);
+                })
+                ->then(static function ($v) {
+                    @trigger_error('Not setting doctrine.dbal.override_url to true is deprecated. True is the only value that will be supported in doctrine-bundle 3.0.', E_USER_DEPRECATED);
 
                     return $v;
                 })
@@ -687,6 +718,13 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('id')->end()
                 ->scalarNode('pool')->end()
             ->end();
+
+        if ($name === 'metadata_cache_driver') {
+            $node->setDeprecated(...$this->getDeprecationMsg(
+                'The "metadata_cache_driver" configuration key is deprecated. PHP Array cache is now automatically registered when %kernel.debug% is false.',
+                '2.3'
+            ));
+        }
 
         return $node;
     }

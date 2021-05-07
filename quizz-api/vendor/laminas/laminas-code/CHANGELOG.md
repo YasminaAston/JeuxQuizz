@@ -2,6 +2,72 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 4.2.1 - 2021-04-23
+
+
+-----
+
+### Release Notes for [4.2.1](https://github.com/laminas/laminas-code/milestone/12)
+
+4.2.x bugfix release (patch)
+
+### 4.2.1
+
+- Total issues resolved: **1**
+- Total pull requests resolved: **1**
+- Total contributors: **1**
+
+#### Bug
+
+ - [77: Consider missing indices in PropertyGenerator](https://github.com/laminas/laminas-code/pull/77) thanks to @rieschl
+
+## 4.2.0 - 2021-04-14
+
+
+-----
+
+### Release Notes for [4.2.0](https://github.com/laminas/laminas-code/milestone/11)
+
+Feature release (minor)
+
+### 4.2.0
+
+- Total issues resolved: **1**
+- Total pull requests resolved: **1**
+- Total contributors: **2**
+
+#### Enhancement
+
+ - [72: Make sure variadic parameter does not have default value](https://github.com/laminas/laminas-code/pull/72) thanks to @mchekin
+
+#### Bug,Enhancement,Help Wanted
+
+ - [35: `ParameterGenerator` always fails with variadic parameters](https://github.com/laminas/laminas-code/issues/35) thanks to @michalbundyra
+
+## 4.1.0 - 2021-03-27
+
+
+-----
+
+### Release Notes for [4.1.0](https://github.com/laminas/laminas-code/milestone/8)
+
+Feature release (minor)
+
+### 4.1.0
+
+- Total issues resolved: **0**
+- Total pull requests resolved: **3**
+- Total contributors: **3**
+
+#### Enhancement
+
+ - [70: Improve `TraitGenerator` test code coverage](https://github.com/laminas/laminas-code/pull/70) thanks to @mchekin
+ - [68: &#91;Feature&#93; Add/update type information for source files](https://github.com/laminas/laminas-code/pull/68) thanks to @lisachenko
+
+#### Documentation
+
+ - [65: Correction of Laminas\Code\Generator\DocBlock\Tag\ParamTag example](https://github.com/laminas/laminas-code/pull/65) thanks to @mdthh
+
 ## 4.0.0 - 2020-12-30
 
 ### Added
