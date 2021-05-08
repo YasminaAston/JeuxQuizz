@@ -12,9 +12,7 @@ import androidx.hilt.lifecycle.ViewModelInject;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import org.aston.quizzapp.data.UserRemoteDataSource;
 import org.aston.quizzapp.data.UserRepository;
-import org.aston.quizzapp.models.Game;
 import org.aston.quizzapp.models.User;
 
 import retrofit2.Call;
@@ -54,15 +52,17 @@ public class UserViewModel extends AndroidViewModel {
                             System.out.println(userMutableLiveData.getValue());
                             Toast.makeText(context, "game getting  ", Toast.LENGTH_SHORT).show();
                         }
+                        System.out.println("get user from repo");
+                        System.out.println(userMutableLiveData.getValue());
                     }
                     @Override
                     public void onFailure(Call<User> call, Throwable t) {
+                        System.out.println("error :"+ t);
                         Toast.makeText(context, "Error " + t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
 
-                System.out.println("get user from repo");
-                System.out.println(userMutableLiveData.getValue());
+
             } catch (Exception e) {
                 Toast.makeText(context, "Error " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
