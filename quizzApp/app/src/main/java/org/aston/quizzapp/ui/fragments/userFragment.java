@@ -1,6 +1,9 @@
 package org.aston.quizzapp.ui.fragments;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,24 +11,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelStoreOwner;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-
-import org.aston.quizzapp.R;
-import org.aston.quizzapp.databinding.FragmentGameBinding;
 import org.aston.quizzapp.databinding.FragmentUserBinding;
-import org.aston.quizzapp.models.Game;
 import org.aston.quizzapp.models.User;
-import org.aston.quizzapp.viewmodel.CategoryViewModel;
-import org.aston.quizzapp.viewmodel.GameViewModel;
-import org.aston.quizzapp.viewmodel.QuizzViewModel;
 import org.aston.quizzapp.viewmodel.UserViewModel;
-
-import dagger.hilt.android.AndroidEntryPoint;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,7 +54,7 @@ public class userFragment extends Fragment {
             userBinding.setLifecycleOwner((LifecycleOwner)this);
             userBinding.setUserViewModel(userViewModel);
         }
-        userViewModel.getUserInfos(1);
+        userViewModel.getUserInfos(5);
 
         userViewModel.userMutableLiveData.observe(getViewLifecycleOwner(), new Observer<User>() {
             @Override

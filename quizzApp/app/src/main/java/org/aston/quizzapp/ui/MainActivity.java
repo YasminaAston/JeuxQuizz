@@ -1,19 +1,17 @@
 package org.aston.quizzapp.ui;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
-
-import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.aston.quizzapp.R;
 
 import dagger.hilt.android.AndroidEntryPoint;
-
-import static androidx.navigation.Navigation.findNavController;
 
 @AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {

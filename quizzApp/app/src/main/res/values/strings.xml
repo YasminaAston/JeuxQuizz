@@ -21,4 +21,7 @@
     <string name="compte">Compte</string>
     <string name="reglages">Réglages</string>
     <string name="jouer">Jouer</string>
+    <string name="radio_1">1</string>
+    <string name="radio_2">2</string>
+    <string name="radio_3">3</string>
 </resources>
