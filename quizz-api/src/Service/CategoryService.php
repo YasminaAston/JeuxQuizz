@@ -14,4 +14,5 @@ interface CategoryService
     public function add(Category $category): Category;
     public function update(Category $category, int $id): Category;
     public function delete(int $id): void;
+    public function getByName(string $name);
 }
