@@ -49,6 +49,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.3.5'
     implementation 'androidx.navigation:navigation-ui:2.3.5'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.wear:wear:1.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -72,6 +73,7 @@ dependencies {
     //RxJava
     implementation 'io.reactivex.rxjava3:rxjava:3.0.13-RC2'
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    compileOnly 'com.google.android.wearable:wearable:2.6.0'
     def lifecycle_version = "2.2.0"
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
@@ -89,8 +91,8 @@ dependencies {
     // Gson
     implementation 'com.google.code.gson:gson:2.8.6'
     // Shimmer
-    implementation 'com.facebook.shimmer:shimmer:0.5.0'
-    implementation 'com.todkars:shimmer-recyclerview:0.4.0'
+    //implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    //implementation 'com.todkars:shimmer-recyclerview:0.4.0'
     // Jsoup
     implementation 'org.jsoup:jsoup:1.13.1'
 
