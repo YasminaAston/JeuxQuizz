@@ -21,10 +21,21 @@
     <string name="compte">Compte</string>
     <string name="reglages">Réglages</string>
     <string name="jouer">Jouer</string>
+
     <string name="title_activity_game">GameActivity</string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
+    <string name="ajouter_une_question">Ajouter une question :</string>
+    <string name="ajouter">Ajouter</string>
+    <string name="questions">Questions :</string>
+    <string name="tout">Tout</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="modifier">Modifier</string>
+    <string name="la_vraie_reponse">la vraie reponse:</string>
+    <string name="fausse_reponse1">fausse reponse1:</string>
+    <string name="fausse_reponse2">fausse reponse2:</string>
+    <string name="fausse_reponse3">fausse reponse3:</string>
 </resources>
