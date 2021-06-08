@@ -9,6 +9,7 @@ use App\dto\UserDto;
 use App\Entity\User;
 use App\Service\UserService;
 use http\Client\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Exception\NotEncodableValueException;
@@ -33,7 +34,7 @@ class UserController extends AbstractController
 
 
     /**
-     * @Route("/users", name="users", methods={"GET"})
+     * @Route("/users", name="users-index", methods={"GET"})
      */
     public function getAll(): \Symfony\Component\HttpFoundation\JsonResponse
     {
@@ -47,7 +48,7 @@ class UserController extends AbstractController
 
 
     /**
-     * @Route("/signup", name="users", methods={"POST"})
+     * @Route("/signup", name="signup", methods={"POST"})
      */
     public function signUp(Request $request, SerializerInterface $serializer): \Symfony\Component\HttpFoundation\JsonResponse
     {
@@ -72,7 +73,7 @@ class UserController extends AbstractController
         } catch (NotEncodableValueException $exception) {
             return $this-> json(['status'=> \Symfony\Component\HttpFoundation\Response::HTTP_BAD_REQUEST, 'message'=> 'Bad request '] , 400, []);
         }
-        $user = $this -> userService -> login($user-> getEmail(), $user -> getMotPasse());
+        $user = $this -> userService -> login($user-> getEmail(), $user -> getPassword());
         return $this -> json($user, 200);
     }
 }
