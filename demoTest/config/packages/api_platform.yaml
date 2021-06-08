@@ -1,4 +1,5 @@
 api_platform:
+    title: 'Symfony REST API'
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
     patch_formats:
