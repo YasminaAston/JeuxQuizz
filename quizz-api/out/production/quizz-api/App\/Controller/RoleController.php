@@ -18,7 +18,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
- * @Route("/role")
+ * @Route("/roles")
  */
 class RoleController extends AbstractController
 {
@@ -61,7 +61,7 @@ class RoleController extends AbstractController
         try {
             $role = $serializer->deserialize($request->getContent(), Role::class, 'json');
         } catch (NotEncodableValueException $exception) {
-            throw new HttpException(Response::HTTP_BAD_REQUEST, 'Invalid Json');
+            return $this->json(['status'=>Response::HTTP_BAD_REQUEST, 'message'=>'Invalid Json'], 400);
         }
 
         $roleCheck = $this-> roleRepository ->findOneBy(array('roleName' =>$role-> getRoleName()));

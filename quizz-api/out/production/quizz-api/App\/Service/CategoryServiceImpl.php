@@ -51,4 +51,10 @@ class CategoryServiceImpl implements CategoryService
     {
         // TODO: Implement delete() method.
     }
+
+    public function getByName(string $name)
+    {
+        $category  = $this -> categoryRepository -> findOneBy(array('name' =>$name));
+        return $category;
+    }
 }

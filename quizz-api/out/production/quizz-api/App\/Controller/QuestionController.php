@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Dto\QuestionDt;
+use App\Dto\QuestionDto;
 use App\Entity\Category;
 use App\Entity\Question;
 use App\Form\QuestionType;
@@ -19,7 +21,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
- * @Route("/question")
+ * @Route("/questions")
  */
 class QuestionController extends AbstractController
 {
@@ -32,49 +34,58 @@ class QuestionController extends AbstractController
         if(sizeof($questions) == 0){
             return $this-> json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'No question found '] , 404, []);
         }
-        return  $this->json($questions);
+        return  $this->json($questions, 200, [], ['groups'=>['question', 'quizz']]);
     }
 
     /**
-     * @Route("/new", name="question_new", methods={"PUT"})
+     * @Route("/new", name="question_new", methods={"POST"})
      */
-    public function new(
-                        Request $request,
-                        SerializerInterface $serializer,
-                        ValidatorInterface $validator
-                        ): Response
+    public function new( Request $request, SerializerInterface $serializer, ValidatorInterface $validator,CategoryRepository $categoryRepository, QuestionRepository $questionRepository ): Response
     {
         // deserialize the json
         try {
-            $question = $serializer->deserialize($request->getContent(), Question::class, 'json');
+            $questionDto = $serializer->deserialize($request->getContent(), QuestionDto::class, 'json');
         } catch (NotEncodableValueException $exception) {
-            throw new HttpException(Response::HTTP_BAD_REQUEST, 'Invalid Json');
+            return $this-> json(['status'=> Response::HTTP_BAD_REQUEST, 'message'=> 'Invalid Json '] , 400, []);
         }
-        $errors = $validator->validate($question);
+        $errors = $validator->validate($questionDto);
 
         if (count($errors) > 0) {
             $json = $serializer->serialize($errors, 'json', array_merge([
                 'json_encode_options' => JsonResponse::DEFAULT_ENCODING_OPTIONS,
             ], []));
-            return new JsonResponse($json, Response::HTTP_BAD_REQUEST, [], true);
+            return $this->json($json, Response::HTTP_BAD_REQUEST, [], true);
         }
+
+        $questionCheck = $questionRepository ->findOneBy(array('label' =>$questionDto->getLabel()));
+        if($questionCheck){
+            return $this-> json(['status'=> Response::HTTP_BAD_REQUEST, 'message'=> 'Question exist '] , 400, []);
+        }
+        $category = $categoryRepository ->find($questionDto->getCategoryId());
+        if(!$category){
+            return $this-> json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'Category not found '] , 404, []);
+        }
+        $question = new Question();
+        $question->setCategory($category);
+        $question->setLabel($questionDto->getLabel());
+        $question->setDifficulty($questionDto->getDifficulty());
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($question);
         $entityManager->flush();
-        return new Response( $this -> json($question, 201));
+        return $this->json($question, 201, [], ['groups'=>['question', 'quizz']]);
 
     }
 
     /**
      * @Route("/{id}", name="question_show", methods={"GET"})
      */
-    public function show(QuestionRepository $questionRepository, int $id): Response
+    public function show(QuestionRepository $questionRepository, int $id)
     {
-        $question = $this->json($questionRepository->find($id));
+        $question = $questionRepository->find($id);
         if(!$question){
             return $this-> json(['status'=> Response::HTTP_NOT_FOUND, 'message'=> 'Question Not Found '] , 404, []);
         }
-        return  $this->json($question);
+        return  $this->json($question, 200, [], ['groups'=>['question', 'quizz']]);
     }
 
     /**
@@ -114,7 +125,7 @@ class QuestionController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($question);
         $entityManager->flush();
-        return  $this -> json($question, 200);
+        return  $this -> json($question, 200, [], ['groups'=>['question', 'quizz']]);
     }
 
     /**

@@ -22,12 +22,12 @@ use Symfony\Component\Serializer\Exception\NotEncodableValueException;
 use Symfony\Component\Serializer\SerializerInterface;
 
 /**
- * @Route("/category")
+ * @Route("/categories")
  */
 class CategoryController extends AbstractController
 {
 
-    protected CategoryService $categoryService;
+     protected CategoryService $categoryService;
      protected CategoryRepository $categoryRepository;
      protected EntityManagerInterface $entityManager;
 
