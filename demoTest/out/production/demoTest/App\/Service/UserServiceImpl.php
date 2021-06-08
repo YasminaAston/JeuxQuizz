@@ -37,9 +37,9 @@ class UserServiceImpl implements UserService
 
     public function login(string $email, string $password): User
     {
-        $user = $this -> userRepository ->findOneBy(['email' => $email]);
-        if($user != null){
-            if ($user->getMotPasse() == $password){
+        $user = $this ->userRepository.findOneBy(array('email' =>$email));
+        if(user != null){
+            if (user.getMotPasse().equals(password)){
                 return $user;
             }
         }
