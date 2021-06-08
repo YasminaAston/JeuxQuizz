@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f302b1ef-cd6d-4418-b613-c976db4e53d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quizz-api/config/packages/lexik_jwt_authentication.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../quizz-api/src/Controller/SecurityController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/cinema-playstore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-small/logo_cinema.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-small/music.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/art.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/cinema_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/cinema_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/film.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/geo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/music.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/science.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/crud_admin_question.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/crud_admin_question_response.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/cinema.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/cinema_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/cinema.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/cinema_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/cinema.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/cinema_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/cinema.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/cinema_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/cinema.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/cinema_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/cinema.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/cinema_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/JeuxQuizz.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoTesting" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTesting" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/.env" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizz-api/vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php" beforeDir="false" afterPath="$PROJECT_DIR$/../quizz-api/vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp/data/CategoryRemoteDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp/data/CategoryRemoteDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp/di/NetworkModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp/di/NetworkModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp/ui/fragments/homeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp/ui/fragments/homeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp/viewmodel/UserViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp/viewmodel/UserViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@/home/fadeil/.android/avd/Pixel_2_API_30.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Kotlin Class" />
+        <option value="valueResourceFile" />
+        <option value="resourceFile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1qt8WQBwc4h1keUUs94bbneZTsM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android-custom-view/home/fadeil/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.3.0/b42a5159ef2c670d26ce08246ec5aaf8f92e5a42/material-1.3.0-sources.jar!/com/google/android/material/button/MaterialButton.java_SELECTED" value="MaterialButton" />
+    <property name="android-custom-view/home/fadeil/Android/Sdk/sources/android-30/android/view/View.java_SELECTED" value="View" />
+    <property name="android-custom-view/home/fadeil/Android/Sdk/sources/android-30/android/widget/TextView.java_SELECTED" value="TextView" />
+    <property name="android-custom-view/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/java/org/aston/quizzapp/adapters/GameAdapter.java_SELECTED" value="GameAdapter" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp/viewmodel" />
+    <property name="multi-representation-preview/home/fadeil/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.3.0/b42a5159ef2c670d26ce08246ec5aaf8f92e5a42/material-1.3.0-sources.jar!/com/google/android/material/button/MaterialButton.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/home/fadeil/Android/Sdk/sources/android-30/android/view/View.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/home/fadeil/Android/Sdk/sources/android-30/android/widget/TextView.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/java/org/aston/quizzapp/adapters/GameAdapter.java_selected" value="Custom views" />
+    <property name="project.structure.last.edited" value="Dependencies" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.aston.quizzapp.adapters" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.aston.quizzapp.ui" />
+      <recent name="org.aston.quizzapp" />
+      <recent name="org.aston.quizzapp.data" />
+    </key>
+    <key name="android.template.-642618254">
+      <recent name="org.aston.quizzapp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.aston.quizzapp.util" />
+      <recent name="org.aston.quizzapp.data" />
+      <recent name="org.aston.quizzapp.data.network" />
+      <recent name="org.aston.quizzapp" />
+      <recent name="org.aston.quizzapp.repository" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp/viewmodel" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="quizzApp.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f302b1ef-cd6d-4418-b613-c976db4e53d9" name="Default Changelist" comment="" />
+      <created>1617887556457</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617887556457</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="480" y="251" width="950" height="537" key="#PSD" timestamp="1620599083310">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="480" y="251" width="950" height="537" key="#PSD/0.0.1920.1032@0.0.1920.1032" timestamp="1620599083310" />
+    <state x="550" y="181" width="800" height="684" key="#Template" timestamp="1618178062807">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="550" y="181" width="800" height="684" key="#Template/0.0.1920.1032@0.0.1920.1032" timestamp="1618178062807" />
+    <state x="768" y="220" width="553" height="606" key="#com.intellij.ide.util.MemberChooser" timestamp="1619166231695">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="768" y="220" width="553" height="606" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1619166231695" />
+    <state x="225" y="440" width="1547" height="158" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1618674720679">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="225" y="440" width="1547" height="158" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1618674720679" />
+    <state x="713" y="384" width="521" height="286" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1620572305439">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="713" y="384" width="521" height="286" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1032@0.0.1920.1032" timestamp="1620572305439" />
+    <state x="712" y="93" width="475" height="860" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1618824412459">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="712" y="93" width="475" height="860" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1618824412459" />
+    <state x="693" y="265" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1620573107240">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="693" y="265" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1620573107240" />
+    <state x="695" y="406" width="519" height="226" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1620576756458">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="695" y="406" width="519" height="226" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1032@0.0.1920.1032" timestamp="1620576756458" />
+    <state x="100" y="100" width="1720" height="832" key="AVDManager" timestamp="1620575830211">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="100" y="100" width="1720" height="832" key="AVDManager/0.0.1920.1032@0.0.1920.1032" timestamp="1620575830211" />
+    <state x="543" y="274" width="824" height="491" key="AndroidCreateResourceDirectoryDialog" timestamp="1618678673944">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="543" y="274" width="824" height="491" key="AndroidCreateResourceDirectoryDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1618678673944" />
+    <state x="543" y="274" width="824" height="491" key="AndroidCreateResourceFileDialog" timestamp="1619362642313">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="543" y="274" width="824" height="491" key="AndroidCreateResourceFileDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1619362642313" />
+    <state x="776" y="304" width="357" height="438" key="AndroidCreateXmlResourceDialog" timestamp="1619363443650">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="776" y="304" width="357" height="438" key="AndroidCreateXmlResourceDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1619363443650" />
+    <state x="743" y="259" width="424" height="520" key="FileChooserDialogImpl" timestamp="1618675343722">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="743" y="259" width="424" height="520" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1618675343722" />
+    <state width="1874" height="240" key="GridCell.Tab.0.bottom" timestamp="1620574422388">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1620574422388" />
+    <state width="1874" height="240" key="GridCell.Tab.0.center" timestamp="1620574422387">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="240" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1620574422387" />
+    <state width="1874" height="240" key="GridCell.Tab.0.left" timestamp="1620574422387">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="240" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1620574422387" />
+    <state width="1874" height="240" key="GridCell.Tab.0.right" timestamp="1620574422387">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="240" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1620574422387" />
+    <state width="1874" height="303" key="GridCell.Tab.1.bottom" timestamp="1619104321022">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="303" key="GridCell.Tab.1.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1619104321022" />
+    <state width="1874" height="303" key="GridCell.Tab.1.center" timestamp="1619104321021">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="303" key="GridCell.Tab.1.center/0.0.1920.1032@0.0.1920.1032" timestamp="1619104321021" />
+    <state width="1874" height="303" key="GridCell.Tab.1.left" timestamp="1619104321020">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="303" key="GridCell.Tab.1.left/0.0.1920.1032@0.0.1920.1032" timestamp="1619104321020" />
+    <state width="1874" height="303" key="GridCell.Tab.1.right" timestamp="1619104321021">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1874" height="303" key="GridCell.Tab.1.right/0.0.1920.1032@0.0.1920.1032" timestamp="1619104321021" />
+    <state x="449" y="151" width="1022" height="737" key="SettingsEditor" timestamp="1619125863053">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="449" y="151" width="1022" height="737" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1619125863053" />
+    <state width="960" height="516" key="XDebugger.FullValuePopup" timestamp="1619014673545">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="960" height="516" key="XDebugger.FullValuePopup/0.0.1920.1032@0.0.1920.1032" timestamp="1619014673545" />
+    <state x="732" y="296" width="446" height="447" key="chooseDestDirectoryDialog" timestamp="1620572267116">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="732" y="296" width="446" height="447" key="chooseDestDirectoryDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1620572267116" />
+    <state x="665" y="327" width="580" height="385" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog" timestamp="1619105019662">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="665" y="327" width="580" height="385" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1619105019662" />
+    <state x="665" y="327" width="580" height="385" key="com.android.tools.idea.run.deployment.SelectMultipleDevicesDialog" timestamp="1620574864390">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="665" y="327" width="580" height="385" key="com.android.tools.idea.run.deployment.SelectMultipleDevicesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1620574864390" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-method">
+          <url>file://$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp/data/network/GameApi.java</url>
+          <line>25</line>
+          <properties class="org.aston.quizzapp.data.network.GameApi" method="getGameById" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/org/aston/quizzapp/ui/fragments/gameFragment.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

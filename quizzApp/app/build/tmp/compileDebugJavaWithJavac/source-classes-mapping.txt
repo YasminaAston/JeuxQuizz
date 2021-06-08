@@ -1,0 +1,62 @@
+org/aston/quizzapp/data/network/QuizzApi.java
+ org.aston.quizzapp.data.network.QuizzApi
+org/aston/quizzapp/data/QuizzRemoteDataSource.java
+ org.aston.quizzapp.data.QuizzRemoteDataSource
+org/aston/quizzapp/QuizzApplication.java
+ org.aston.quizzapp.QuizzApplication
+org/aston/quizzapp/util/NetworkResult.java
+ org.aston.quizzapp.util.NetworkResult
+ org.aston.quizzapp.util.NetworkResult$Error
+ org.aston.quizzapp.util.NetworkResult$Loading
+ org.aston.quizzapp.util.NetworkResult$Success
+org/aston/quizzapp/models/Quizz.java
+ org.aston.quizzapp.models.Quizz
+org/aston/quizzapp/models/User.java
+ org.aston.quizzapp.models.User
+org/aston/quizzapp/data/UserRemoteDataSource.java
+ org.aston.quizzapp.data.UserRemoteDataSource
+org/aston/quizzapp/data/CategoryRemoteDataSource.java
+ org.aston.quizzapp.data.CategoryRemoteDataSource
+org/aston/quizzapp/ui/fragments/settingsFragment.java
+ org.aston.quizzapp.ui.fragments.settingsFragment
+org/aston/quizzapp/data/GameRemoteDataSource.java
+ org.aston.quizzapp.data.GameRemoteDataSource
+org/aston/quizzapp/models/Game.java
+ org.aston.quizzapp.models.Game
+org/aston/quizzapp/models/Role.java
+ org.aston.quizzapp.models.Role
+org/aston/quizzapp/data/QuizzRepository.java
+ org.aston.quizzapp.data.QuizzRepository
+org/aston/quizzapp/ui/fragments/userFragment.java
+ org.aston.quizzapp.ui.fragments.userFragment
+ org.aston.quizzapp.ui.fragments.userFragment$1
+org/aston/quizzapp/dto/GameDto.java
+ org.aston.quizzapp.dto.GameDto
+org/aston/quizzapp/models/Response.java
+ org.aston.quizzapp.models.Response
+org/aston/quizzapp/di/NetworkModule.java
+ org.aston.quizzapp.di.NetworkModule
+org/aston/quizzapp/data/CategoryRepository.java
+ org.aston.quizzapp.data.CategoryRepository
+org/aston/quizzapp/data/UserRepository.java
+ org.aston.quizzapp.data.UserRepository
+org/aston/quizzapp/data/network/GameApi.java
+ org.aston.quizzapp.data.network.GameApi
+org/aston/quizzapp/data/network/UserApi.java
+ org.aston.quizzapp.data.network.UserApi
+org/aston/quizzapp/dto/QuizzDto.java
+ org.aston.quizzapp.dto.QuizzDto
+org/aston/quizzapp/ui/MainActivity.java
+ org.aston.quizzapp.ui.MainActivity
+org/aston/quizzapp/util/Constants.java
+ org.aston.quizzapp.util.Constants
+org/aston/quizzapp/data/GameRepository.java
+ org.aston.quizzapp.data.GameRepository
+org/aston/quizzapp/models/Category.java
+ org.aston.quizzapp.models.Category
+org/aston/quizzapp/data/network/CategoryApi.java
+ org.aston.quizzapp.data.network.CategoryApi
+org/aston/quizzapp/models/Question.java
+ org.aston.quizzapp.models.Question
+org/aston/quizzapp/models/Score.java
+ org.aston.quizzapp.models.Score

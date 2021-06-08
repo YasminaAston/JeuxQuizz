@@ -1,0 +1,58 @@
+<?php //App.Entity.User
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        (\Symfony\Component\VarExporter\Internal\Registry::$factories['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity')),
+        clone $p['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\User',
+            ],
+            'defaultGroup' => [
+                'User',
+            ],
+            'constraints' => [
+                [
+                    $o[1],
+                    $o[2],
+                ],
+            ],
+            'constraintsByGroup' => [
+                [
+                    'Default' => [
+                        $o[1],
+                        $o[2],
+                    ],
+                    'User' => [
+                        $o[1],
+                        $o[2],
+                    ],
+                ],
+            ],
+            'message' => [
+                1 => 'Email is already used.',
+                'Username is already used.',
+            ],
+            'fields' => [
+                1 => 'email',
+                'username',
+            ],
+            'groups' => [
+                1 => [
+                    'Default',
+                    'User',
+                ],
+                [
+                    'Default',
+                    'User',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

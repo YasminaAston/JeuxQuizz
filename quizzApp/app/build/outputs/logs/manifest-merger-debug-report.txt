@@ -1,0 +1,318 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:2:1-41:12
+MERGED from [androidx.databinding:databinding-adapters:4.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e60c4dc59774450a7a70144326d6a64a/databinding-adapters-4.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.databinding:databinding-runtime:4.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/7b27349a3667a466f3a8f0774a1d1401/databinding-runtime-4.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-ui:2.3.5] /home/fadeil/.gradle/caches/transforms-2/files-2.1/c60f1eff1e175f0305d534cdb9350284/navigation-ui-2.3.5/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.3.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/8f2f88798bfca18b3282787ad5c42f02/material-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.wear:wear:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/49afbb1e512d24264d0c51f103909eb2/wear-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/fadeil/.gradle/caches/transforms-2/files-2.1/3aada263b5eef699e39963fcfc2425fb/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/641ee5be85740a3d427074f8cb0a1286/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-fragment:2.3.5] /home/fadeil/.gradle/caches/transforms-2/files-2.1/58b5c662eed018af0fb75c3f4feab550/navigation-fragment-2.3.5/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/4b0cdd07f7477d48a6b5e1ed5daa0e1c/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/8849d17dfe57ea27edda68263499ec11/jetified-volley-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/73aaa97e65a9557039130cbea4258f52/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/70461fab38db528cdef3d4be556e86ca/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/45c812eb22c07a98778b600c2d48bc79/recyclerview-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ee4e3802b9f7a0c9eb4460ca1e5ab2de/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha01/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.hilt:hilt-common:1.0.0-alpha01] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e23cf0796910d905537c97f59f8bd6a7/jetified-hilt-common-1.0.0-alpha01/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.dagger:hilt-android:2.28-alpha] /home/fadeil/.gradle/caches/transforms-2/files-2.1/9942e7f40d1e757aeb459a36fb42afb4/jetified-hilt-android-2.28-alpha/AndroidManifest.xml:16:1-19:12
+MERGED from [io.reactivex.rxjava3:rxandroid:3.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/3ac6800c5c8824157a3c4eaa0185f171/jetified-rxandroid-3.0.0/AndroidManifest.xml:15:1-20:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/fff0b27c5471636b33228193b24e432e/lifecycle-extensions-2.2.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.fragment:fragment:1.2.4] /home/fadeil/.gradle/caches/transforms-2/files-2.1/4df5da6575241d7b9240588bde1b11c5/fragment-1.2.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime:2.3.5] /home/fadeil/.gradle/caches/transforms-2/files-2.1/35fa0e48e6a5ea928cdbfe3968a21f97/navigation-runtime-2.3.5/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/792c3946b7a5a1cf1dbb2ea616ef25eb/jetified-activity-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/364d49547d2f611b40b08aa08c98b857/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/d3ab29971b3d2aac344fa5478adcd184/jetified-lifecycle-viewmodel-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/b86af7883220130d6c75c3327a3b47f0/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/6c84e10365a951c54b8fd1efaa868cb4/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/a1d5e3e68b500f7ee76d0753cc705dec/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/9fa6ef5e0bb92837163164642d4b4f20/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/05ca8f565e997cdb7657d58c82c1a72e/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ad3195dba2cad9725ee581d601b17cf8/jetified-lifecycle-livedata-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/1fa987101563441bd0917fb292cecb35/lifecycle-livedata-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/d05f11d472a0d33142e8b58a18f06c3b/jetified-lifecycle-runtime-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [io.coil-kt:coil:0.13.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e687e0654602551c26ac6433c30e39a1/jetified-coil-0.13.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.databinding:viewbinding:4.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/97a203e884c20c36e34f3f065aba3dfc/jetified-viewbinding-4.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.3.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/fd3af71546c1cdf81cf0c26f7f34267d/transition-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [io.coil-kt:coil-base:0.13.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ce56b1759c00b11cf8a08b530c73fdb5/jetified-coil-base-0.13.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/71f2e42f01ae807227172a782e188f4b/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/cc1ad026242b9c1bd4c36bd949c33e61/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/335c3e02357d21092bab3367dd15d3a9/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/b522e772d26d70e04fb5dd387d15f210/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ed6c764a57d2d9c53ff41c080b296f9a/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/c958f9a3ed4eb936aed9f35e1ae4681c/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/23d4f930971057003fc83f7877fc739b/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/85a55b873f48b98d5418568ca9272368/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media:media:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/9f03408aac04de644bb10fb8843555e0/media-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common:2.3.5] /home/fadeil/.gradle/caches/transforms-2/files-2.1/75a0ac035926cfb010aa5ef20458d5c5/navigation-common-2.3.5/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/0038c189efa3d55d9fb6a551a518a281/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/64a77377c8e702f134a405d6e17520d6/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/dbd022ebc0eb20db18b3a2e8ee3e573c/jetified-core-ktx-1.3.1/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.core:core:1.3.2] /home/fadeil/.gradle/caches/transforms-2/files-2.1/2747227a8e6073ac157baf8ae77b77ac/core-1.3.2/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/11b596f9667f4805d3b81b3a694ee50f/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:17:1-32:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/f87d865d8f4107ef2ac4961a1c2404b5/jetified-lifecycle-service-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/04cde82a2c5661d66154d87d0614ca9e/lifecycle-runtime-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/9172737b063f3e908f0202df768246ed/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/7a655d9745f4da1a2dc2697cec98b9dc/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/259952d8a87f014b8da6ccdb1b07fa8c/jetified-lifecycle-livedata-core-ktx-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e22c925f1e0155159388d67306dda0c5/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/b784cc24e53d95eef927686d44b7b547/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/f4ab22a80fe109cbaed26ba9072175f9/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e02e68bc4b365d6d3bf176710b0be70e/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/f3c0b3d42822d4f92116ab3cd5c52f3e/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/c78ddbe917ab2d63a61c2950472e6828/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ff7c79c67e968d8146391c2b1e1bf7c3/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/b174d3d3396ef2ebdef95566e8d32e72/exifinterface-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/36efc489ec6805eab996b8cbc1be2f7b/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.dagger:dagger-lint-aar:2.28] /home/fadeil/.gradle/caches/transforms-2/files-2.1/feef3bf54a20950a5b720c1c447f914a/jetified-dagger-lint-aar-2.28/AndroidManifest.xml:16:1-18:12
+INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:2:1-41:12
+	package
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:3:5-33
+		INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+		INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:2:1-41:12
+		INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:2:1-41:12
+		INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:5:5-68
+	android:name
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:5:22-65
+uses-feature#android.hardware.type.watch
+ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:7:5-64
+	android:name
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:7:19-61
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:9:22-76
+uses-permission#android.permission.INTERNET
+ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:10:5-67
+	android:name
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:10:22-64
+application
+ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:12:5-39:19
+MERGED from [com.google.android.material:material:1.3.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/8f2f88798bfca18b3282787ad5c42f02/material-1.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.3.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/8f2f88798bfca18b3282787ad5c42f02/material-1.3.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/fadeil/.gradle/caches/transforms-2/files-2.1/3aada263b5eef699e39963fcfc2425fb/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/fadeil/.gradle/caches/transforms-2/files-2.1/3aada263b5eef699e39963fcfc2425fb/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/fff0b27c5471636b33228193b24e432e/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/fff0b27c5471636b33228193b24e432e/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.core:core:1.3.2] /home/fadeil/.gradle/caches/transforms-2/files-2.1/2747227a8e6073ac157baf8ae77b77ac/core-1.3.2/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.2] /home/fadeil/.gradle/caches/transforms-2/files-2.1/2747227a8e6073ac157baf8ae77b77ac/core-1.3.2/AndroidManifest.xml:24:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/11b596f9667f4805d3b81b3a694ee50f/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:24:5-30:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/11b596f9667f4805d3b81b3a694ee50f/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:24:5-30:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/9172737b063f3e908f0202df768246ed/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/9172737b063f3e908f0202df768246ed/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.3.2] /home/fadeil/.gradle/caches/transforms-2/files-2.1/2747227a8e6073ac157baf8ae77b77ac/core-1.3.2/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:17:9-35
+	android:label
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:15:9-41
+	android:roundIcon
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:16:9-54
+	android:icon
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:14:9-43
+	android:theme
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:18:9-46
+	android:usesCleartextTraffic
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:19:9-44
+	android:name
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:13:9-41
+uses-library#com.google.android.wearable
+ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:20:9-22:39
+	android:required
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:22:13-36
+	android:name
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:21:13-55
+meta-data#com.google.android.wearable.standalone
+ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:28:9-30:36
+	android:value
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:30:13-33
+	android:name
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:29:13-66
+activity#org.aston.quizzapp.ui.MainActivity
+ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:32:9-38:20
+	android:name
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:32:19-50
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:33:13-37:29
+action#android.intent.action.MAIN
+ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:34:17-69
+	android:name
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:34:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:36:17-77
+	android:name
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:36:27-74
+uses-sdk
+INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:databinding-adapters:4.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e60c4dc59774450a7a70144326d6a64a/databinding-adapters-4.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:databinding-adapters:4.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e60c4dc59774450a7a70144326d6a64a/databinding-adapters-4.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:databinding-runtime:4.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/7b27349a3667a466f3a8f0774a1d1401/databinding-runtime-4.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:databinding-runtime:4.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/7b27349a3667a466f3a8f0774a1d1401/databinding-runtime-4.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-ui:2.3.5] /home/fadeil/.gradle/caches/transforms-2/files-2.1/c60f1eff1e175f0305d534cdb9350284/navigation-ui-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.3.5] /home/fadeil/.gradle/caches/transforms-2/files-2.1/c60f1eff1e175f0305d534cdb9350284/navigation-ui-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.3.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/8f2f88798bfca18b3282787ad5c42f02/material-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.3.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/8f2f88798bfca18b3282787ad5c42f02/material-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.wear:wear:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/49afbb1e512d24264d0c51f103909eb2/wear-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.wear:wear:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/49afbb1e512d24264d0c51f103909eb2/wear-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/fadeil/.gradle/caches/transforms-2/files-2.1/3aada263b5eef699e39963fcfc2425fb/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/fadeil/.gradle/caches/transforms-2/files-2.1/3aada263b5eef699e39963fcfc2425fb/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/641ee5be85740a3d427074f8cb0a1286/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/641ee5be85740a3d427074f8cb0a1286/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.3.5] /home/fadeil/.gradle/caches/transforms-2/files-2.1/58b5c662eed018af0fb75c3f4feab550/navigation-fragment-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.3.5] /home/fadeil/.gradle/caches/transforms-2/files-2.1/58b5c662eed018af0fb75c3f4feab550/navigation-fragment-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/4b0cdd07f7477d48a6b5e1ed5daa0e1c/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/4b0cdd07f7477d48a6b5e1ed5daa0e1c/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/8849d17dfe57ea27edda68263499ec11/jetified-volley-1.2.0/AndroidManifest.xml:5:5-43
+MERGED from [com.android.volley:volley:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/8849d17dfe57ea27edda68263499ec11/jetified-volley-1.2.0/AndroidManifest.xml:5:5-43
+MERGED from [androidx.cardview:cardview:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/73aaa97e65a9557039130cbea4258f52/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/73aaa97e65a9557039130cbea4258f52/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/70461fab38db528cdef3d4be556e86ca/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/70461fab38db528cdef3d4be556e86ca/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/45c812eb22c07a98778b600c2d48bc79/recyclerview-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/45c812eb22c07a98778b600c2d48bc79/recyclerview-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ee4e3802b9f7a0c9eb4460ca1e5ab2de/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ee4e3802b9f7a0c9eb4460ca1e5ab2de/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.hilt:hilt-common:1.0.0-alpha01] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e23cf0796910d905537c97f59f8bd6a7/jetified-hilt-common-1.0.0-alpha01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.hilt:hilt-common:1.0.0-alpha01] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e23cf0796910d905537c97f59f8bd6a7/jetified-hilt-common-1.0.0-alpha01/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.dagger:hilt-android:2.28-alpha] /home/fadeil/.gradle/caches/transforms-2/files-2.1/9942e7f40d1e757aeb459a36fb42afb4/jetified-hilt-android-2.28-alpha/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:hilt-android:2.28-alpha] /home/fadeil/.gradle/caches/transforms-2/files-2.1/9942e7f40d1e757aeb459a36fb42afb4/jetified-hilt-android-2.28-alpha/AndroidManifest.xml:18:3-42
+MERGED from [io.reactivex.rxjava3:rxandroid:3.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/3ac6800c5c8824157a3c4eaa0185f171/jetified-rxandroid-3.0.0/AndroidManifest.xml:18:5-43
+MERGED from [io.reactivex.rxjava3:rxandroid:3.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/3ac6800c5c8824157a3c4eaa0185f171/jetified-rxandroid-3.0.0/AndroidManifest.xml:18:5-43
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/fff0b27c5471636b33228193b24e432e/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/fff0b27c5471636b33228193b24e432e/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.4] /home/fadeil/.gradle/caches/transforms-2/files-2.1/4df5da6575241d7b9240588bde1b11c5/fragment-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.4] /home/fadeil/.gradle/caches/transforms-2/files-2.1/4df5da6575241d7b9240588bde1b11c5/fragment-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.3.5] /home/fadeil/.gradle/caches/transforms-2/files-2.1/35fa0e48e6a5ea928cdbfe3968a21f97/navigation-runtime-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.3.5] /home/fadeil/.gradle/caches/transforms-2/files-2.1/35fa0e48e6a5ea928cdbfe3968a21f97/navigation-runtime-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/792c3946b7a5a1cf1dbb2ea616ef25eb/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/792c3946b7a5a1cf1dbb2ea616ef25eb/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/364d49547d2f611b40b08aa08c98b857/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/364d49547d2f611b40b08aa08c98b857/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/d3ab29971b3d2aac344fa5478adcd184/jetified-lifecycle-viewmodel-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/d3ab29971b3d2aac344fa5478adcd184/jetified-lifecycle-viewmodel-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/b86af7883220130d6c75c3327a3b47f0/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/b86af7883220130d6c75c3327a3b47f0/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/6c84e10365a951c54b8fd1efaa868cb4/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/6c84e10365a951c54b8fd1efaa868cb4/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/a1d5e3e68b500f7ee76d0753cc705dec/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/a1d5e3e68b500f7ee76d0753cc705dec/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/9fa6ef5e0bb92837163164642d4b4f20/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/9fa6ef5e0bb92837163164642d4b4f20/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/05ca8f565e997cdb7657d58c82c1a72e/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/05ca8f565e997cdb7657d58c82c1a72e/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ad3195dba2cad9725ee581d601b17cf8/jetified-lifecycle-livedata-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ad3195dba2cad9725ee581d601b17cf8/jetified-lifecycle-livedata-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/1fa987101563441bd0917fb292cecb35/lifecycle-livedata-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/1fa987101563441bd0917fb292cecb35/lifecycle-livedata-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/d05f11d472a0d33142e8b58a18f06c3b/jetified-lifecycle-runtime-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/d05f11d472a0d33142e8b58a18f06c3b/jetified-lifecycle-runtime-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [io.coil-kt:coil:0.13.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e687e0654602551c26ac6433c30e39a1/jetified-coil-0.13.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil:0.13.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e687e0654602551c26ac6433c30e39a1/jetified-coil-0.13.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.databinding:viewbinding:4.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/97a203e884c20c36e34f3f065aba3dfc/jetified-viewbinding-4.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:viewbinding:4.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/97a203e884c20c36e34f3f065aba3dfc/jetified-viewbinding-4.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.3.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/fd3af71546c1cdf81cf0c26f7f34267d/transition-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.3.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/fd3af71546c1cdf81cf0c26f7f34267d/transition-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [io.coil-kt:coil-base:0.13.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ce56b1759c00b11cf8a08b530c73fdb5/jetified-coil-base-0.13.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil-base:0.13.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ce56b1759c00b11cf8a08b530c73fdb5/jetified-coil-base-0.13.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/71f2e42f01ae807227172a782e188f4b/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/71f2e42f01ae807227172a782e188f4b/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/cc1ad026242b9c1bd4c36bd949c33e61/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/cc1ad026242b9c1bd4c36bd949c33e61/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/335c3e02357d21092bab3367dd15d3a9/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/335c3e02357d21092bab3367dd15d3a9/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/b522e772d26d70e04fb5dd387d15f210/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/b522e772d26d70e04fb5dd387d15f210/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ed6c764a57d2d9c53ff41c080b296f9a/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ed6c764a57d2d9c53ff41c080b296f9a/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/c958f9a3ed4eb936aed9f35e1ae4681c/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/c958f9a3ed4eb936aed9f35e1ae4681c/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/23d4f930971057003fc83f7877fc739b/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/23d4f930971057003fc83f7877fc739b/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/85a55b873f48b98d5418568ca9272368/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/85a55b873f48b98d5418568ca9272368/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/9f03408aac04de644bb10fb8843555e0/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/9f03408aac04de644bb10fb8843555e0/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.3.5] /home/fadeil/.gradle/caches/transforms-2/files-2.1/75a0ac035926cfb010aa5ef20458d5c5/navigation-common-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.3.5] /home/fadeil/.gradle/caches/transforms-2/files-2.1/75a0ac035926cfb010aa5ef20458d5c5/navigation-common-2.3.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/0038c189efa3d55d9fb6a551a518a281/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/0038c189efa3d55d9fb6a551a518a281/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/64a77377c8e702f134a405d6e17520d6/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/64a77377c8e702f134a405d6e17520d6/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/dbd022ebc0eb20db18b3a2e8ee3e573c/jetified-core-ktx-1.3.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/dbd022ebc0eb20db18b3a2e8ee3e573c/jetified-core-ktx-1.3.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core:1.3.2] /home/fadeil/.gradle/caches/transforms-2/files-2.1/2747227a8e6073ac157baf8ae77b77ac/core-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.2] /home/fadeil/.gradle/caches/transforms-2/files-2.1/2747227a8e6073ac157baf8ae77b77ac/core-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/11b596f9667f4805d3b81b3a694ee50f/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/11b596f9667f4805d3b81b3a694ee50f/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/f87d865d8f4107ef2ac4961a1c2404b5/jetified-lifecycle-service-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-service:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/f87d865d8f4107ef2ac4961a1c2404b5/jetified-lifecycle-service-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/04cde82a2c5661d66154d87d0614ca9e/lifecycle-runtime-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/04cde82a2c5661d66154d87d0614ca9e/lifecycle-runtime-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/9172737b063f3e908f0202df768246ed/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/9172737b063f3e908f0202df768246ed/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/7a655d9745f4da1a2dc2697cec98b9dc/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/7a655d9745f4da1a2dc2697cec98b9dc/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/259952d8a87f014b8da6ccdb1b07fa8c/jetified-lifecycle-livedata-core-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/259952d8a87f014b8da6ccdb1b07fa8c/jetified-lifecycle-livedata-core-ktx-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e22c925f1e0155159388d67306dda0c5/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e22c925f1e0155159388d67306dda0c5/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/b784cc24e53d95eef927686d44b7b547/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/b784cc24e53d95eef927686d44b7b547/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/f4ab22a80fe109cbaed26ba9072175f9/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/f4ab22a80fe109cbaed26ba9072175f9/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e02e68bc4b365d6d3bf176710b0be70e/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/e02e68bc4b365d6d3bf176710b0be70e/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/f3c0b3d42822d4f92116ab3cd5c52f3e/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/f3c0b3d42822d4f92116ab3cd5c52f3e/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/c78ddbe917ab2d63a61c2950472e6828/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/c78ddbe917ab2d63a61c2950472e6828/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ff7c79c67e968d8146391c2b1e1bf7c3/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/ff7c79c67e968d8146391c2b1e1bf7c3/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/b174d3d3396ef2ebdef95566e8d32e72/exifinterface-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/b174d3d3396ef2ebdef95566e8d32e72/exifinterface-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/36efc489ec6805eab996b8cbc1be2f7b/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/36efc489ec6805eab996b8cbc1be2f7b/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+		INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+		ADDED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+		INJECTED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml
+provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/11b596f9667f4805d3b81b3a694ee50f/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
+	android:authorities
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/11b596f9667f4805d3b81b3a694ee50f/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
+	android:multiprocess
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/11b596f9667f4805d3b81b3a694ee50f/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
+	android:exported
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/11b596f9667f4805d3b81b3a694ee50f/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /home/fadeil/.gradle/caches/transforms-2/files-2.1/11b596f9667f4805d3b81b3a694ee50f/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+IMPLIED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:2:1-41:12 reason: dagger.lint has a targetSdkVersion < 4
+uses-permission#android.permission.READ_PHONE_STATE
+IMPLIED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:2:1-41:12 reason: dagger.lint has a targetSdkVersion < 4
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+IMPLIED from /media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/AndroidManifest.xml:2:1-41:12 reason: dagger.lint requested WRITE_EXTERNAL_STORAGE

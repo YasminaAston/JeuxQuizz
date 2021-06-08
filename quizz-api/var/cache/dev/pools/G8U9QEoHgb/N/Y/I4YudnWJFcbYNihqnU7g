@@ -1,0 +1,70 @@
+<?php //App_Entity_User
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\User',
+                'id',
+                'email',
+                'firstname',
+                'lastname',
+                'image',
+                'password',
+                'username',
+                'role',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'email' => $o[2],
+                    'firstname' => $o[3],
+                    'lastname' => $o[4],
+                    'image' => $o[5],
+                    'password' => $o[6],
+                    'username' => $o[7],
+                    'role' => $o[8],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'quizz',
+                ],
+                [
+                    'quizz',
+                    'userInfos',
+                ],
+                [
+                    'quizz',
+                    'userInfos',
+                ],
+                [
+                    'quizz',
+                    'userInfos',
+                ],
+                7 => [
+                    'quizz',
+                    'userInfos',
+                ],
+                [
+                    'quizz',
+                    'userInfos',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-round-v23/values-round-v23.xml",
+            "map": [
+                {
+                    "source": "/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/res/values-round/strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "58",
+                        "endOffsets": "70"
+                    },
+                    "to": {
+                        "startLines": "5",
+                        "startColumns": "4",
+                        "startOffsets": "284",
+                        "endColumns": "58",
+                        "endOffsets": "338"
+                    }
+                },
+                {
+                    "source": "/home/fadeil/.gradle/caches/transforms-2/files-2.1/49afbb1e512d24264d0c51f103909eb2/wear-1.0.0/res/values-round-v23/values-round-v23.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,118,204",
+                        "endColumns": "62,85,79",
+                        "endOffsets": "113,199,279"
+                    }
+                }
+            ]
+        }
+    ]
+}

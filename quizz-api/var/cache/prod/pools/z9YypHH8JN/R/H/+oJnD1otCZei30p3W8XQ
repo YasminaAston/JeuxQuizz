@@ -1,0 +1,48 @@
+<?php //App.Entity.Question
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        (\Symfony\Component\VarExporter\Internal\Registry::$factories['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Question',
+            ],
+            'defaultGroup' => [
+                'Question',
+            ],
+            'constraints' => [
+                [
+                    $o[1],
+                ],
+            ],
+            'constraintsByGroup' => [
+                [
+                    'Default' => [
+                        $o[1],
+                    ],
+                    'Question' => [
+                        $o[1],
+                    ],
+                ],
+            ],
+            'message' => [
+                1 => 'Question is already exist.',
+            ],
+            'fields' => [
+                1 => 'label',
+            ],
+            'groups' => [
+                1 => [
+                    'Default',
+                    'Question',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

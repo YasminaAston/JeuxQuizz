@@ -1,0 +1,48 @@
+<?php //App.Entity.Category
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        (\Symfony\Component\VarExporter\Internal\Registry::$factories['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Category',
+            ],
+            'defaultGroup' => [
+                'Category',
+            ],
+            'constraints' => [
+                [
+                    $o[1],
+                ],
+            ],
+            'constraintsByGroup' => [
+                [
+                    'Default' => [
+                        $o[1],
+                    ],
+                    'Category' => [
+                        $o[1],
+                    ],
+                ],
+            ],
+            'message' => [
+                1 => 'Name is already used.',
+            ],
+            'fields' => [
+                1 => 'name',
+            ],
+            'groups' => [
+                1 => [
+                    'Default',
+                    'Category',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];
