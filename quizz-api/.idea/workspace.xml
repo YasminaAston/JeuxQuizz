@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddace3e5-cd51-4cbf-8ed0-79adc1b97d9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../demoTest/src/Controller/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demoTest/src/dto/UserDto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/JeuxQuizz.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoTest/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoTest/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoTest/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoTest/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoTest/src/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/src/Service/UserService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoTest/src/Service/UserServiceImpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/src/Service/UserServiceImpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +161,7 @@
       <workItem from="1618702707455" duration="4358000" />
       <workItem from="1619105848223" duration="5346000" />
       <workItem from="1623072148390" duration="5229000" />
-      <workItem from="1623140592625" duration="4565000" />
+      <workItem from="1623140592625" duration="7528000" />
     </task>
     <servers />
   </component>
