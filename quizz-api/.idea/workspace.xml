@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddace3e5-cd51-4cbf-8ed0-79adc1b97d9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../demoTest/tests/UserServiceTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/JeuxQuizz.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoTest/.env" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoTest/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoTest/.idea/demoTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/.idea/demoTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoTest/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoTest/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoTest/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoTest/config/packages/test/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/config/packages/test/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoTest/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoTest/tests/UserServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/../demoTest/tests/UserServiceTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +160,7 @@
       <workItem from="1618702707455" duration="4358000" />
       <workItem from="1619105848223" duration="5346000" />
       <workItem from="1623072148390" duration="5229000" />
-      <workItem from="1623140592625" duration="9347000" />
+      <workItem from="1623140592625" duration="10027000" />
     </task>
     <servers />
   </component>
