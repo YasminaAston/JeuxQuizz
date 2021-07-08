@@ -5,7 +5,7 @@
     "kind": "Directory"
   },
   "applicationId": "org.aston.quizzapp",
-  "variantName": "debug",
+  "variantName": "processDebugResources",
   "elements": [
     {
       "type": "SINGLE",

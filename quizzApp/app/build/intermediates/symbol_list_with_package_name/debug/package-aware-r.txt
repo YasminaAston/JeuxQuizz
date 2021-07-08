@@ -1791,6 +1791,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable art
 drawable avd_hide_password
 drawable avd_show_password
 drawable btn_checkbox_checked_mtrl
@@ -1801,6 +1802,8 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable cinema_background
+drawable cinema_foreground
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1808,8 +1811,10 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable email_icone
+drawable film
 drawable generic_confirmation
 drawable generic_confirmation_animation
+drawable geo
 drawable ic_baseline_games_24
 drawable ic_baseline_lock_24
 drawable ic_baseline_settings_applications_24
@@ -1825,6 +1830,7 @@ drawable ic_person
 drawable ic_settings
 drawable icon_home
 drawable logo
+drawable logo_cinema
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1844,6 +1850,7 @@ drawable mtrl_ic_error
 drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
+drawable music
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -1865,6 +1872,7 @@ drawable phone_icone
 drawable quizz
 drawable retour_icone
 drawable rounded_corners
+drawable science
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1975,14 +1983,20 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id blocking
+id bonnereponse
 id bottom
 id bottomnavigation
 id bounce
+id btnAjouer
 id btnGame
 id btnJouer
+id btn_login
+id btn_register
 id butt
 id button
 id button2
+id button4
+id button5
 id buttonEmail
 id buttonMdp
 id buttonPanel
@@ -1996,6 +2010,7 @@ id center_horizontal
 id center_vertical
 id chain
 id chains
+id checkBox
 id checkbox
 id checked
 id chip
@@ -2043,9 +2058,17 @@ id disablePostScroll
 id disableScroll
 id disjoint
 id divider
+id divider10
+id divider11
+id divider12
 id divider2
 id divider3
 id divider4
+id divider5
+id divider6
+id divider7
+id divider8
+id divider9
 id dragDown
 id dragEnd
 id dragLeft
@@ -2056,6 +2079,9 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
+id editText2
+id editText3
+id editText4
 id edit_query
 id elastic
 id end
@@ -2063,10 +2089,17 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id et_email
+id et_password
+id et_reg_firstname
+id et_reg_lastname
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fade
+id faussereponse1
+id faussereponse2
+id faussereponse3
 id fill
 id fill_horizontal
 id fill_vertical
@@ -2103,16 +2136,20 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id imageView11
+id imageView12
 id imageView2
 id imageView3
 id imageView4
 id imageView5
 id imageView6
 id info
+id input_question
 id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id iv_logo
 id jumpToEnd
 id jumpToStart
 id labelGroup
@@ -2126,6 +2163,7 @@ id line3
 id linear
 id listMode
 id list_item
+id loginscrn
 id masked
 id material_clock_display
 id material_clock_face
@@ -2306,9 +2344,11 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView10
 id textView2
 id textView3
 id textView4
+id textView5
 id textView6
 id textView7
 id textView8
@@ -2338,6 +2378,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_register
 id unchecked
 id uniform
 id unlabeled
@@ -2452,6 +2493,8 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout crud_admin_question
+layout crud_admin_question_response
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2470,6 +2513,8 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_game
 layout fragment_home
+layout fragment_login
+layout fragment_registration
 layout fragment_settings
 layout fragment_user
 layout material_chip_input_combo
@@ -2565,6 +2610,8 @@ layout ws_single_page_nav_drawer_peek_view
 layout ws_single_page_nav_drawer_text
 layout ws_wearable_drawer_view
 menu menu_quizz
+mipmap cinema
+mipmap cinema_round
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation quizz_nav
@@ -2597,6 +2644,8 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string accueil
+string ajouter
+string ajouter_une_question
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -2613,12 +2662,16 @@ string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string fausse_reponse1
+string fausse_reponse2
+string fausse_reponse3
 string hello_blank_fragment
 string hello_world
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
 string jouer
+string la_vraie_reponse
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_selection
@@ -2634,6 +2687,7 @@ string material_timepicker_minute
 string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
+string modifier
 string mon_profile
 string mot_de_passe
 string mot_de_passe2
@@ -2685,12 +2739,15 @@ string phrase_invite1
 string prenom
 string prenombis
 string question_modifier
+string questions
 string reglages
 string search_menu_title
 string status_bar_notification_info_overflow
+string supprimer
 string telephone2
 string title_activity_game
 string toto
+string tout
 string user
 string username
 string ws_action_drawer_content_description
@@ -3579,6 +3636,7 @@ styleable WearableActionDrawerView actionMenu drawerTitle showOverflowInPeek
 styleable WearableDrawerView android_background android_elevation drawerContent enableAutoPeek peekView
 styleable WearableNavigationDrawerView navigationStyle
 styleable WearableRecyclerView bezelWidth circularScrollingGestureEnabled scrollDegreesPerScreen
+xml network_security_config
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start

@@ -25,7 +25,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="152dp"
-        android:background="@drawable/circlebackground"
         android:gravity="center"
         android:paddingTop="5dp"
         android:text="Sign Up"

@@ -36,9 +36,9 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class userFragment extends Fragment {
 
     // /////////////////////////////////////
-    private FragmentUserBinding _biniding;
+    private FragmentUserBinding _binding;
     private final FragmentUserBinding getBinding() {
-        return this._biniding;
+        return this._binding;
     }
 
     private UserViewModel userViewModel;
@@ -53,7 +53,7 @@ public class userFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        this._biniding = FragmentUserBinding.inflate(inflater, container, false);
+        this._binding = FragmentUserBinding.inflate(inflater, container, false);
         FragmentUserBinding userBinding = this.getBinding();
         System.out.println("userBinding ");
         System.out.println(userBinding);

@@ -20,7 +20,6 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/circlelight"
         app:layout_constraintBottom_toBottomOf="@+id/loginscrn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.559"
@@ -33,7 +32,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:background="@drawable/circlebackground"
         android:gravity="center"
         android:paddingTop="5dp"
         android:text="Login"

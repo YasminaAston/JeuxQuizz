@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "/home/fadeil/.gradle/caches/transforms-2/files-2.1/641ee5be85740a3d427074f8cb0a1286/appcompat-1.2.0/res/values-v24/values-v24.xml",
+                    "source": "C:\\Users\\maxga\\.gradle\\caches\\transforms-2\\files-2.1\\31f8bee760ee8795eb34411f23a46905\\media-1.0.0\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,121,182,248",
+                        "endColumns": "65,60,65,66",
+                        "endOffsets": "116,177,243,310"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "347,413,474,540",
+                        "endColumns": "65,60,65,66",
+                        "endOffsets": "408,469,535,602"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\maxga\\.gradle\\caches\\transforms-2\\files-2.1\\e0bc97836d86b7749707e72379169d1c\\appcompat-1.2.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +31,7 @@
                     }
                 },
                 {
-                    "source": "/home/fadeil/.gradle/caches/transforms-2/files-2.1/49afbb1e512d24264d0c51f103909eb2/wear-1.0.0/res/values-v24/values-v24.xml",
+                    "source": "C:\\Users\\maxga\\.gradle\\caches\\transforms-2\\files-2.1\\f16b5eec0f54c2f94c68f8d21182ec45\\wear-1.0.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -30,23 +47,6 @@
                         "endLines": "20",
                         "endColumns": "12",
                         "endOffsets": "1481"
-                    }
-                },
-                {
-                    "source": "/home/fadeil/.gradle/caches/transforms-2/files-2.1/9f03408aac04de644bb10fb8843555e0/media-1.0.0/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,121,182,248",
-                        "endColumns": "65,60,65,66",
-                        "endOffsets": "116,177,243,310"
-                    },
-                    "to": {
-                        "startLines": "4,5,6,7",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "347,413,474,540",
-                        "endColumns": "65,60,65,66",
-                        "endOffsets": "408,469,535,602"
                     }
                 }
             ]

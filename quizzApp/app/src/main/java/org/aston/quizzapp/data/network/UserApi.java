@@ -14,6 +14,6 @@ public interface UserApi {
     @POST("users/new")
     Call<User> addUser(@Body User user);
 
-    @GET("users/{id}")
+    @GET("user/{id}")
     Call<User> getUserInfos(@Path("id") Integer userId);
 }

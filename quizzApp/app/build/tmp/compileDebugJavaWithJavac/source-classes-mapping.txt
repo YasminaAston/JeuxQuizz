@@ -1,5 +1,9 @@
 org/aston/quizzapp/data/network/QuizzApi.java
  org.aston.quizzapp.data.network.QuizzApi
+org/aston/quizzapp/databinding/FragmentHomeBinding.java
+ org.aston.quizzapp.databinding.FragmentHomeBinding
+org/aston/quizzapp/ui/fragments/RegistrationFragment.java
+ org.aston.quizzapp.ui.fragments.RegistrationFragment
 org/aston/quizzapp/data/QuizzRemoteDataSource.java
  org.aston.quizzapp.data.QuizzRemoteDataSource
 org/aston/quizzapp/QuizzApplication.java
@@ -13,6 +17,10 @@ org/aston/quizzapp/models/Quizz.java
  org.aston.quizzapp.models.Quizz
 org/aston/quizzapp/models/User.java
  org.aston.quizzapp.models.User
+org/aston/quizzapp/viewmodel/GameViewModel.java
+ org.aston.quizzapp.viewmodel.GameViewModel
+ org.aston.quizzapp.viewmodel.GameViewModel$1
+ org.aston.quizzapp.viewmodel.GameViewModel$2
 org/aston/quizzapp/data/UserRemoteDataSource.java
  org.aston.quizzapp.data.UserRemoteDataSource
 org/aston/quizzapp/data/CategoryRemoteDataSource.java
@@ -25,8 +33,19 @@ org/aston/quizzapp/models/Game.java
  org.aston.quizzapp.models.Game
 org/aston/quizzapp/models/Role.java
  org.aston.quizzapp.models.Role
+org/aston/quizzapp/viewmodel/QuizzViewModel.java
+ org.aston.quizzapp.viewmodel.QuizzViewModel
+org/aston/quizzapp/viewmodel/UserViewModel.java
+ org.aston.quizzapp.viewmodel.UserViewModel
+ org.aston.quizzapp.viewmodel.UserViewModel$1
 org/aston/quizzapp/data/QuizzRepository.java
  org.aston.quizzapp.data.QuizzRepository
+org/aston/quizzapp/DataBindingTriggerClass.java
+ org.aston.quizzapp.DataBindingTriggerClass
+org/aston/quizzapp/viewmodel/CategoryViewModel.java
+ org.aston.quizzapp.viewmodel.CategoryViewModel
+ org.aston.quizzapp.viewmodel.CategoryViewModel$1
+ org.aston.quizzapp.viewmodel.CategoryViewModel$2
 org/aston/quizzapp/ui/fragments/userFragment.java
  org.aston.quizzapp.ui.fragments.userFragment
  org.aston.quizzapp.ui.fragments.userFragment$1
@@ -34,29 +53,48 @@ org/aston/quizzapp/dto/GameDto.java
  org.aston.quizzapp.dto.GameDto
 org/aston/quizzapp/models/Response.java
  org.aston.quizzapp.models.Response
-org/aston/quizzapp/di/NetworkModule.java
- org.aston.quizzapp.di.NetworkModule
+org/aston/quizzapp/ui/fragments/gameFragment.java
+ org.aston.quizzapp.ui.fragments.gameFragment
+ org.aston.quizzapp.ui.fragments.gameFragment$1
+ org.aston.quizzapp.ui.fragments.gameFragment$2
+ org.aston.quizzapp.ui.fragments.gameFragment$3
+org/aston/quizzapp/databinding/FragmentUserBinding.java
+ org.aston.quizzapp.databinding.FragmentUserBinding
 org/aston/quizzapp/data/CategoryRepository.java
  org.aston.quizzapp.data.CategoryRepository
+org/aston/quizzapp/di/NetworkModule.java
+ org.aston.quizzapp.di.NetworkModule
+ org.aston.quizzapp.di.NetworkModule$1
+ org.aston.quizzapp.di.NetworkModule$2
+org/aston/quizzapp/databinding/FragmentGameBinding.java
+ org.aston.quizzapp.databinding.FragmentGameBinding
+org/aston/quizzapp/ui/fragments/LoginFragment.java
+ org.aston.quizzapp.ui.fragments.LoginFragment
+ org.aston.quizzapp.ui.fragments.LoginFragment$1
 org/aston/quizzapp/data/UserRepository.java
  org.aston.quizzapp.data.UserRepository
 org/aston/quizzapp/data/network/GameApi.java
  org.aston.quizzapp.data.network.GameApi
-org/aston/quizzapp/data/network/UserApi.java
- org.aston.quizzapp.data.network.UserApi
 org/aston/quizzapp/dto/QuizzDto.java
  org.aston.quizzapp.dto.QuizzDto
+org/aston/quizzapp/data/network/UserApi.java
+ org.aston.quizzapp.data.network.UserApi
 org/aston/quizzapp/ui/MainActivity.java
  org.aston.quizzapp.ui.MainActivity
-org/aston/quizzapp/util/Constants.java
- org.aston.quizzapp.util.Constants
+org/aston/quizzapp/ui/fragments/homeFragment.java
+ org.aston.quizzapp.ui.fragments.homeFragment
+ org.aston.quizzapp.ui.fragments.homeFragment$1
+org/aston/quizzapp/BuildConfig.java
+ org.aston.quizzapp.BuildConfig
 org/aston/quizzapp/data/GameRepository.java
  org.aston.quizzapp.data.GameRepository
+org/aston/quizzapp/util/Constants.java
+ org.aston.quizzapp.util.Constants
 org/aston/quizzapp/models/Category.java
  org.aston.quizzapp.models.Category
 org/aston/quizzapp/data/network/CategoryApi.java
  org.aston.quizzapp.data.network.CategoryApi
-org/aston/quizzapp/models/Question.java
- org.aston.quizzapp.models.Question
 org/aston/quizzapp/models/Score.java
  org.aston.quizzapp.models.Score
+org/aston/quizzapp/models/Question.java
+ org.aston.quizzapp.models.Question

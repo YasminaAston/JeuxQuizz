@@ -1,10 +1,14 @@
 [
     {
-        "merged": "/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_user.xml",
-        "source": "/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/res/layout/fragment_user.xml"
+        "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_game.xml",
-        "source": "/media/fadeil/5c4e4cc3-8032-41db-85a5-f43671b2a803/aston/projet_quizz/JeuxQuizz/quizzApp/app/src/main/res/layout/fragment_game.xml"
+        "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_user.xml",
+        "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\layout\\fragment_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_game.xml",
+        "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\layout\\fragment_game.xml"
     }
 ]

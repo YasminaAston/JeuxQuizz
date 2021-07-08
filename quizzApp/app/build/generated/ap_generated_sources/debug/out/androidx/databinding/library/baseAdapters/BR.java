@@ -6,7 +6,9 @@ import javax.annotation.Generated;
 public class BR {
   public static final int _all = 0;
 
-  public static final int gameViewModel = 1;
+  public static final int categoryViewModel = 1;
 
-  public static final int userViewModel = 2;
+  public static final int gameViewModel = 2;
+
+  public static final int userViewModel = 3;
 }

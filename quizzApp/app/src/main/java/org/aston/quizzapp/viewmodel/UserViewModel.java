@@ -52,23 +52,30 @@ public class UserViewModel extends AndroidViewModel {
                             System.out.println("gameMutableLiveData.getValue()  ");
                             System.out.println(userMutableLiveData.getValue());
                             Toast.makeText(context, "game getting  ", Toast.LENGTH_SHORT).show();
+                        } else {
+                            System.out.println("response not successful");
+                            System.out.println(response.code());
+                            System.out.println(response.errorBody());
+                            System.out.println(response.message());
+                            return;
                         }
                         System.out.println("get user from repo");
+
                         System.out.println(userMutableLiveData.getValue());
                     }
                     @Override
                     public void onFailure(Call<User> call, Throwable t) {
                         System.out.println("error :"+ t);
-                        Toast.makeText(context, "Error " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Error " + t.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
 
 
             } catch (Exception e) {
-                Toast.makeText(context, "Error " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Error " + e.getMessage(), Toast.LENGTH_LONG).show();
             }
         } else {
-            Toast.makeText(context, "No Internet Connection", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "No Internet Connection", Toast.LENGTH_LONG).show();
         }
     }
 

@@ -17,18 +17,22 @@ import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Generated;
 import org.aston.quizzapp.databinding.FragmentGameBindingImpl;
+import org.aston.quizzapp.databinding.FragmentHomeBindingImpl;
 import org.aston.quizzapp.databinding.FragmentUserBindingImpl;
 
 @Generated("Android Data Binding")
 public class DataBinderMapperImpl extends DataBinderMapper {
   private static final int LAYOUT_FRAGMENTGAME = 1;
 
-  private static final int LAYOUT_FRAGMENTUSER = 2;
+  private static final int LAYOUT_FRAGMENTHOME = 2;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(2);
+  private static final int LAYOUT_FRAGMENTUSER = 3;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(3);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(org.aston.quizzapp.R.layout.fragment_game, LAYOUT_FRAGMENTGAME);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(org.aston.quizzapp.R.layout.fragment_home, LAYOUT_FRAGMENTHOME);
     INTERNAL_LAYOUT_ID_LOOKUP.put(org.aston.quizzapp.R.layout.fragment_user, LAYOUT_FRAGMENTUSER);
   }
 
@@ -46,6 +50,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new FragmentGameBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for fragment_game is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTHOME: {
+          if ("layout/fragment_home_0".equals(tag)) {
+            return new FragmentHomeBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_home is invalid. Received: " + tag);
         }
         case  LAYOUT_FRAGMENTUSER: {
           if ("layout/fragment_user_0".equals(tag)) {
@@ -98,20 +108,22 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerBrLookup {
-    static final SparseArray<String> sKeys = new SparseArray<String>(3);
+    static final SparseArray<String> sKeys = new SparseArray<String>(4);
 
     static {
       sKeys.put(0, "_all");
-      sKeys.put(1, "gameViewModel");
-      sKeys.put(2, "userViewModel");
+      sKeys.put(1, "categoryViewModel");
+      sKeys.put(2, "gameViewModel");
+      sKeys.put(3, "userViewModel");
     }
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(2);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(3);
 
     static {
       sKeys.put("layout/fragment_game_0", org.aston.quizzapp.R.layout.fragment_game);
+      sKeys.put("layout/fragment_home_0", org.aston.quizzapp.R.layout.fragment_home);
       sKeys.put("layout/fragment_user_0", org.aston.quizzapp.R.layout.fragment_user);
     }
   }

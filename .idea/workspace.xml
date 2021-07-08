@@ -1,10 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="NONE" />
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/front" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d59c5362-6535-4c8c-b922-2648f0fbf115" name="Default Changelist" comment="">
+    <list default="true" id="0359d43f-36c4-430e-9a67-3608bf880ad6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/JeuxQuizz.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JeuxQuizz.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoTest/out/production/demoTest/App/Controller/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoTest/out/production/demoTest/App/Controller/UserController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoTest/out/production/demoTest/App/Entity/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoTest/out/production/demoTest/App/Entity/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoTest/out/production/demoTest/App/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoTest/out/production/demoTest/App/Repository/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoTest/out/production/demoTest/App/Repository/UserRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoTest/out/production/demoTest/App/Service/UserService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoTest/out/production/demoTest/App/Service/UserServiceImpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoTest/out/production/demoTest/App/dto/UserDto.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoTest/out/test/demoTest/App/Tests/UserServiceTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoTest/out/test/demoTest/App/Tests/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/bin/console" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/api_platform.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/cache.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/dev/debug.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/doctrine.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/doctrine_migrations.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/nelmio_cors.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/prod/doctrine.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/prod/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/sensio_framework_extra.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/test/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/test/twig.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/test/validator.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/twig.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/packages/validator.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/preload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/routes/annotations.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/routes/api_platform.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/routes/dev/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/config/services.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/migrations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/migrations/Version20210201001932.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/migrations/Version20210201011843.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Controller/GameController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Controller/QuestionController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Controller/QuizzController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Controller/ResponseController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Controller/RoleController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Controller/ScoreController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Controller/UserController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Dto/QuestionDto.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Entity/Category.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Entity/Game.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Entity/Question.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Entity/Quizz.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Entity/Response.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Entity/Role.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Entity/Score.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Entity/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Form/CategoryType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Form/GameType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Form/QuestionType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Form/QuizzType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Form/ResponseType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Form/RoleType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Form/ScoreType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Form/UserType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Repository/CategoryRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Repository/GameRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Repository/QuestionRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Repository/QuizzRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Repository/ResponseRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Repository/RoleRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Repository/ScoreRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/out/production/quizz-api/App/Repository/UserRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Dto/QuestionDto.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Dto/QuizzDto.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Dto/ResponseDto.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Entity/Category.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Entity/Game.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Entity/Question.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Entity/Quizz.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Entity/Response.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Entity/Score.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Form/CategoryType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Form/GameType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Form/QuestionType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Form/QuizzType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Form/ResponseType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Form/RoleType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Form/ScoreType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Form/UserType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Repository/CategoryRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Repository/GameRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Repository/QuestionRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Repository/QuizzRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Repository/ResponseRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Repository/RoleRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Repository/ScoreRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-api/src/Repository/UserRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizzApp/.idea/caches/build_file_checksums.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizzApp/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizzApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/quizzApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizzApp/app/src/main/res/layout/fragment_registration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/quizzApp/app/src/main/res/layout/fragment_registration.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quizzApp/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/quizzApp/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,34 +146,57 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1s9ZxrBN9Izb8WdR5CYbJ61abGr" />
+  <component name="ProjectId" id="1v1lzFTK91qsssCV4fQ05ivihCE" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/quizzApp" />
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d59c5362-6535-4c8c-b922-2648f0fbf115" name="Default Changelist" comment="" />
-      <created>1620287020372</created>
+      <changelist id="0359d43f-36c4-430e-9a67-3608bf880ad6" name="Default Changelist" comment="" />
+      <created>1625737735978</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1620287020372</updated>
+      <updated>1625737735978</updated>
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/front" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="134" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620287227918">
-      <screen x="72" y="27" width="1208" height="773" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1625737788848">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="134" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1208.773@72.27.1208.773" timestamp="1620287227918" />
-    <state x="459" y="171" width="424" height="491" key="FileChooserDialogImpl" timestamp="1620287237566">
-      <screen x="72" y="27" width="1208" height="773" />
-    </state>
-    <state x="459" y="171" width="424" height="491" key="FileChooserDialogImpl/72.27.1208.773@72.27.1208.773" timestamp="1620287237566" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1625737788848" />
   </component>
 </project>
