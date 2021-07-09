@@ -1,60 +1,57 @@
 package org.aston.quizzapp.ui.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
-
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import org.aston.quizzapp.R;
+import org.aston.quizzapp.databinding.FragmentLoginBinding;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link LoginFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class LoginFragment<loginFragment> extends Fragment {
 
-    EditText etMail, etPassword;
-    TextView tvRegister;
-    Button btnLogin;
+public class LoginFragment<loginFragment> extends Fragment implements View.OnClickListener {
+
+    private FragmentLoginBinding binding;
+    private Button logMeBtn;
+    private TextView registerMeLink;
 
     public LoginFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment LoginFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static LoginFragment newInstance(String param1, String param2) {
-        LoginFragment fragment = new LoginFragment();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        binding = FragmentLoginBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+        logMeBtn = binding.loginBtn;
+        logMeBtn.setOnClickListener(this);
+
+        registerMeLink = binding.registerMeLkTv;
+        registerMeLink.setOnClickListener(this::goToRegister);
+
+        return view;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    public void onClick(View view) {
+        String emailEt = binding.emailEt.getText().toString();
+        String password = binding.passwordEt.getText().toString();
+        System.out.println(emailEt);
+        return;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+    public void goToRegister(View view) {
+            Navigation.findNavController(view).navigate(R.id.registration_fragment);
     }
+
 }

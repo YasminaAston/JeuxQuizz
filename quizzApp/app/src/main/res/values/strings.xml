@@ -40,7 +40,12 @@
     <string name="fausse_reponse3">fausse reponse3:</string>
     <string name="register_me_tv">Pas encore inscrit ? Créer un compte</string>
     <string name="send">Envoyer</string>
-    <string name="password">mot de passe</string>
-    <string name="email_hint">email</string>
+    <string name="password">Mot de passe</string>
+    <string name="email_hint">Email</string>
     <string name="login">Me connecter</string>
+    <string name="registration">Créer un compte</string>
+    <string name="firstname_hint">Prénom</string>
+    <string name="lastname_hint">Nom</string>
+    <string name="username_hint">Nom utilisateur</string>
+    <string name="already_registered">Déjà inscrit ? Me connecter</string>
 </resources>

@@ -16,6 +16,10 @@
         android:label="Se connecter"
         tools:layout="@layout/fragment_login"/>
     <fragment
+        android:id="@+id/registration_fragment"
+        android:name="org.aston.quizzapp.ui.fragments.RegistrationFragment"
+        tools:layout="@layout/fragment_registration"/>
+    <fragment
         android:id="@+id/userFragment"
         android:name="org.aston.quizzapp.ui.fragments.userFragment"
         android:label="Mon Compte"

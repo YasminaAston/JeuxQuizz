@@ -1819,6 +1819,8 @@ drawable ic_baseline_alternate_email_24
 drawable ic_baseline_games_24
 drawable ic_baseline_lock_24
 drawable ic_baseline_lock_open_24
+drawable ic_baseline_person_24
+drawable ic_baseline_person_outline_24
 drawable ic_baseline_settings_applications_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
@@ -1980,6 +1982,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id back_to_login_link_tv
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1992,7 +1995,6 @@ id bounce
 id btnAjouer
 id btnGame
 id btnJouer
-id btn_register
 id butt
 id button
 id button2
@@ -2080,9 +2082,6 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
-id editText2
-id editText3
-id editText4
 id edit_query
 id elastic
 id email_et
@@ -2091,8 +2090,6 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
-id et_reg_firstname
-id et_reg_lastname
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -2104,6 +2101,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id firstname_et
 id fitToContents
 id fixed
 id flip
@@ -2149,12 +2147,12 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
-id iv_logo
 id jumpToEnd
 id jumpToStart
 id labelGroup
 id labeled
 id largeLabel
+id lastname_et
 id layout
 id left
 id leftToRight
@@ -2166,7 +2164,6 @@ id list_item
 id login_btn
 id login_fragment
 id login_title_tv
-id loginscrn
 id logo_iv
 id masked
 id material_clock_display
@@ -2262,7 +2259,9 @@ id quizz_nav
 id radio
 id ratio
 id rectangles
-id register_me_ln_tv
+id register_me_lk_tv
+id registration_fragment
+id registration_title_tv
 id reverseSawtooth
 id right
 id rightToLeft
@@ -2390,6 +2389,7 @@ id unlabeled
 id up
 id useLogo
 id userFragment
+id username_et
 id view_offset_helper
 id view_tree_lifecycle_owner
 id view_tree_view_model_store_owner
@@ -2651,6 +2651,7 @@ string abc_toolbar_collapse_description
 string accueil
 string ajouter
 string ajouter_une_question
+string already_registered
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -2671,6 +2672,7 @@ string fab_transformation_sheet_behavior
 string fausse_reponse1
 string fausse_reponse2
 string fausse_reponse3
+string firstname_hint
 string hello_blank_fragment
 string hello_world
 string hide_bottom_view_on_scroll_behavior
@@ -2678,6 +2680,7 @@ string icon_content_description
 string item_view_role_description
 string jouer
 string la_vraie_reponse
+string lastname_hint
 string login
 string material_clock_display_divider
 string material_clock_toggle_content_description
@@ -2749,6 +2752,7 @@ string prenombis
 string question_modifier
 string questions
 string register_me_tv
+string registration
 string reglages
 string search_menu_title
 string send
@@ -2760,6 +2764,7 @@ string toto
 string tout
 string user
 string username
+string username_hint
 string ws_action_drawer_content_description
 string ws_navigation_drawer_content_description
 style AlertDialog_AppCompat

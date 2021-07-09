@@ -1,11 +1,39 @@
 [
     {
+        "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_login.xml",
+        "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\layout\\fragment_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\non_compte_quizz_app.xml",
+        "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\layout\\non_compte_quizz_app.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_registration.xml",
+        "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\layout\\fragment_registration.xml"
+    },
+    {
         "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
         "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_user.xml",
         "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\layout\\fragment_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\crud_admin_question_response.xml",
+        "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\layout\\crud_admin_question_response.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\crud_admin_question.xml",
+        "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\layout\\crud_admin_question.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_settings.xml",
+        "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\layout\\fragment_settings.xml"
     },
     {
         "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_game.xml",
