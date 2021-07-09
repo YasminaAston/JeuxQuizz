@@ -16,10 +16,6 @@
         "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\mipmap-xhdpi\\cinema.png"
     },
     {
-        "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_email_icone.xml.flat",
-        "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\drawable\\email_icone.xml"
-    },
-    {
         "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
@@ -144,6 +140,10 @@
         "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\drawable\\cinema_foreground.xml"
     },
     {
+        "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_alternate_email_24.xml.flat",
+        "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\drawable\\ic_baseline_alternate_email_24.xml"
+    },
+    {
         "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_cinema.png.flat",
         "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\cinema.png"
     },
@@ -158,6 +158,10 @@
     {
         "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_lock_open_24.xml.flat",
+        "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\drawable\\ic_baseline_lock_open_24.xml"
     },
     {
         "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_lock_24.xml.flat",
@@ -230,6 +234,10 @@
     {
         "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.png.flat",
         "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\drawable\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_email_icon.xml.flat",
+        "source": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\src\\main\\res\\drawable\\email_icon.xml"
     },
     {
         "merged": "C:\\Users\\maxga\\aston\\projet_2_front\\JeuxQuizz\\quizzApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_login.xml.flat",

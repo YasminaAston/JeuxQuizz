@@ -1,95 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_fragment"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/iv_logo"
-        android:layout_width="138dp"
-        android:layout_height="115dp"
-        android:src="@drawable/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="28dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/loginscrn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.559"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/loginscrn"
-        app:layout_constraintVertical_bias="0.55" />
+        android:id="@+id/logo_iv"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo" />
 
     <TextView
-        android:id="@+id/loginscrn"
+        android:id="@+id/login_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:gravity="center"
-        android:paddingTop="5dp"
-        android:text="Login"
-        android:textColor="#fff"
+        android:text="@string/login"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.443"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:textColor="@color/design_default_color_primary"
+        android:textStyle="bold"/>
 
     <EditText
-        android:id="@+id/et_email"
-        android:layout_width="wrap_content"
+        android:id="@+id/email_et"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:ems="10"
-        android:hint="email"
-        app:layout_constraintBottom_toTopOf="@+id/et_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:hint="@string/email_hint"
+        android:textSize="20sp"
+        android:drawablePadding="10dp"
+        app:drawableStartCompat="@drawable/email_icon"/>
+
 
     <EditText
-        android:id="@+id/et_password"
-        android:layout_width="wrap_content"
+        android:id="@+id/password_et"
+        android:layout_width="300dp"
+        android:textSize="20sp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="mot de passe"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="416dp" />
+        android:hint="@string/password"
+        android:layout_marginTop="40dp"
+        android:drawablePadding="10dp"
+        app:drawableStartCompat="@drawable/ic_baseline_lock_24"/>
 
     <Button
-        android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/login_btn"
+        android:layout_marginTop="50dp"
+        android:layout_width="150dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="48dp"
-        android:text="Me connecter"
-        app:layout_constraintBottom_toTopOf="@+id/tv_register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="wrap_content"
+        android:text="@string/send" />
 
     <TextView
-        android:id="@+id/tv_register"
-        android:layout_width="match_parent"
+        android:id="@+id/register_me_ln_tv"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:gravity="center"
-        android:text="Créer un compte"
-        android:textColor="#3F51B5"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="@string/register_me_tv"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="15sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

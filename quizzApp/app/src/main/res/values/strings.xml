@@ -38,4 +38,9 @@
     <string name="fausse_reponse1">fausse reponse1:</string>
     <string name="fausse_reponse2">fausse reponse2:</string>
     <string name="fausse_reponse3">fausse reponse3:</string>
+    <string name="register_me_tv">Pas encore inscrit ? Créer un compte</string>
+    <string name="send">Envoyer</string>
+    <string name="password">mot de passe</string>
+    <string name="email_hint">email</string>
+    <string name="login">Me connecter</string>
 </resources>

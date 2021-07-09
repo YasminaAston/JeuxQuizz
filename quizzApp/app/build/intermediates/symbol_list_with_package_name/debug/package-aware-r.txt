@@ -1810,13 +1810,15 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
-drawable email_icone
+drawable email_icon
 drawable film
 drawable generic_confirmation
 drawable generic_confirmation_animation
 drawable geo
+drawable ic_baseline_alternate_email_24
 drawable ic_baseline_games_24
 drawable ic_baseline_lock_24
+drawable ic_baseline_lock_open_24
 drawable ic_baseline_settings_applications_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
@@ -1990,7 +1992,6 @@ id bounce
 id btnAjouer
 id btnGame
 id btnJouer
-id btn_login
 id btn_register
 id butt
 id button
@@ -2084,13 +2085,12 @@ id editText3
 id editText4
 id edit_query
 id elastic
+id email_et
 id end
 id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
-id et_email
-id et_password
 id et_reg_firstname
 id et_reg_lastname
 id exitUntilCollapsed
@@ -2163,8 +2163,11 @@ id line3
 id linear
 id listMode
 id list_item
+id login_btn
 id login_fragment
+id login_title_tv
 id loginscrn
+id logo_iv
 id masked
 id material_clock_display
 id material_clock_face
@@ -2243,6 +2246,7 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id password_et
 id password_toggle
 id path
 id pathRelative
@@ -2258,6 +2262,7 @@ id quizz_nav
 id radio
 id ratio
 id rectangles
+id register_me_ln_tv
 id reverseSawtooth
 id right
 id rightToLeft
@@ -2379,7 +2384,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id tv_register
 id unchecked
 id uniform
 id unlabeled
@@ -2659,6 +2663,7 @@ string clear_text_end_icon_content_description
 string compte
 string email
 string email2
+string email_hint
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -2673,6 +2678,7 @@ string icon_content_description
 string item_view_role_description
 string jouer
 string la_vraie_reponse
+string login
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_selection
@@ -2731,6 +2737,7 @@ string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string nom
 string numero_de_t_l_phone
+string password
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -2741,8 +2748,10 @@ string prenom
 string prenombis
 string question_modifier
 string questions
+string register_me_tv
 string reglages
 string search_menu_title
+string send
 string status_bar_notification_info_overflow
 string supprimer
 string telephone2
