@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LifecycleOwner;
@@ -21,6 +22,7 @@ import org.aston.quizzapp.viewmodel.CategoryViewModel;
 //@AndroidEntryPoint
 public class homeFragment extends Fragment {
 
+    private Button button;
     private FragmentHomeBinding _biniding;
     private final FragmentHomeBinding getBinding() {
         return this._biniding;
