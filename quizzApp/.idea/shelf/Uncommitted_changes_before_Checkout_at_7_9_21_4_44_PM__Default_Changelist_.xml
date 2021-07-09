@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_7_9_21_4_44_PM_[Default_Changelist]" date="1625841901076" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_9_21_4_44_PM_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 7/9/21 4:44 PM [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="../quizz-api/var/cache/dev/App_KernelDevDebugContainer.php.meta" />
+    <option name="AFTER_PATH" value="../quizz-api/var/cache/dev/App_KernelDevDebugContainer.php.meta" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_9_21_4_44_PM_[Default_Changelist]/App_KernelDevDebugContainer.php.meta" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../quizz-api/var/cache/dev/url_matching_routes.php.meta" />
+    <option name="AFTER_PATH" value="../quizz-api/var/cache/dev/url_matching_routes.php.meta" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_9_21_4_44_PM_[Default_Changelist]/url_matching_routes.php.meta" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../quizz-api/var/cache/dev/url_generating_routes.php.meta" />
+    <option name="AFTER_PATH" value="../quizz-api/var/cache/dev/url_generating_routes.php.meta" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_9_21_4_44_PM_[Default_Changelist]/url_generating_routes.php.meta" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../quizz-api/var/cache/dev/App_KernelDevDebugContainer.xml.meta" />
+    <option name="AFTER_PATH" value="../quizz-api/var/cache/dev/App_KernelDevDebugContainer.xml.meta" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_9_21_4_44_PM_[Default_Changelist]/App_KernelDevDebugContainer.xml.meta" />
+  </binary>
+</changelist>
