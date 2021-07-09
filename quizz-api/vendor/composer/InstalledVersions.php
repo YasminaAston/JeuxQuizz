@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'c82fae6f5e6f333b382a64ba3417d98e597c3549',
+    'reference' => '2a64ea2ba037daf2817e15994b0dbf0599af3969',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'c82fae6f5e6f333b382a64ba3417d98e597c3549',
+      'reference' => '2a64ea2ba037daf2817e15994b0dbf0599af3969',
     ),
     'api-platform/core' => 
     array (
@@ -242,6 +242,33 @@ private static $installed = array (
       ),
       'reference' => '6ede70583e101030bcace4dcddd648f760ddf642',
     ),
+    'lcobucci/clock' => 
+    array (
+      'pretty_version' => '2.0.0',
+      'version' => '2.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '353d83fe2e6ae95745b16b3d911813df6a05bfb3',
+    ),
+    'lcobucci/jwt' => 
+    array (
+      'pretty_version' => '4.1.4',
+      'version' => '4.1.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '71cf170102c8371ccd933fa4df6252086d144de6',
+    ),
+    'lexik/jwt-authentication-bundle' => 
+    array (
+      'pretty_version' => 'v2.11.3',
+      'version' => '2.11.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9358649d03ba41e1c98effa0a6e39c0317cceeec',
+    ),
     'myclabs/deep-copy' => 
     array (
       'pretty_version' => '1.10.2',
@@ -254,6 +281,15 @@ private static $installed = array (
       array (
         0 => '1.10.2',
       ),
+    ),
+    'namshi/jose' => 
+    array (
+      'pretty_version' => '7.2.3',
+      'version' => '7.2.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '89a24d7eb3040e285dd5925fcad992378b82bcff',
     ),
     'nelmio/cors-bundle' => 
     array (
@@ -923,6 +959,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'f377a3dd1fde44d37b9831d68dc8dea3ffd28e13',
+    ),
+    'symfony/polyfill-php56' => 
+    array (
+      'pretty_version' => 'v1.20.0',
+      'version' => '1.20.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675',
     ),
     'symfony/polyfill-php72' => 
     array (
