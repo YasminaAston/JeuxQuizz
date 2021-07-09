@@ -48,18 +48,7 @@ public class LoginFragment<loginFragment> extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        etMail = (EditText) etMail.findViewById(R.id.et_email);
-        etPassword = (EditText) etPassword.findViewById(R.id.et_password);
-        btnLogin = (Button) btnLogin.findViewById(R.id.btn_login);
-        tvRegister = (TextView) tvRegister.findViewById(R.id.tv_register);
 
-        tvRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(LoginFragment.this.getActivity(), RegistrationFragment.class);
-                startActivity(i);
-            }
-        });
     }
 
     @Override

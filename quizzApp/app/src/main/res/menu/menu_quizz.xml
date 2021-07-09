@@ -9,11 +9,20 @@
         android:icon="@drawable/icon_home" />
 
     <item
+        android:id="@+id/login_fragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_person"
+        android:title="Me connecter"
+        app:showAsAction="ifRoom" />
+
+
+    <item
         android:id="@+id/userFragment"
         android:enabled="true"
         android:title="@string/compte"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_person" />
+
 
     <item
         android:id="@+id/settingsFragment"

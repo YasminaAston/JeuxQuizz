@@ -68,9 +68,8 @@ org/aston/quizzapp/di/NetworkModule.java
  org.aston.quizzapp.di.NetworkModule$2
 org/aston/quizzapp/databinding/FragmentGameBinding.java
  org.aston.quizzapp.databinding.FragmentGameBinding
-org/aston/quizzapp/ui/fragments/LoginFragment.java
- org.aston.quizzapp.ui.fragments.LoginFragment
- org.aston.quizzapp.ui.fragments.LoginFragment$1
+org/aston/quizzapp/models/Question.java
+ org.aston.quizzapp.models.Question
 org/aston/quizzapp/data/UserRepository.java
  org.aston.quizzapp.data.UserRepository
 org/aston/quizzapp/data/network/GameApi.java
@@ -96,5 +95,5 @@ org/aston/quizzapp/data/network/CategoryApi.java
  org.aston.quizzapp.data.network.CategoryApi
 org/aston/quizzapp/models/Score.java
  org.aston.quizzapp.models.Score
-org/aston/quizzapp/models/Question.java
- org.aston.quizzapp.models.Question
+org/aston/quizzapp/ui/fragments/LoginFragment.java
+ org.aston.quizzapp.ui.fragments.LoginFragment

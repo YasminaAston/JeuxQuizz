@@ -448,7 +448,7 @@ public final class DaggerQuizzApplication_HiltComponents_ApplicationC extends Qu
       }
 
       @Override
-      public void injectMainActivity(MainActivity mainActivity) {
+      public void injectMainActivity(MainActivity arg0) {
       }
 
       private final class FragmentCBuilder implements QuizzApplication_HiltComponents.FragmentC.Builder {
@@ -489,15 +489,15 @@ public final class DaggerQuizzApplication_HiltComponents_ApplicationC extends Qu
         }
 
         @Override
-        public void injectgameFragment(gameFragment gameFragment) {
+        public void injectgameFragment(gameFragment arg0) {
         }
 
         @Override
-        public void injecthomeFragment(homeFragment homeFragment) {
+        public void injecthomeFragment(homeFragment arg0) {
         }
 
         @Override
-        public void injectsettingsFragment(settingsFragment settingsFragment) {
+        public void injectsettingsFragment(settingsFragment arg0) {
         }
 
         private final class ViewWithFragmentCBuilder implements QuizzApplication_HiltComponents.ViewWithFragmentC.Builder {
