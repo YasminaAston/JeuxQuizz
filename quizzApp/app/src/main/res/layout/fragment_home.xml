@@ -64,37 +64,37 @@
                 android:orientation="horizontal">
 
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/imageView12"
                     android:layout_width="111dp"
                     android:layout_height="88dp"
                     app:srcCompat="@drawable/art" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/imageView10"
                     android:layout_width="111dp"
                     android:layout_height="88dp"
                     app:srcCompat="@drawable/science" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/imageView8"
                     android:layout_width="111dp"
                     android:layout_height="88dp"
                     app:srcCompat="@drawable/music" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/imageView7"
                     android:layout_width="111dp"
                     android:layout_height="88dp"
                     app:srcCompat="@drawable/film" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/imageView9"
                     android:layout_width="111dp"
                     android:layout_height="match_parent"
                     app:srcCompat="@drawable/sport" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/imageView11"
                     android:layout_width="111dp"
                     android:layout_height="88dp"
@@ -162,21 +162,7 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:background="@drawable/rounded_corners"
-            android:text="Jouer"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.512"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.885"
-            tools:ignore="MissingPrefix" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="org.aston.quizzapp">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -13,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizzApp"
         android:usesCleartextTraffic="true">
+        <activity android:name=".ui.fragments.MainActivity3"></activity>
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
