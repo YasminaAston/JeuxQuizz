@@ -2,8 +2,9 @@ org/aston/quizzapp/data/network/QuizzApi.java
  org.aston.quizzapp.data.network.QuizzApi
 org/aston/quizzapp/databinding/FragmentHomeBinding.java
  org.aston.quizzapp.databinding.FragmentHomeBinding
-org/aston/quizzapp/data/network/CategoryApi.java
- org.aston.quizzapp.data.network.CategoryApi
+org/aston/quizzapp/ui/fragments/RegistrationFragment.java
+ org.aston.quizzapp.ui.fragments.RegistrationFragment
+ org.aston.quizzapp.ui.fragments.RegistrationFragment$1
 org/aston/quizzapp/data/QuizzRemoteDataSource.java
  org.aston.quizzapp.data.QuizzRemoteDataSource
 org/aston/quizzapp/QuizzApplication.java
@@ -39,8 +40,8 @@ org/aston/quizzapp/di/NetworkModule.java
  org.aston.quizzapp.di.NetworkModule
  org.aston.quizzapp.di.NetworkModule$1
  org.aston.quizzapp.di.NetworkModule$2
-org/aston/quizzapp/models/Question.java
- org.aston.quizzapp.models.Question
+org/aston/quizzapp/ui/fragments/LoginFragment.java
+ org.aston.quizzapp.ui.fragments.LoginFragment
 org/aston/quizzapp/data/UserRepository.java
  org.aston.quizzapp.data.UserRepository
 org/aston/quizzapp/data/network/UserApi.java
@@ -107,7 +108,7 @@ org/aston/quizzapp/util/Constants.java
  org.aston.quizzapp.util.Constants
 org/aston/quizzapp/models/Category.java
  org.aston.quizzapp.models.Category
-org/aston/quizzapp/ui/fragments/LoginFragment.java
- org.aston.quizzapp.ui.fragments.LoginFragment
-org/aston/quizzapp/ui/fragments/RegistrationFragment.java
- org.aston.quizzapp.ui.fragments.RegistrationFragment
+org/aston/quizzapp/data/network/CategoryApi.java
+ org.aston.quizzapp.data.network.CategoryApi
+org/aston/quizzapp/models/Question.java
+ org.aston.quizzapp.models.Question
